@@ -4,6 +4,7 @@ import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
@@ -16,9 +17,10 @@ public class CompBot extends MecanumDrive {
     public HardwareMap hwBot = null;
 
     public DcMotor viperSlideRight = null;
-    public DcMotor viperSlideLeft = null;
     public DcMotor wormgearRight = null;
-    public DcMotor wormgearLeft = null;
+    public DcMotor hookArm = null;
+    public Servo hookArmRaiser = null;
+
     public ElapsedTime currentTime = new ElapsedTime();
 
     public ElapsedTime timer = new ElapsedTime();
@@ -58,17 +60,26 @@ public class CompBot extends MecanumDrive {
         viperSlideRight.setDirection(DcMotor.Direction.FORWARD);
         viperSlideRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-        viperSlideLeft = hwBot.dcMotor.get("viper_slide_left");
-        viperSlideLeft.setDirection(DcMotorSimple.Direction.FORWARD);
-        viperSlideLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         wormgearRight = hwBot.dcMotor.get("wormgear_right");
         wormgearRight.setDirection(DcMotor.Direction.FORWARD); //check direction b/f testing
         wormgearRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-        wormgearLeft = hwBot.dcMotor.get("wormgear_left");
-        wormgearLeft.setDirection(DcMotor.Direction.FORWARD);  //check direction b/f testing
-        wormgearLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        hookArm = hwBot.dcMotor.get("hookArm"); //Expantion Hub Port 0
+
+       hookArm.setDirection(DcMotorSimple.Direction.FORWARD);
+
+
+        hookArm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+        hookArm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        hookArm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+        hookArmRaiser = hwBot.get(Servo.class, "hookArmRaiser");
+        hookArmRaiser.setDirection(Servo.Direction.FORWARD);
+
+
+
 
 
         currentTime.reset();
@@ -88,6 +99,28 @@ public class CompBot extends MecanumDrive {
 
 
     }
+
+
+    public void hookArmUp (){
+        hookArm.setPower(100);
+    }
+
+    public void hookArmDown(){
+        hookArm.setPower(-100);
+    }
+    public void hookArmStop(){
+        hookArm.setPower(0);
+    }
+
+
+    public void hookArmRaiserUp(){
+        hookArmRaiser.setPosition(1);
+    }
+
+    public void hookArmRaiserDown(){
+        hookArmRaiser.setPosition(0);
+    }
+
 
     public void stopMotors(){
         frontLeftMotor.setPower(0);
