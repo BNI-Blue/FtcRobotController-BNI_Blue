@@ -4,6 +4,7 @@ import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
@@ -18,6 +19,9 @@ public class CompBot_Blue extends MecanumDrive {
     public DcMotor viperSlide = null;
     public DcMotor wormGear = null;
     public DcMotor hangHook = null;
+
+    public Servo hingeHook= null;
+
     public ElapsedTime currentTime = new ElapsedTime();
 
     public ElapsedTime timer = new ElapsedTime();
@@ -52,6 +56,9 @@ public class CompBot_Blue extends MecanumDrive {
         frontRightMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rearRightMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rearLeftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+        hingeHook = hwBot.get(Servo.class,"hinge_hook");
+        hingeHook.setDirection(Servo.Direction.FORWARD); //check direction b4 testing
 
 
         viperSlide = hwBot.dcMotor.get("viper_slide");
@@ -98,6 +105,7 @@ public class CompBot_Blue extends MecanumDrive {
         viperSlide.setPower(-Math.abs(power));
     }
 
+    //pixel claw
     public void extendClaw(double power, double rotations)  {
         double ticks = rotations * (1) * TICKS_PER_ROTATION;
         viperSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -121,7 +129,8 @@ public class CompBot_Blue extends MecanumDrive {
     public void stopClaw() {
         viperSlide.setPower(0);
     }
-    //methods for the worm gear
+
+    //methods for the worm gear/up and down for pixel claw
     public void raiseWormGear (double power) {
         wormGear.setPower(Math.abs(power));
     }
@@ -156,33 +165,43 @@ public class CompBot_Blue extends MecanumDrive {
 
 
     //methods for the hang hook
-    public void raiseHangHook(double power) {
+    public void extendHangHook(double power) {
         hangHook.setPower(Math.abs(power));
     }
 
-    public void lowerHangHook(double power){
+    public void retractHangHook(double power){
         hangHook.setPower(-Math.abs(power));
     }
 
-    public void raiseHangHook(double power, double rotations){
+    public void extendHangHook(double power, double rotations){
         double ticks = rotations * (1) * TICKS_PER_ROTATION;
         hangHook.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         hangHook.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         while (Math.abs(hangHook.getCurrentPosition()) > ticks && LinearOp.opModeIsActive()){
-            raiseHangHook(power);
+            extendHangHook(power);
         }
     }
 
-    public void lowerHangHook(double power, double rotations){
+    public void retractHangHook(double power, double rotations){
         double ticks = rotations * (-1) * TICKS_PER_ROTATION;
         hangHook.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         hangHook.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         while (Math.abs(hangHook.getCurrentPosition()) < ticks && LinearOp.opModeIsActive()){
-            lowerHangHook(power);
+            retractHangHook(power);
         }
     }
 
     public void stopHangHook() {
         hangHook.setPower(0);
     }
+
+     public void openHook (){
+        hingeHook.setPosition(0.5); //check position
+     }
+
+     public void closeHook (){
+        hingeHook.setPosition(0); //check position
+     }
+
+
 }
