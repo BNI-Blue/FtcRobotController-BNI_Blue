@@ -39,6 +39,8 @@ public class SingleMotor_Triggers extends OpMode {
     }
 
     public void update_telemetry () {
+        telemetry.addLine("LeftT Trigger to go raise");
+        telemetry.addLine("Right Trigger to lower");
         telemetry.addData("Forward Motor Power: ", forwardMotorPower);
         telemetry.addData("Reverse Motor Power: ", reverseMotorPower);
         telemetry.update();
