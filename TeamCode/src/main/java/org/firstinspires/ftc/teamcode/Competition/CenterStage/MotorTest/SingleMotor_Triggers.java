@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
-
+//@Disabled
 @TeleOp (name = "Test:Single Motor:Triggers", group = "Lab")
 //Use 1 port, switch which motor is in the port to test it
 
@@ -14,6 +14,7 @@ public class SingleMotor_Triggers extends OpMode {
     private DcMotor motor = null;
     double forwardMotorPower = 0.4;
     double reverseMotorPower = 0.5;
+    //only one decimal value - battery % in Endgame
 
 
     @Override
