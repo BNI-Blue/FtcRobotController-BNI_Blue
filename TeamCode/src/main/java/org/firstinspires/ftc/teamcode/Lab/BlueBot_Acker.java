@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots;
+package org.firstinspires.ftc.teamcode.Lab;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -8,10 +8,9 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.MecanumDrive;
 
 
-public class BlueBot_Acker extends MecanumDrive {
+public class BlueBot_Acker extends MecanumDrive_Acker {
 
         // Hardware Mapping Variables
         public HardwareMap hwBot = null;

@@ -1,11 +1,8 @@
-package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeleOp;
+package org.firstinspires.ftc.teamcode.Lab;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
-
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_Acker;
 
 //@Disabled
 @TeleOp (name = "BlueBot:TeleOp Acker")
