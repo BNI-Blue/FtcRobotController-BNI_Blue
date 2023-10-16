@@ -1,17 +1,16 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeleOp;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
 
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_Acker;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New;
 
 //import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_Acker;
 
     //@Disabled
-    @TeleOp(name = "BlueBot:TeleOp Acker")
-    public class BlueBot_TeleOp_Acker extends OpMode {
+    @TeleOp(name = "BlueBot:TeleOp ")
+    public class BlueBot_TeleOp extends OpMode {
         double leftStickYVal;
         double leftStickXVal;
         double rightStickXVal;
@@ -32,7 +31,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_Ack
         public double endGameDownPosition = 0.2;
 
         // Construct the physical robot object
-        public BlueBot_Acker BlueBot = new BlueBot_Acker();
+        public BlueBot_New BlueBot = new BlueBot_New();
 
         @Override
         public void init () {

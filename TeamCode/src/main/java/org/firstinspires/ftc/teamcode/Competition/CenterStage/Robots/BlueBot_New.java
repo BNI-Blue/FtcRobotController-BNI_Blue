@@ -11,7 +11,8 @@ import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.MecanumDrive;
 
 
-    public class BlueBot_Acker extends MecanumDrive {
+    public class BlueBot_New extends MecanumDrive {
+        //Change name and remove "Acker"
 
         // Hardware Mapping Variables
         public HardwareMap hwBot = null;
@@ -34,7 +35,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
 
         // Constructors
-        public BlueBot_Acker(){}
+        public BlueBot_New(){}
 
         // Initialization Method
         public void initRobot(HardwareMap hwMap) {

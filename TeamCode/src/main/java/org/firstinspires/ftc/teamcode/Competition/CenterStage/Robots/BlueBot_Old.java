@@ -11,7 +11,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.MecanumDrive;
 
-public class CompBot_Blue extends MecanumDrive {
+public class BlueBot_Old extends MecanumDrive {
 
 
     public HardwareMap hwBot = null;
@@ -33,7 +33,7 @@ public class CompBot_Blue extends MecanumDrive {
     public final double SPEED = .3;
     public final double TOLERANCE = .4;
 
-    public CompBot_Blue(){}
+    public BlueBot_Old(){}
 
     public void initRobot(HardwareMap hwMap) {
         hwBot = hwMap;
