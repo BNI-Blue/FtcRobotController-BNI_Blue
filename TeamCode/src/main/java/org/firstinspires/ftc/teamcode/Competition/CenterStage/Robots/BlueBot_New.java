@@ -12,7 +12,6 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
 
     public class BlueBot_New extends MecanumDrive {
-        //Change name and remove "Acker"
 
         // Hardware Mapping Variables
         public HardwareMap hwBot = null;
@@ -21,6 +20,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         public DcMotor pixelArm = null;
         public DcMotor pixelArmRotator = null;
         public Servo pixelClaw = null;
+        public Servo pixelWrist = null;
 
         // End Game Arm Variables
         public DcMotor endgameArm = null;
@@ -73,6 +73,10 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             //Pixel Claw Mechanism HW Mapping
             pixelClaw = hwBot.servo.get("pixel_claw");
             endGameRotator.setDirection(Servo.Direction.FORWARD);
+
+            //Pixel Wrist HW Mapping
+            pixelWrist = hwBot.servo.get("pixel_wrist");
+            // -------------------
 
             // End Game Rotational Mechanism (Servo and Motor) HW Mapping
             endGameRotator = hwBot.servo.get("end_game_rotator");

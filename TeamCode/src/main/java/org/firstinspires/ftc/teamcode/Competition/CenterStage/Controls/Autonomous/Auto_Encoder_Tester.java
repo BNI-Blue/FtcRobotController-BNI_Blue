@@ -1,15 +1,12 @@
-package org.firstinspires.ftc.teamcode.Lab;
+package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous;
 
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
+import org.firstinspires.ftc.teamcode.Lab.Auto1_Main_Acker;
+import org.firstinspires.ftc.teamcode.Lab.BlueBot_Acker;
 
-// Autonomous Pathing Class.  It inherits from Auto Blue parent and Auto Main "grandparent"
-@Disabled
-@Autonomous(name ="Blue:Position1:Basic:NoVision")
-public class Auto3_BluePath_Pos1_Acker extends Auto2_Blue_Acker {
-
+public class Auto_Encoder_Tester extends Auto1_Main_Acker{
     // Construct Competiton and Programming Robots
     public BlueBot_Acker blueBot = new BlueBot_Acker();
     public ProgramBot programBot = new ProgramBot();
@@ -39,30 +36,33 @@ public class Auto3_BluePath_Pos1_Acker extends Auto2_Blue_Acker {
 
             telemetry.addLine("Driving Forward");
             telemetry.update();
-            blueBot.driveForward(.75,5);
+            blueBot.driveForward(.75, 5);
             sleep(1000);
 
             telemetry.addLine("Rotating Left");
             telemetry.update();
-            blueBot.rotateLeft(.40,4);
+            blueBot.rotateLeft(.40, 4);
             sleep(1000);
 
-            telemetry.addLine("Driving Forward Again");
+            telemetry.addLine("Rotating Right");
             telemetry.update();
-            blueBot.driveForward(.75,5);
-            sleep(1000);
-            blueBot.rotateLeft(.40,4);
+            blueBot.rotateRight(.75, 5);
             sleep(1000);
 
-            //Drive Forward
-            //Turn Left
-            //Drive Forward to Backdrop
-            //Place both pre-loaded pixels on backdrop(if claw works)
-            //               OR
-            //Push both pre-loaded pixels backstage
-            //park backstage
+            telemetry.addLine("Driving Backwards");
+            telemetry.update();
+            blueBot.driveBack(.40, 4);
+            sleep(1000);
 
+            telemetry.addLine("Strafe Left");
+            telemetry.update();
+            blueBot.strafeLeft(.5, 4);
+            sleep(1000);
 
+            telemetry.addLine("Strafe Right");
+            telemetry.update();
+            blueBot.strafeRight(.5, 4);
+            sleep(1000);
 
 
             // ***** INSERT AUTONOMOUS CODE ABOVE THIS LINE  *****
@@ -70,8 +70,5 @@ public class Auto3_BluePath_Pos1_Acker extends Auto2_Blue_Acker {
             idle();
             requestOpModeStop();
         }
-
-
-
     }
 }

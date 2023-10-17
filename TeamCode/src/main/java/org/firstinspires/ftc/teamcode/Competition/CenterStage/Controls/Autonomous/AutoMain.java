@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous;
 
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.MecanumDrive;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
+@Autonomous
 public class AutoMain {
 }

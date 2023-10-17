@@ -2,5 +2,5 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomo
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRed;
 
-public class RedStartPos1 extends AutoRed {
+public class RedStartPos1 {
 }

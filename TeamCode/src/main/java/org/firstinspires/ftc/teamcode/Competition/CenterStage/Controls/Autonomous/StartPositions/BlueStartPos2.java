@@ -2,5 +2,5 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomo
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoBlue;
 
-public class BlueStartPos2 extends AutoBlue {
+public class BlueStartPos2 {
 }
