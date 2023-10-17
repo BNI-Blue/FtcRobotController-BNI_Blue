@@ -1,9 +1,11 @@
 package org.firstinspires.ftc.teamcode.Lab;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
+import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.IMU;
 import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
@@ -25,11 +27,15 @@ public class BlueBot_Acker extends MecanumDrive_Acker {
         public Servo endGameRotator = null;
 
         //Gyro Variables
-        public BNO055IMU imu;
-        public Orientation angles;
-        public Acceleration gravity;
-        public final double SPEED = .3;
-        public final double TOLERANCE = .4;
+
+        public IMU imu  = null;
+        public double headingError  = 0;
+        RevHubOrientationOnRobot.LogoFacingDirection logoDirection = RevHubOrientationOnRobot.LogoFacingDirection.UP;
+        RevHubOrientationOnRobot.UsbFacingDirection  usbDirection  = RevHubOrientationOnRobot.UsbFacingDirection.FORWARD;
+        RevHubOrientationOnRobot orientationOnRobot = new RevHubOrientationOnRobot(logoDirection, usbDirection);
+
+    // Now initialize the IMU with this mounting orientation
+    // This sample expects the IMU to be in a REV Hub and named "imu".
 
 
         // Constructors
@@ -80,6 +86,10 @@ public class BlueBot_Acker extends MecanumDrive_Acker {
             endgameArm = hwBot.dcMotor.get("end_game_arm");
             endgameArm.setDirection(DcMotorSimple.Direction.FORWARD);
             endgameArm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+            // Gyro
+            imu = hwBot.get(IMU .class, "imu");
+            imu.initialize(new IMU.Parameters(orientationOnRobot));
 
         }
 

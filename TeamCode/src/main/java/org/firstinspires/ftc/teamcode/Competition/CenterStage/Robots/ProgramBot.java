@@ -10,7 +10,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.MecanumDrive;
 
-public class MetalBot extends MecanumDrive {
+public class ProgramBot extends MecanumDrive {
 
 
     // Robot Hardware Constructors
@@ -30,7 +30,7 @@ public class MetalBot extends MecanumDrive {
     public final double TOLERANCE = .4;
 
     //MechBot Constructor
-    public MetalBot() {}
+    public ProgramBot() {}
 
     // Initializing Hardware for Robot
     public void initRobot(HardwareMap hwMap) {
@@ -57,9 +57,6 @@ public class MetalBot extends MecanumDrive {
         frontRightMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rearRightMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rearLeftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-
-//        //Timer Reset
-//        currentTime.reset();
 
     }
 
