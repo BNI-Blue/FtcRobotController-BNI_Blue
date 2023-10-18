@@ -2,6 +2,8 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeleOp;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New;
@@ -16,6 +18,8 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New
         double rightStickXVal;
         double rightStickYVal;
 
+
+
         double frontLeftSpeed;
         double frontRightSpeed;
         double rearLeftSpeed;
@@ -29,6 +33,14 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New
         public double endGameArmPower = 0.95;
         public double endGameUpPosition = 0.7;
         public double endGameDownPosition = 0.2;
+
+        //would I include this to move the arm
+        // instead of changing the motor power
+        // or is there something else
+        public DcMotor pixelArm = null;
+        public DcMotor pixelArmRotator = null;
+        public Servo pixelClaw = null;
+        public Servo pixelWrist = null;
 
         // Construct the physical robot object
         public BlueBot_New BlueBot = new BlueBot_New();
@@ -131,10 +143,10 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New
         public void endGameControl() {
 
             // End Game Extension/Retraction
-            if (gamepad2.left_trigger > 0.1) {
+            if (gamepad1.dpad_up) {
                 BlueBot.extendEndGameArm(endGameArmPower);
             }
-            else if (gamepad2.right_trigger > 0.1) {
+            else if (gamepad1.dpad_down) {
                 BlueBot.retractEndGameArm(endGameArmPower);
             }
             else {
@@ -142,10 +154,10 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New
             }
 
             // End Game Rotation
-            if (gamepad2.y) {
+            if (gamepad1.left_stick_y < -0.1) {
                 BlueBot.rotateEndGameArmUp(endGameUpPosition);
             }
-            if (gamepad2.x) {
+            if (gamepad1.left_stick_y > 0.1) {
                 BlueBot.retractEndGameArm(endGameDownPosition);
             }
         }
@@ -170,6 +182,48 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New
 
             else if (gamepad1.dpad_down) {
                 speedMultiply = 1;
+            }
+        }
+
+        public void driverControl(){
+            //worm gear - pixel arm
+            if(gamepad2.dpad_up){
+
+            }
+            if(gamepad2.dpad_down){
+
+            }
+
+            //claw
+            if(gamepad2.left_bumper){
+
+            }
+            if(gamepad2.right_bumper){
+
+            }
+
+            //linear extension (pixel arm - up and down)
+            if(gamepad2.right_stick_y < -0.1){
+
+            }
+            if(gamepad2.right_stick_y > 0.1){
+
+            }
+
+            //endgame arm actuator
+            if(gamepad1.dpad_up){
+
+            }
+            if(gamepad1.dpad_down){
+
+            }
+
+            //servo for endgame arm
+            if(gamepad1.left_stick_y < -0.1){
+
+            }
+            if(gamepad1.left_stick_y > 0.1){
+
             }
         }
 

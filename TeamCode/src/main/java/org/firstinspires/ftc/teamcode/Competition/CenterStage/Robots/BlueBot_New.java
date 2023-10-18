@@ -66,6 +66,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             pixelArm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
             // Pixel Arm Rotational Mechanism HW Mapping
+            //worm gear
             pixelArmRotator = hwBot.dcMotor.get("pixel_arm_rotator");
             pixelArmRotator.setDirection(DcMotor.Direction.FORWARD); //check direction b/f testing
             pixelArmRotator.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
