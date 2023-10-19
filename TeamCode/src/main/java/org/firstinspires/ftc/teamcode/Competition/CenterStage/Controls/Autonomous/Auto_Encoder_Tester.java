@@ -1,11 +1,12 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
 import org.firstinspires.ftc.teamcode.Lab.Auto1_Main_Acker;
 import org.firstinspires.ftc.teamcode.Lab.BlueBot_Acker;
-
+@Disabled
 public class Auto_Encoder_Tester extends Auto1_Main_Acker{
     // Construct Competiton and Programming Robots
     public BlueBot_Acker blueBot = new BlueBot_Acker();

@@ -1,10 +1,11 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeleOp;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
-
+@Disabled
 @TeleOp (name = "MecTeleOp")
 public class MecTeleOp extends OpMode {
 

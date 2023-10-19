@@ -2,11 +2,9 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeleOp;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
 //import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_Acker;
 
@@ -37,7 +35,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New
 
 
         // Construct the physical robot object
-        public BlueBot_New BlueBot = new BlueBot_New();
+        public org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot BlueBot = new BlueBot();
 
         @Override
         public void init () {
@@ -133,6 +131,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New
             else {
                 BlueBot.stopPixelArmRotation();
             }
+
         }
 
         // EndGame Control Method for EndGame Extension/Lifting and Rotation
@@ -146,17 +145,20 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New
                 BlueBot.retractEndGameArm(endGameArmPower);
             }
             else {
-                BlueBot.stopPixelArmRotation();
+                BlueBot.stopEndGameArm();
             }
 
             // End Game Rotation
-            if (gamepad1.left_stick_y < -0.1) {
+            if (gamepad1.dpad_left) {
                 BlueBot.rotateEndGameArmUp(endGameUpPosition);
             }
-            if (gamepad1.left_stick_y > 0.1) {
-                BlueBot.retractEndGameArm(endGameDownPosition);
+            else if (gamepad1.dpad_right) {
+                BlueBot.rotateEndGameArmDown(endGameDownPosition);
             }
-        }
+
+            }
+        //game pad 1 - left stick driving - strafe instead of going forward
+        //end game arm isn't working
 
 
         public void clawControl(){
@@ -174,7 +176,9 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New
                 BlueBot.rotatePixelArmUp(0.3);
             }
 
-            //if(gamepad2.)
+            else {
+                BlueBot.stopPixelArmRotation();
+            }
         }
 
 

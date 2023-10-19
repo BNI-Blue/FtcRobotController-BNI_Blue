@@ -1,7 +1,7 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
-@Autonomous
-public class AutoMain {
+public abstract class AutoMain extends LinearOpMode {
 }

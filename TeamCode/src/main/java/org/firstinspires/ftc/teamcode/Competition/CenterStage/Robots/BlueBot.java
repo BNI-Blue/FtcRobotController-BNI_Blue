@@ -11,7 +11,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.MecanumDrive;
 
 
-    public class BlueBot_New extends MecanumDrive {
+    public class BlueBot extends MecanumDrive {
 
         // Hardware Mapping Variables
         public HardwareMap hwBot = null;
@@ -36,17 +36,17 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
 
         // Constructors
-        public BlueBot_New(){}
+        public BlueBot(){}
 
         // Initialization Method
         public void initRobot(HardwareMap hwMap) {
             hwBot = hwMap;
 
             // Drivetrain Motors HW Mapping
-            frontLeftMotor = hwBot.dcMotor.get("front_left_motor");
-            frontRightMotor = hwBot.dcMotor.get("front_right_motor");
-            rearLeftMotor = hwBot.dcMotor.get("rear_left_motor");
-            rearRightMotor = hwBot.dcMotor.get("rear_right_motor");
+            frontLeftMotor = hwBot.dcMotor.get("front_left_motor");//Port 0 - Control
+            frontRightMotor = hwBot.dcMotor.get("front_right_motor");//Port 1 - Control
+            rearLeftMotor = hwBot.dcMotor.get("rear_left_motor");//Port 2 - Control
+            rearRightMotor = hwBot.dcMotor.get("rear_right_motor");//Port 3 - Control
 
             frontLeftMotor.setDirection(DcMotor.Direction.FORWARD);
             rearLeftMotor.setDirection(DcMotor.Direction.FORWARD);
@@ -62,32 +62,32 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             rearLeftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
             // Pixel Arm Extension Mechanism HW Mapping
-            pixelArm = hwBot.dcMotor.get("pixel_arm");
+            pixelArm = hwBot.dcMotor.get("pixel_arm");//Port 0 - Expansion
             pixelArm.setDirection(DcMotor.Direction.FORWARD);
             pixelArm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
             // Pixel Arm Rotational Mechanism HW Mapping
             //worm gear
-            pixelArmRotator = hwBot.dcMotor.get("pixel_arm_rotator");
+            pixelArmRotator = hwBot.dcMotor.get("pixel_arm_rotator");//Port 2 - Expansion
             pixelArmRotator.setDirection(DcMotor.Direction.FORWARD); //check direction b/f testing
             pixelArmRotator.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
             //Pixel Claw Mechanism HW Mapping
-            pixelClawLeft = hwBot.servo.get("pixel_claw_left");
+            pixelClawLeft = hwBot.servo.get("pixel_claw_left");//Port 0 - Expansion
             pixelClawLeft.setDirection(Servo.Direction.FORWARD);
-            pixelClawRight = hwBot.servo.get("pixel_claw_right");
+            pixelClawRight = hwBot.servo.get("pixel_claw_right");//Port 1 - Expansion
             pixelClawRight.setDirection(Servo.Direction.FORWARD);
 
             //Pixel Wrist HW Mapping
-            pixelWrist = hwBot.servo.get("pixel_wrist");
+            pixelWrist = hwBot.servo.get("pixel_wrist");//Port 2 - Expansion
             pixelWrist.setDirection(Servo.Direction.FORWARD);
 
             // End Game Rotational Mechanism (Servo and Motor) HW Mapping
-            endGameRotator = hwBot.servo.get("end_game_rotator");
+            endGameRotator = hwBot.servo.get("end_game_rotator");//Port 3 - Expansion
             endGameRotator.setDirection(Servo.Direction.FORWARD);
 
             // End Game Arm Lifting HW Mapping
-            endgameArm = hwBot.dcMotor.get("end_game_arm");
+            endgameArm = hwBot.dcMotor.get("end_game_arm");//Port 1 - Expansion
             endgameArm.setDirection(DcMotorSimple.Direction.FORWARD);
             endgameArm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 

@@ -1,4 +1,4 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous;
 
-public class AutoBlue extends AutoMain{
+public abstract class AutoBlue extends AutoMain{
 }
