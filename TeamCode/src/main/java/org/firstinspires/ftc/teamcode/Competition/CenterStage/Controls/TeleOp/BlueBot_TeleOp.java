@@ -34,13 +34,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New
         public double endGameUpPosition = 0.7;
         public double endGameDownPosition = 0.2;
 
-        //would I include this to move the arm
-        // instead of changing the motor power
-        // or is there something else
-        public DcMotor pixelArm = null;
-        public DcMotor pixelArmRotator = null;
-        public Servo pixelClaw = null;
-        public Servo pixelWrist = null;
+
 
         // Construct the physical robot object
         public BlueBot_New BlueBot = new BlueBot_New();
@@ -60,7 +54,9 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New
             drive();
             pixelArmControl();
             endGameControl();
+            clawControl();
             telemetryOutput();
+
         }
 
         public void drive() {
@@ -163,6 +159,25 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New
         }
 
 
+        public void clawControl(){
+            if(gamepad2.left_trigger > 0.1){
+                BlueBot.openPixelClaw();
+            }
+            else if(gamepad2.right_trigger > 0.1){
+                BlueBot.closePixelClaw();;
+            }
+
+            if(gamepad2.dpad_down){
+                BlueBot.rotatePixelArmDown(-0.1);
+            }
+            else if (gamepad2.dpad_up){
+                BlueBot.rotatePixelArmUp(0.3);
+            }
+
+            //if(gamepad2.)
+        }
+
+
         // Telemetry Controls Method for EndGame Extension/Lifting and Rotation
         public void telemetryOutput() {
 
@@ -182,48 +197,6 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_New
 
             else if (gamepad1.dpad_down) {
                 speedMultiply = 1;
-            }
-        }
-
-        public void driverControl(){
-            //worm gear - pixel arm
-            if(gamepad2.dpad_up){
-
-            }
-            if(gamepad2.dpad_down){
-
-            }
-
-            //claw
-            if(gamepad2.left_bumper){
-
-            }
-            if(gamepad2.right_bumper){
-
-            }
-
-            //linear extension (pixel arm - up and down)
-            if(gamepad2.right_stick_y < -0.1){
-
-            }
-            if(gamepad2.right_stick_y > 0.1){
-
-            }
-
-            //endgame arm actuator
-            if(gamepad1.dpad_up){
-
-            }
-            if(gamepad1.dpad_down){
-
-            }
-
-            //servo for endgame arm
-            if(gamepad1.left_stick_y < -0.1){
-
-            }
-            if(gamepad1.left_stick_y > 0.1){
-
             }
         }
 

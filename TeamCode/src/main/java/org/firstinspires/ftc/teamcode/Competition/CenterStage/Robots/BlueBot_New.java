@@ -19,7 +19,8 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         // Pixel Arm Variables
         public DcMotor pixelArm = null;
         public DcMotor pixelArmRotator = null;
-        public Servo pixelClaw = null;
+        public Servo pixelClawLeft = null;
+        public Servo pixelClawRight = null;
         public Servo pixelWrist = null;
 
         // End Game Arm Variables
@@ -72,12 +73,14 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             pixelArmRotator.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
             //Pixel Claw Mechanism HW Mapping
-            pixelClaw = hwBot.servo.get("pixel_claw");
-            endGameRotator.setDirection(Servo.Direction.FORWARD);
+            pixelClawLeft = hwBot.servo.get("pixel_claw_left");
+            pixelClawLeft.setDirection(Servo.Direction.FORWARD);
+            pixelClawRight = hwBot.servo.get("pixel_claw_right");
+            pixelClawRight.setDirection(Servo.Direction.FORWARD);
 
             //Pixel Wrist HW Mapping
             pixelWrist = hwBot.servo.get("pixel_wrist");
-            // -------------------
+            pixelWrist.setDirection(Servo.Direction.FORWARD);
 
             // End Game Rotational Mechanism (Servo and Motor) HW Mapping
             endGameRotator = hwBot.servo.get("end_game_rotator");
@@ -101,6 +104,24 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         public void stopPixelArm() {
             pixelArm.setPower(0);
+        }
+
+        // ************* Pixel Claw Open & Close ********************
+        public void openPixelClaw(){
+            pixelClawLeft.setPosition(0.3);
+            pixelClawRight.setPosition(0.6);
+        }
+        public void closePixelClaw(){
+            pixelClawLeft.setPosition(0.6);
+            pixelClawRight.setPosition(0.3);
+        }
+
+        //************** Pixel Wrist Up & Down ******************
+        public void rotatePixelWristUp(){
+            pixelWrist.setPosition(0.4);
+        }
+        public void rotatePixelWristDown(){
+            pixelWrist.setPosition(0.1);
         }
 
         // **********  Pixel Arm Rotating Methods  ************
