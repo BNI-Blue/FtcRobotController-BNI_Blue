@@ -68,8 +68,9 @@ public class Auto_Encoder_Tester extends Auto1_Main_Acker{
 
             // ***** INSERT AUTONOMOUS CODE ABOVE THIS LINE  *****
 
-            idle();
+
             requestOpModeStop();
         }
+        idle();
     }
 }
