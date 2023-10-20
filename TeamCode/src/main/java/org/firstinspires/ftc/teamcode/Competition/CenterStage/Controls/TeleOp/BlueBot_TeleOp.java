@@ -59,11 +59,11 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
         public void drive() {
 
-            leftStickYVal = gamepad1.left_stick_y;
+            leftStickYVal = -gamepad1.left_stick_y;
             leftStickYVal = Range.clip(leftStickYVal, -1, 1);
-            leftStickXVal = -gamepad1.left_stick_x;
+            leftStickXVal = gamepad1.left_stick_x;
             leftStickXVal = Range.clip(leftStickXVal, -1, 1);
-            rightStickXVal = -gamepad1.right_stick_x;
+            rightStickXVal = gamepad1.right_stick_x;
             rightStickXVal = Range.clip(rightStickXVal, -1, 1);
 
             frontLeftSpeed = leftStickYVal + leftStickXVal + rightStickXVal;
