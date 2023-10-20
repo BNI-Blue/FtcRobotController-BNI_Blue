@@ -155,6 +155,9 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             else if (gamepad1.dpad_right) {
                 BlueBot.rotateEndGameArmDown(endGameDownPosition);
             }
+            else{
+                BlueBot.stopEndGameArm();
+            }
 
             }
         //game pad 1 - left stick driving - strafe instead of going forward
@@ -166,7 +169,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
                 BlueBot.openPixelClaw();
             }
             else if(gamepad2.right_trigger > 0.1){
-                BlueBot.closePixelClaw();;
+                BlueBot.closePixelClaw();
             }
 
             if(gamepad2.dpad_down){

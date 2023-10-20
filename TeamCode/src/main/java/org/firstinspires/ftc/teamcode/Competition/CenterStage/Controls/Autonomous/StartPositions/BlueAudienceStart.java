@@ -1,4 +1,4 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions;
 
-public class BlueStartPos2 {
+public class BlueAudienceStart {
 }
