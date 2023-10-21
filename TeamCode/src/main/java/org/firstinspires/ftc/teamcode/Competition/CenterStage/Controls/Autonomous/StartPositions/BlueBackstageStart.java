@@ -18,7 +18,7 @@ public class BlueBackstageStart extends AutoBlueAlliance {
         telemetry.addLine("Awaiting Start");
         telemetry.update();
 
-        Bot.autoArmInitPos();
+        //Bot.autoArmInitPos();
 
         waitForStart();
 
@@ -26,7 +26,7 @@ public class BlueBackstageStart extends AutoBlueAlliance {
 
             // INSERT AUTO CODE BELOW
 
-            Bot.autoArmStartPos();
+            //Bot.autoArmStartPos();
 
             Bot.driveForward(0.75,.5);
             sleep(100);

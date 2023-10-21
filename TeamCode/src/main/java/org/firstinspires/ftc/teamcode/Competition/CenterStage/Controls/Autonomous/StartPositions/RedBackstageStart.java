@@ -17,13 +17,13 @@ public class RedBackstageStart extends AutoRedAlliance {
         telemetry.addLine("Awaiting Start");
         telemetry.update();
 
-        Bot.autoArmInitPos();
+        //Bot.autoArmInitPos();
 
         waitForStart();
 
         while(opModeIsActive()){
 
-            Bot.autoArmStartPos();
+            //\Bot.autoArmStartPos();
 
             Bot.driveForward(.75, .5);
             sleep(100);

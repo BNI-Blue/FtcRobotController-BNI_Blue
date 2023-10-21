@@ -20,7 +20,7 @@ public class RedAudienceStart extends AutoRedAlliance {
         telemetry.update();
 
         //keeps arm inside of 18"
-        Bot.autoArmInitPos();
+        //Bot.autoArmInitPos();
 
         waitForStart();
 
@@ -29,7 +29,7 @@ public class RedAudienceStart extends AutoRedAlliance {
 
             // INSERT AUTO CODE BELOW
 
-            Bot.autoArmStartPos();
+            //Bot.autoArmStartPos();
 
             Bot.driveForward(.25, .28);
             sleep(100);
