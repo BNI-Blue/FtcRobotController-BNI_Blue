@@ -1,13 +1,13 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoBlueAlliance;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
-@Autonomous(name= "Blue:Audience:Start")
-public class BlueAudienceStart extends AutoBlueAlliance {
+@Autonomous(name= "Blue:Backstage:Start")
+public class BlueBackstageStart extends AutoBlueAlliance {
+
     BlueBot Bot = new BlueBot();
 
     @Override
@@ -28,18 +28,17 @@ public class BlueAudienceStart extends AutoBlueAlliance {
 
             Bot.autoArmStartPos();
 
-            Bot.driveForward(.25, .28);
+            Bot.driveForward(0.75,.5);
             sleep(100);
 
-
-            Bot.rotateLeftNew(0.25, 3);
+            Bot.rotateLeftNew(0.5,3.1);
             sleep(100);
 
-
-            Bot.driveForward(.5,9);
+            Bot.driveForward(0.75,3.6);
             sleep(100);
 
             // INSERT AUTO CODE ABOVE
+
 
             requestOpModeStop();
 
@@ -47,7 +46,5 @@ public class BlueAudienceStart extends AutoBlueAlliance {
 
         idle();
     }
-
-
 
 }

@@ -143,8 +143,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             endGameRotator.setPosition(position);
         }
 
-        public void rotateEndGameArmDown (double position) {
-            endGameRotator.setPosition(position);
+        public void rotateEndGameArmDown (double position) {endGameRotator.setPosition(position);
         }
 
         // ********** End Game Arm Extension and Lifting Methods **********
@@ -159,6 +158,11 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         public void stopEndGameArm(){
             endgameArm.setPower(0);
         }
+
+        //AUTONOMOUS END GAME ARM
+        public void autoArmInitPos(){endGameRotator.setPosition(.7);}
+
+        public void autoArmStartPos(){endGameRotator.setPosition(.2);}
 
     }
 

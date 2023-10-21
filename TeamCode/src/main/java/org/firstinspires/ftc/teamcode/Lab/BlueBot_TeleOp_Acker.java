@@ -1,10 +1,11 @@
 package org.firstinspires.ftc.teamcode.Lab;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
 
-//@Disabled
+@Disabled
 @TeleOp (name = "BlueBot:TeleOp Acker")
 public class BlueBot_TeleOp_Acker extends OpMode {
     double leftStickYVal;

@@ -49,7 +49,7 @@ public class MecanumDrive {
         rearRightMotor.setPower(-speed);
     }
 
-    public void rotateLeft(double speed) {
+    public void strafeLeftNew(double speed) {
         frontLeftMotor.setPower(-speed);
         frontRightMotor.setPower(speed);
         rearLeftMotor.setPower(-speed);
@@ -57,7 +57,7 @@ public class MecanumDrive {
 
     }
 
-    public void rotateRight(double speed) {
+    public void strafeRightNew(double speed) {
         frontLeftMotor.setPower(speed);
         frontRightMotor.setPower(-speed);
         rearLeftMotor.setPower(speed);
@@ -65,7 +65,7 @@ public class MecanumDrive {
 
     }
 
-    public void strafeLeft(double speed) {
+    public void rotateLeftNew(double speed) {
         frontLeftMotor.setPower(-speed);
         frontRightMotor.setPower(speed);
         rearLeftMotor.setPower(speed);
@@ -73,7 +73,7 @@ public class MecanumDrive {
 
     }
 
-    public void strafeRight(double speed) {
+    public void rotateRightNew(double speed) {
         frontLeftMotor.setPower(speed);
         frontRightMotor.setPower(-speed);
         rearLeftMotor.setPower(-speed);
@@ -125,47 +125,47 @@ public class MecanumDrive {
 
     }
 
-    public void strafeLeft(double speed, double rotations) {
+    public void rotateLeftNew(double speed, double rotations) {
         double ticks = rotations * TICKS_PER_ROTATION;
         setMotorRunModes(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         setMotorRunModes(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition() ) < ticks && LinearOp.opModeIsActive()) ){
-            strafeLeft(speed);
+            rotateLeftNew(speed);
         }
         stopMotors();
     }
 
-    public void strafeRight(double speed, double rotations) {
+    public void rotateRightNew(double speed, double rotations) {
         double ticks = rotations * TICKS_PER_ROTATION;
         setMotorRunModes(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         setMotorRunModes(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition() ) < ticks && LinearOp.opModeIsActive()) ) {
-            strafeRight(speed);
+            rotateRightNew(speed);
         }
         stopMotors();
 
     }
 
-    public void rotateRight(double speed, double rotations) {
+    public void strafeRightNew(double speed, double rotations) {
         double ticks = rotations * TICKS_PER_ROTATION;
         setMotorRunModes(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         setMotorRunModes(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition() ) < ticks) && LinearOp.opModeIsActive()) {
-            rotateRight(speed);
+            strafeRightNew(speed);
         }
         stopMotors();
     }
 
-    public void rotateLeft(double speed, double rotations) {
+    public void strafeLeftNew(double speed, double rotations) {
         double ticks = rotations * TICKS_PER_ROTATION;
         setMotorRunModes(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         setMotorRunModes(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition() ) < ticks ) && LinearOp.opModeIsActive()) {
-            rotateLeft(speed);
+            strafeLeftNew(speed);
         }
         stopMotors();
 
