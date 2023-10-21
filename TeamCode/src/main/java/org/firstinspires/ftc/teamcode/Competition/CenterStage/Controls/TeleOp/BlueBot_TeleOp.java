@@ -155,9 +155,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             else if (gamepad2.dpad_right) {
                 BlueBot.rotateEndGameArmDown(endGameDownPosition);
             }
-            else{
-                BlueBot.stopEndGameArm();
-            }
+
 
             }
         //game pad 1 - left stick driving - strafe instead of going forward
