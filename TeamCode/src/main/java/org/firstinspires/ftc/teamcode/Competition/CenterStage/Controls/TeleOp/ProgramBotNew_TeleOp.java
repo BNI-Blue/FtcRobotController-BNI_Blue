@@ -10,7 +10,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot_
 @TeleOp(name="ProgramBot")
 public class ProgramBotNew_TeleOp extends ProgramBot_New {
 
-    public class BlueBot_TeleOp extends OpMode {
+    public class ProgramBot_TeleOp extends OpMode {
         double leftStickYVal;
         double leftStickXVal;
         double rightStickXVal;
