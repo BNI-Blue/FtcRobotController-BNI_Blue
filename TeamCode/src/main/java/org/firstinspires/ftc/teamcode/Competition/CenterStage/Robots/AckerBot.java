@@ -47,6 +47,7 @@ public class AckerBot extends MecanumDrive {
         rearLeftMotor.setDirection(DcMotor.Direction.REVERSE);
         frontRightMotor.setDirection(DcMotor.Direction.FORWARD);
         rearRightMotor.setDirection(DcMotor.Direction.FORWARD);
+        //NEED TO CHECK DIRECTION OF MOTOR
 
 
         //Initialize Motor Run Mode for Robot
