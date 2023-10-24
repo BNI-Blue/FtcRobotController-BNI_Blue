@@ -2,9 +2,7 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
@@ -12,44 +10,35 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
 public class ProgramBot extends MecanumDrive {
 
+    // Hardware Mapping Variables
+    public HardwareMap hwBot = null;
 
-    // Robot Hardware Constructors
-    public HardwareMap hwBot  =  null;
-
-    // Declaration of Timer Variables
-    public ElapsedTime currentTime = new ElapsedTime();
-
-    public ElapsedTime timer = new ElapsedTime();
-    double waitTime = 2.0;
-
-    // Declaration of Gyro Variables
+    //Gyro Variables
     public BNO055IMU imu;
     public Orientation angles;
     public Acceleration gravity;
     public final double SPEED = .3;
     public final double TOLERANCE = .4;
 
-    //MechBot Constructor
-    public ProgramBot() {}
 
-    // Initializing Hardware for Robot
-    public void initRobot(HardwareMap hwMap) {
+    // Constructors
+    public ProgramBot(){}
 
+    // Initialization Method
+    public void initBot(HardwareMap hwMap) {
         hwBot = hwMap;
 
-        // Define Motors for Robot
-        frontLeftMotor = hwMap.get(DcMotorEx.class, "front_left_motor");
-        frontRightMotor = hwMap.get(DcMotorEx.class, "front_right_motor");
-        rearLeftMotor = hwMap.get(DcMotorEx.class, "rear_left_motor");
-        rearRightMotor = hwMap.get(DcMotorEx.class, "rear_right_motor");
+        // Drivetrain Motors HW Mapping
+        frontLeftMotor = hwBot.dcMotor.get("front_left_motor");//Port 0 - Control
+        frontRightMotor = hwBot.dcMotor.get("front_right_motor");//Port 1 - Control
+        rearLeftMotor = hwBot.dcMotor.get("rear_left_motor");//Port 2 - Control
+        rearRightMotor = hwBot.dcMotor.get("rear_right_motor");//Port 3 - Control
 
         frontLeftMotor.setDirection(DcMotor.Direction.REVERSE);
-        rearLeftMotor.setDirection(DcMotor.Direction.REVERSE);
+        rearLeftMotor.setDirection(DcMotor.Direction.FORWARD);
         frontRightMotor.setDirection(DcMotor.Direction.FORWARD);
-        rearRightMotor.setDirection(DcMotor.Direction.FORWARD);
+        rearRightMotor.setDirection(DcMotor.Direction.REVERSE);
 
-
-        //Initialize Motor Run Mode for Robot
         setMotorRunModes(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         setMotorRunModes(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
@@ -62,3 +51,4 @@ public class ProgramBot extends MecanumDrive {
 
 
 }
+

@@ -1,16 +1,12 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeleOp;
 
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
 
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot_New;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
 
 @TeleOp(name="ProgramBot")
-public class ProgramBotNew_TeleOp extends ProgramBot_New {
-
-    public class ProgramBot_TeleOp extends OpMode {
+public class ProgramBot_TeleOp extends ProgramBot {
         double leftStickYVal;
         double leftStickXVal;
         double rightStickXVal;
@@ -27,11 +23,10 @@ public class ProgramBotNew_TeleOp extends ProgramBot_New {
 
 
         // Construct the physical robot object
-        public org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot_New ProgramBot_New = new ProgramBot_New();
-
+        public ProgramBot ProgramBot_New = new ProgramBot();
         @Override
         public void init() {
-            ProgramBot_New.initRobot(hardwareMap);
+            ProgramBot_New.initBot(hardwareMap);
         }
 
         public void init_loop() {}
@@ -108,4 +103,4 @@ public class ProgramBotNew_TeleOp extends ProgramBot_New {
 
         }
     }
-}
+
