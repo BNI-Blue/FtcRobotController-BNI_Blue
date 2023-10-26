@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.AckerBot;
 @Disabled
 @TeleOp (name = "MecTeleOp")
 public class MecTeleOp extends OpMode {
@@ -22,7 +22,7 @@ public class MecTeleOp extends OpMode {
     double powerThreshold = 0;
     double speedMultiply = 1;
 
-    public ProgramBot MecBot = new ProgramBot();
+    public AckerBot MecBot = new AckerBot();
 
     @Override
     public void init(){MecBot.initRobot(hardwareMap);}

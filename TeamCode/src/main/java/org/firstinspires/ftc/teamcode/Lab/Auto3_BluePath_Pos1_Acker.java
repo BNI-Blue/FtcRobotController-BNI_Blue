@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode.Lab;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.AckerBot;
 
 // Autonomous Pathing Class.  It inherits from Auto Blue parent and Auto Main "grandparent"
 @Disabled
@@ -12,7 +12,7 @@ public class Auto3_BluePath_Pos1_Acker extends Auto2_Blue_Acker {
 
     // Construct Competiton and Programming Robots
     public BlueBot_Acker blueBot = new BlueBot_Acker();
-    public ProgramBot programBot = new ProgramBot();
+    public AckerBot programBot = new AckerBot();
 
     // Boolean Flag to determine which robot we are using
     public boolean isCompetition = true;

@@ -50,9 +50,9 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
         public void loop(){
             speedControl();
             drive();
-            //pixelArmControl();
+            pixelArmControl();
             endGameControl();
-            //clawControl();
+            clawControl();
             telemetryOutput();
 
         }
@@ -131,17 +131,15 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             else {
                 BlueBot.stopPixelArmRotation();
             }
-
         }
-
         // EndGame Control Method for EndGame Extension/Lifting and Rotation
         public void endGameControl() {
 
             // End Game Extension/Retraction
-            if (gamepad2.dpad_up) {
+            if (gamepad1.dpad_up) {
                 BlueBot.extendEndGameArm(endGameArmPower);
             }
-            else if (gamepad2.dpad_down) {
+            else if (gamepad1.dpad_down) {
                 BlueBot.retractEndGameArm(endGameArmPower);
             }
             else {
@@ -149,10 +147,10 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             }
 
             // End Game Rotation
-            if (gamepad2.dpad_left) {
+            if (gamepad1.dpad_left) {
                 BlueBot.rotateEndGameArmUp(endGameUpPosition);
             }
-            else if (gamepad2.dpad_right) {
+            else if (gamepad1.dpad_right) {
                 BlueBot.rotateEndGameArmDown(endGameDownPosition);
             }
 
@@ -161,8 +159,6 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             }
         //game pad 1 - left stick driving - strafe instead of going forward
         //end game arm isn't working
-
-
         public void clawControl(){
             if(gamepad2.left_trigger > 0.1){
                 BlueBot.openPixelClaw();
@@ -182,8 +178,6 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
                 BlueBot.stopPixelArmRotation();
             }
         }
-
-
         // Telemetry Controls Method for EndGame Extension/Lifting and Rotation
         public void telemetryOutput() {
 
@@ -193,7 +187,6 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             telemetry.addData("pwr", "RR mtr: " + rearRightSpeed);
             telemetry.update();
         }
-
         // Driving Speed Control Method
         public void speedControl() {
 
@@ -205,8 +198,5 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
                 speedMultiply = 1;
             }
         }
-
-
-
     }
 

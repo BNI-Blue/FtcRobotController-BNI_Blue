@@ -3,14 +3,14 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomo
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.AckerBot;
 
 //@Disabled
 @Autonomous(name= "Blue Encoder Tester")
 public class Auto_Encoder_Tester extends AutoMain{
     // Construct Competition and Programming Robots
     public BlueBot Bot = new BlueBot();
-    public ProgramBot programBot = new ProgramBot();
+    public AckerBot programBot = new AckerBot();
 
     // Boolean Flag to determine which robot we are using
     public boolean isCompetition = true;

@@ -1,9 +1,10 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-public class MecanumDrive {
+public class MecanumDrive extends OpMode {
     public DcMotor frontLeftMotor;
     public DcMotor frontRightMotor;
     public DcMotor rearLeftMotor;
@@ -15,6 +16,16 @@ public class MecanumDrive {
     public static final double TICKS_PER_ROTATION = 386.3;
 
     public MecanumDrive() {
+
+    }
+
+    @Override
+    public void init() {
+
+    }
+
+    @Override
+    public void loop() {
 
     }
 
