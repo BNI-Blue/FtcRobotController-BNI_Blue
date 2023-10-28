@@ -29,7 +29,7 @@ public class BlueBackstageStart extends AutoBlueAlliance {
             Bot.driveForward(0.5,.5);
             sleep(100);
 
-            Bot.rotateLeftNew(0.5,3.1);
+            Bot.rotateLeftNew(0.5,2.6);
             sleep(100);
 
             Bot.driveForward(0.5,3.6);
