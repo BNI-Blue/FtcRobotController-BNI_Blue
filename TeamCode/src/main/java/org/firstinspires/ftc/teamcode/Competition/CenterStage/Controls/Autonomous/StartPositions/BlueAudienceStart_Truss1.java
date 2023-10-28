@@ -6,8 +6,10 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoBlueAlliance;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
-@Autonomous(name= "Blue:Audience:Start")
-public class BlueAudienceStart extends AutoBlueAlliance {
+@Disabled
+@Autonomous(name="Blue:Audience:Start_1")
+public class BlueAudienceStart_Truss1 extends AutoBlueAlliance {
+
     BlueBot Bot = new BlueBot();
 
     @Override
@@ -47,7 +49,4 @@ public class BlueAudienceStart extends AutoBlueAlliance {
 
         idle();
     }
-
-
-
 }
