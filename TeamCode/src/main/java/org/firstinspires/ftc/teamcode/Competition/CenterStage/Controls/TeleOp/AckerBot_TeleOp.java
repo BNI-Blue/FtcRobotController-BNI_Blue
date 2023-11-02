@@ -1,13 +1,15 @@
 
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeleOp;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.AckerBot;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
 
-    @TeleOp(name="AckerBot")
+@Disabled
+@TeleOp(name="AckerBot")
     public class AckerBot_TeleOp extends AckerBot {
         double leftStickYVal;
         double leftStickXVal;

@@ -17,7 +17,7 @@ import org.openftc.easyopencv.OpenCvCameraRotation;
 import org.openftc.easyopencv.OpenCvPipeline;
 import org.openftc.easyopencv.OpenCvWebcam;
 
-@Disabled
+//@Disabled
 @TeleOp(name = "Vision:Auto with Detection", group="iLab")
 public class BNIVision extends LinearOpMode {
 
@@ -76,11 +76,11 @@ public class BNIVision extends LinearOpMode {
         static final Scalar RED = new Scalar(255, 0, 0);
 
         // Constants for the Points to draw a box
-        static final Point REGION1_TOPLEFT_ANCHOR_POINT = new Point(50, 450);
-        static final Point REGION2_TOPLEFT_ANCHOR_POINT = new Point(390, 400);
-        static final Point REGION3_TOPLEFT_ANCHOR_POINT = new Point(690, 450);
-        static final int REGION_WIDTH = 100;
-        static final int REGION_HEIGHT = 100;
+        static final Point REGION1_TOPLEFT_ANCHOR_POINT = new Point(35, 370);
+        static final Point REGION2_TOPLEFT_ANCHOR_POINT = new Point(390, 320);
+        static final Point REGION3_TOPLEFT_ANCHOR_POINT = new Point(760, 350);
+        static final int REGION_WIDTH = 200;
+        static final int REGION_HEIGHT = 200;
 
 
         Point region1_pointA = new Point(REGION1_TOPLEFT_ANCHOR_POINT.x, REGION1_TOPLEFT_ANCHOR_POINT.y);
@@ -106,10 +106,10 @@ public class BNIVision extends LinearOpMode {
 
             if (blue_alliance) {
                 Core.extractChannel(YCrCb, chan, 2); //Index 2 is Cb Channel (Blue)
-                colorThreshold = 190.0;
+                colorThreshold = 140.0;
             } else {
                 Core.extractChannel(YCrCb, chan, 1); //Index 1 is Cr Channel (Red)
-                colorThreshold = 190.0;
+                colorThreshold = 140.0;
             }
         }
 
