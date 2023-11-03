@@ -36,7 +36,7 @@ public abstract class Auto1_Main_Acker extends LinearOpMode {
         if (USE_WEBCAM) {
             builder.setCamera(hardwareMap.get(WebcamName.class, "Webcam 1"));
         }   else{
-            builder.setCamera(BuiltinCameraDirection.BACK);
+            builder.setCamera(BuiltinCameraDirection.FRONT);
         }
 
         builder.addProcessor(aprilTag);
