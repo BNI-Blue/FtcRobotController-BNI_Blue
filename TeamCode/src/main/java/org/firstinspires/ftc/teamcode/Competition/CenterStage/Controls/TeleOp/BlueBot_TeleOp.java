@@ -6,7 +6,6 @@ import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
-//import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot_Acker;
 
     //@Disabled
     @TeleOp(name = "BlueBot:TeleOp ")
@@ -35,7 +34,9 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
 
         // Construct the physical robot object
-        public org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot BlueBot = new BlueBot();
+//        public BlueBot = new BlueBot();
+//        public org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot BlueBot = new BlueBot();
+        public BlueBot BlueBot = new BlueBot();
 
         @Override
         public void init () {

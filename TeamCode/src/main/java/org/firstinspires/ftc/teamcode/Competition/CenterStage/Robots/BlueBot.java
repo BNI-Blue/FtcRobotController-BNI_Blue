@@ -127,7 +127,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         // **********  Pixel Arm Rotating Methods  ************
 
 
-        BlueBot Bot = new BlueBot();
+//        BlueBot Bot = new BlueBot();
 
 
         public void rotatePixelArmUp(double power) {
