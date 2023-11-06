@@ -13,7 +13,7 @@ public abstract class AutoRedAlliance extends AutoMain{
 
 //    public ProgramBot Bot = new ProgramBot();
 //    public BlueBot Bot = new BlueBot();
-
+//
 
     // Common method for red alliance positioning to drop pixel
 
