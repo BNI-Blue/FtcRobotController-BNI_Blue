@@ -8,7 +8,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropP
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
 import org.firstinspires.ftc.teamcode.Lab.BNIVision;
-
+//@Disabled
 @Autonomous(name="Red:Backstage:Start:CamTest")
 public class RedBackstageStart_CamTest extends AutoRedAlliance {
 
@@ -54,33 +54,36 @@ public class RedBackstageStart_CamTest extends AutoRedAlliance {
             //Bot.driveForward(.5, .5);
             telemetry.addLine("Drive Forward");
             telemetry.update();
-            sleep(100);
+            sleep(1000);
 
             //Bot.rotateRightNew(0.5, 3.1);
             telemetry.addLine("Rotate Right");
             telemetry.update();
-            sleep(100);
+            sleep(1000);
 
             //Bot.driveForward(.5,3.6);
             telemetry.addLine("Drive Forward");
             telemetry.update();
-            sleep(100);
+            sleep(1000);
 
-            if (propPosition == TeamPropPosition.ONE) {
+            if (propPosition == TeamPropPosition.FOUR) {
                 //Bot.strafeLeftNew(.40, 1);
-                telemetry.addLine("Position One: Staffe Left");
+                telemetry.addLine("Position FOUR: Staffe Left");
                 telemetry.update();
+                sleep(1000);
             }
-            else if (propPosition == TeamPropPosition.TWO) {
-                sleep(100);
-                telemetry.addLine("Position Two: Hold Position");
+            else if (propPosition == TeamPropPosition.FIVE) {
+                telemetry.addLine("Position FIVE: Hold Position");
                 telemetry.update();
+                sleep(1000);
             }
             else {
                 //Bot.strafeRightNew(.40, 1);
-                telemetry.addLine("Position Three: Staffe Right");
+                telemetry.addLine("Position SIX: Staffe Right");
                 telemetry.update();
+                sleep(1000);
             }
+            sleep(3000);
             requestOpModeStop();
 
         }

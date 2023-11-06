@@ -32,8 +32,8 @@ public abstract class AutoMain extends LinearOpMode {
 
     // Stop the Streaming and Close the Camera Pipeline
     public void stopCamera() {
-        visionPortal.stopStreaming();
-        visionPortal.close();
+        webcam.stopStreaming();
+        webcam.closeCameraDevice();
     }
 
     // Start the OpenCV Pipeline for image processing
