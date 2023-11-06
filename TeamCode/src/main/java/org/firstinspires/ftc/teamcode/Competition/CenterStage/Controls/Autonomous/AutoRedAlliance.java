@@ -1,9 +1,10 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous;
 
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPositionPipeline;
+
 public abstract class AutoRedAlliance extends AutoMain{
 
-    //cameras - April Tags vary based on alliance color
-    //Blue - 1,2,3
-    //Red - 4,5,6
-    //
+    // Constructor to for Pipeline processing specific to Red Alliance and Red Color Threshold value
+    public TeamPropPositionPipeline pipeline = new TeamPropPositionPipeline("RED", 140);
+
 }

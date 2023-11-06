@@ -16,7 +16,7 @@ import org.openftc.easyopencv.OpenCvCameraRotation;
 import org.openftc.easyopencv.OpenCvPipeline;
 import org.openftc.easyopencv.OpenCvWebcam;
 
-//@Disabled
+@Disabled
 @TeleOp(name = "Vision:Auto with Detection", group="iLab")
 public class BNIVision extends LinearOpMode {
 
