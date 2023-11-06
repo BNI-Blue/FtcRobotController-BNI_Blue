@@ -10,32 +10,31 @@ public abstract class AutoRedAlliance extends AutoMain{
     public TeamPropPositionPipeline pipeline = new TeamPropPositionPipeline("RED", 140);
 
     // Construct Program Bot or Competiton Bot for all autonomous red paths
-
-//    public ProgramBot Bot = new ProgramBot();
+    public ProgramBot Bot = new ProgramBot();
 //    public BlueBot Bot = new BlueBot();
-//
+
 
     // Common method for red alliance positioning to drop pixel
 
-//    public void positionToDropPixel() {
-//
-//        if (propPosition == TeamPropPosition.FOUR) {
-//            //Bot.strafeLeftNew(.40, 1);
-//            telemetry.addLine("Position FOUR: Staffe Left");
-//            telemetry.update();
-//            sleep(1000);
-//        }
-//        else if (propPosition == TeamPropPosition.FIVE) {
-//            telemetry.addLine("Position FIVE: Hold Position");
-//            telemetry.update();
-//            sleep(1000);
-//        }
-//        else {
-//            //Bot.strafeRightNew(.40, 1);
-//            telemetry.addLine("Position SIX: Staffe Right");
-//            telemetry.update();
-//            sleep(1000);
-//        }
-//
-//    }
+    public void positionToDropPixel() {
+
+        if (propPosition == TeamPropPosition.FOUR) {
+            //Bot.strafeLeftNew(.40, 1);
+            telemetry.addLine("Position FOUR: Staffe Left");
+            telemetry.update();
+            sleep(1000);
+        }
+        else if (propPosition == TeamPropPosition.FIVE) {
+            telemetry.addLine("Position FIVE: Hold Position");
+            telemetry.update();
+            sleep(1000);
+        }
+        else {
+            //Bot.strafeRightNew(.40, 1);
+            telemetry.addLine("Position SIX: Staffe Right");
+            telemetry.update();
+            sleep(1000);
+        }
+
+    }
 }

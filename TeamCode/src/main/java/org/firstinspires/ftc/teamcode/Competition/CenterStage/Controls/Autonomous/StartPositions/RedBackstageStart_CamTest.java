@@ -14,7 +14,6 @@ public class RedBackstageStart_CamTest extends AutoRedAlliance {
 
     public boolean isCompetition = false;
 
-    ProgramBot Bot = new ProgramBot();
 
     @Override
     public void runOpMode() throws InterruptedException{
@@ -67,7 +66,7 @@ public class RedBackstageStart_CamTest extends AutoRedAlliance {
             telemetry.update();
             sleep(1000);
 
-          //  positionToDropPixel();
+            positionToDropPixel();
 
             sleep(3000);
 

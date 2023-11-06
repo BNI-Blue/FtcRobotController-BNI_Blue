@@ -108,12 +108,12 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         // ************* Pixel Claw Open & Close ********************
         public void openPixelClaw(){
-            pixelClawLeft.setPosition(0.3);
-            pixelClawRight.setPosition(0.6);
+            pixelClawLeft.setPosition(0.239);
+            pixelClawRight.setPosition(0.83);
         }
         public void closePixelClaw(){
-            pixelClawLeft.setPosition(0.6);
-            pixelClawRight.setPosition(0.3);
+            pixelClawLeft.setPosition(0.168);
+            pixelClawRight.setPosition(1.0);
         }
 
         //************** Pixel Wrist Up & Down ******************
