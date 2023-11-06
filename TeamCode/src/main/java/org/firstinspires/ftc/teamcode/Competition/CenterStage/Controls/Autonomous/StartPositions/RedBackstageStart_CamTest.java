@@ -13,6 +13,7 @@ import org.firstinspires.ftc.teamcode.Lab.BNIVision;
 public class RedBackstageStart_CamTest extends AutoRedAlliance {
 
     public boolean isCompetition = false;
+
     ProgramBot Bot = new ProgramBot();
 
     @Override
@@ -66,7 +67,7 @@ public class RedBackstageStart_CamTest extends AutoRedAlliance {
             telemetry.update();
             sleep(1000);
 
-            positionToDropPixel();
+          //  positionToDropPixel();
 
             sleep(3000);
 
@@ -77,26 +78,6 @@ public class RedBackstageStart_CamTest extends AutoRedAlliance {
         idle();
     }
 
-    public void positionToDropPixel() {
 
-        if (propPosition == TeamPropPosition.FOUR) {
-            //Bot.strafeLeftNew(.40, 1);
-            telemetry.addLine("Position FOUR: Staffe Left");
-            telemetry.update();
-            sleep(1000);
-        }
-        else if (propPosition == TeamPropPosition.FIVE) {
-            telemetry.addLine("Position FIVE: Hold Position");
-            telemetry.update();
-            sleep(1000);
-        }
-        else {
-            //Bot.strafeRightNew(.40, 1);
-            telemetry.addLine("Position SIX: Staffe Right");
-            telemetry.update();
-            sleep(1000);
-        }
-
-    }
 
 }
