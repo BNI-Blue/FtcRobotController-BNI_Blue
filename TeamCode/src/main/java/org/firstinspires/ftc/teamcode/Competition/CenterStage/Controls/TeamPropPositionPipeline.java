@@ -10,7 +10,7 @@ import org.openftc.easyopencv.OpenCvPipeline;
 
 public class TeamPropPositionPipeline extends OpenCvPipeline {
 
-    //Instance Variables
+    //Instance Variables for Team Alliance Color and Threshold
     public String teamAlliance;
     public double colorThreshold;
 
@@ -27,6 +27,7 @@ public class TeamPropPositionPipeline extends OpenCvPipeline {
     static final int REGION_HEIGHT = 200;
 
     // Constructor for handling different team alliances and color thresholds
+    // Not a Default Constructor
     public TeamPropPositionPipeline(String alliance,double threshold) {
         teamAlliance = alliance;
         colorThreshold = threshold;
@@ -47,7 +48,8 @@ public class TeamPropPositionPipeline extends OpenCvPipeline {
     Mat chan = new Mat();
 
     // Volatile variable to accomodate threading w/o synchronization
-    public volatile TeamPropPosition position = TeamPropPosition.ONE;
+    // Defaults to TWO
+    public volatile TeamPropPosition position = TeamPropPosition.TWO;
 
     // Method to convert RGB to YCrCb to eliminate lighting, luminosty differences
     // Method to extract the the Cr channel and the Cb channel
