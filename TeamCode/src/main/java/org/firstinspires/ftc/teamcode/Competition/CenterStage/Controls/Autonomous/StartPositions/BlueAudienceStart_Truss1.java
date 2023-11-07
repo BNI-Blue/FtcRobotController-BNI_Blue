@@ -19,7 +19,7 @@ public class BlueAudienceStart_Truss1 extends AutoBlueAlliance {
         telemetry.addLine("Awaiting Start");
         telemetry.update();
 
-        //Bot.autoArmInitPos();
+        Bot.autoArmInitPos();
 
         waitForStart();
 
@@ -27,7 +27,7 @@ public class BlueAudienceStart_Truss1 extends AutoBlueAlliance {
 
             // INSERT AUTO CODE BELOW
 
-            //Bot.autoArmStartPos();
+            Bot.autoArmStartPos();
 
             Bot.driveForward(.25, .28);
             sleep(100);

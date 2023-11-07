@@ -13,12 +13,11 @@ public abstract class AutoRedAlliance extends AutoMain{
     public ProgramBot Bot = new ProgramBot();
     //public BlueBot Bot = new BlueBot();
 
-
-    // Common method for red alliance positioning to drop pixel
+    // Common method for RED alliance positioning to drop pixel
     public void positionToDropPixel() {
 
         if (propPosition == TeamPropPosition.FOUR) {
-            //Bot.strafeLeftNew(.40, 1);
+            Bot.strafeLeftNew(.40, 1);
             telemetry.addLine("Position FOUR: Staffe Left");
             telemetry.update();
             sleep(1000);
@@ -29,7 +28,7 @@ public abstract class AutoRedAlliance extends AutoMain{
             sleep(1000);
         }
         else {
-            //Bot.strafeRightNew(.40, 1);
+            Bot.strafeRightNew(.40, 1);
             telemetry.addLine("Position SIX: Staffe Right");
             telemetry.update();
             sleep(1000);

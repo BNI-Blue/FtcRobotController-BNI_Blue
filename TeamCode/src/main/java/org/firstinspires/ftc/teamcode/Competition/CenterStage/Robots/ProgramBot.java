@@ -50,6 +50,10 @@ public class ProgramBot extends MecanumDrive {
 
     }
 
+    //AUTONOMOUS END GAME ARM PLACEHOLDER
+    public void autoArmInitPos(){}
+    public void autoArmStartPos(){}
+
 
 }
 
