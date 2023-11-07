@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Competition.CenterStage.MotorTest;
+package org.firstinspires.ftc.teamcode.Competition.CenterStage.Testers;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
