@@ -1,5 +1,5 @@
 
-package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeleOp;
+package org.firstinspires.ftc.teamcode.Lab;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -28,9 +28,10 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
 
         // Construct the physical robot object
         public ProgramBot ProgramBot_New = new ProgramBot();
+
         @Override
         public void init() {
-            ProgramBot_New.initBot(hardwareMap);
+            ProgramBot_New.initRobot(hardwareMap);
         }
 
         public void init_loop() {}

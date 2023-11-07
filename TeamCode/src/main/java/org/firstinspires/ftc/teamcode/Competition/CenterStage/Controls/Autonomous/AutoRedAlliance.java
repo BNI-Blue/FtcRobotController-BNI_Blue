@@ -11,11 +11,10 @@ public abstract class AutoRedAlliance extends AutoMain{
 
     // Construct Program Bot or Competiton Bot for all autonomous red paths
     public ProgramBot Bot = new ProgramBot();
-//    public BlueBot Bot = new BlueBot();
+    //public BlueBot Bot = new BlueBot();
 
 
     // Common method for red alliance positioning to drop pixel
-
     public void positionToDropPixel() {
 
         if (propPosition == TeamPropPosition.FOUR) {

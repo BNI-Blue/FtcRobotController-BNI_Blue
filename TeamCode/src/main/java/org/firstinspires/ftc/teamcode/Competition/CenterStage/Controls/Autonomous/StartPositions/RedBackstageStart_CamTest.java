@@ -8,6 +8,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropP
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
 import org.firstinspires.ftc.teamcode.Lab.BNIVision;
+
 //@Disabled
 @Autonomous(name="Red:Backstage:Start:CamTest")
 public class RedBackstageStart_CamTest extends AutoRedAlliance {
@@ -19,7 +20,7 @@ public class RedBackstageStart_CamTest extends AutoRedAlliance {
     public void runOpMode() throws InterruptedException{
 
         //Initialize Robot, Initialize Camera, and Integrate Linear OP
-        Bot.initBot(hardwareMap);
+        Bot.initRobot(hardwareMap);
         initCamera();
         Bot.setLinearOp(this);
 

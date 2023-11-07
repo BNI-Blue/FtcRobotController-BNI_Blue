@@ -10,7 +10,6 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 @Disabled
 @Autonomous(name= "Red:Audience:Start_1")
 public class RedAudienceStart_Truss1 extends AutoRedAlliance {
-    BlueBot Bot = new BlueBot();
 
     @Override
     public void runOpMode() throws InterruptedException{

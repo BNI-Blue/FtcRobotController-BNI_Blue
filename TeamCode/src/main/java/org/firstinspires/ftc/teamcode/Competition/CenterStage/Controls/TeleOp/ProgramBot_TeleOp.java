@@ -24,9 +24,10 @@ public class ProgramBot_TeleOp extends ProgramBot {
 
         // Construct the physical robot object
         public ProgramBot ProgramBot_New = new ProgramBot();
+
         @Override
         public void init() {
-            ProgramBot_New.initBot(hardwareMap);
+            ProgramBot_New.initRobot(hardwareMap);
         }
 
         public void init_loop() {}

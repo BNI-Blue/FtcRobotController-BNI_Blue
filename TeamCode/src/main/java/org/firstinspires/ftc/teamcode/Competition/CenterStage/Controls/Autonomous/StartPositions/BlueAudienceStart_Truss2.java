@@ -2,14 +2,13 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomo
 
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoBlueAlliance;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
-
+//@Disabled
 @Autonomous(name="Blue:Audience:Start")
 public class BlueAudienceStart_Truss2 extends AutoBlueAlliance {
-
-    BlueBot Bot = new BlueBot();
 
     @Override
     public void runOpMode() throws InterruptedException{

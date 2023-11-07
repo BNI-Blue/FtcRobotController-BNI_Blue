@@ -10,7 +10,6 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 @Autonomous(name="Blue:Audience:Start_1")
 public class BlueAudienceStart_Truss1 extends AutoBlueAlliance {
 
-    BlueBot Bot = new BlueBot();
 
     @Override
     public void runOpMode() throws InterruptedException{
@@ -20,7 +19,7 @@ public class BlueAudienceStart_Truss1 extends AutoBlueAlliance {
         telemetry.addLine("Awaiting Start");
         telemetry.update();
 
-        Bot.autoArmInitPos();
+        //Bot.autoArmInitPos();
 
         waitForStart();
 
@@ -28,7 +27,7 @@ public class BlueAudienceStart_Truss1 extends AutoBlueAlliance {
 
             // INSERT AUTO CODE BELOW
 
-            Bot.autoArmStartPos();
+            //Bot.autoArmStartPos();
 
             Bot.driveForward(.25, .28);
             sleep(100);

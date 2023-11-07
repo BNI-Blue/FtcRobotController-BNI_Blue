@@ -15,8 +15,6 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
         double rightStickXVal;
         double rightStickYVal;
 
-
-
         double frontLeftSpeed;
         double frontRightSpeed;
         double rearLeftSpeed;
@@ -31,11 +29,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
         public double endGameUpPosition = 0.7;
         public double endGameDownPosition = 0.2;
 
-
-
         // Construct the physical robot object
-//        public BlueBot = new BlueBot();
-//        public org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot BlueBot = new BlueBot();
         public BlueBot BlueBot = new BlueBot();
 
         @Override

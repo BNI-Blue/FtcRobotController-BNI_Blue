@@ -26,7 +26,7 @@ public class ProgramBot extends MecanumDrive {
     public ProgramBot(){}
 
     // Initialization Method
-    public void initBot(HardwareMap hwMap) {
+    public void initRobot(HardwareMap hwMap) {
         hwBot = hwMap;
 
         // Drivetrain Motors HW Mapping
