@@ -108,12 +108,12 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         // ************* Pixel Claw Open & Close ********************
         public void openPixelClaw(){
-            pixelClawLeft.setPosition(0.239);
-            pixelClawRight.setPosition(0.83);
+            pixelClawLeft.setPosition(0.239);    //0.239
+            pixelClawRight.setPosition(0.83);    //0.83
         }
         public void closePixelClaw(){
-            pixelClawLeft.setPosition(0.168);
-            pixelClawRight.setPosition(1.0);
+            pixelClawLeft.setPosition(0.168);    //0.168
+            pixelClawRight.setPosition(1.0);     //1.0
         }
 
         //************** Pixel Wrist Up & Down ******************
@@ -159,10 +159,6 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             endgameArm.setPower(0);
         }
 
-        //AUTONOMOUS END GAME ARM
-        public void autoArmInitPos(){endGameRotator.setPosition(.7);}
-
-        public void autoArmStartPos(){endGameRotator.setPosition(.2);}
 
     }
 
