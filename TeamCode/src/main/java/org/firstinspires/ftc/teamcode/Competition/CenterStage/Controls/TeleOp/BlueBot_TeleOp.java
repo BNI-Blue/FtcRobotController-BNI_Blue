@@ -162,16 +162,6 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
                 BlueBot.closePixelClaw();
             }
 
-            if(gamepad2.dpad_down){
-                BlueBot.rotatePixelArmDown(-0.1);
-            }
-            else if (gamepad2.dpad_up){
-                BlueBot.rotatePixelArmUp(0.3);
-            }
-
-            else {
-                BlueBot.stopPixelArmRotation();
-            }
         }
         // Telemetry Controls Method for EndGame Extension/Lifting and Rotation
         public void telemetryOutput() {
