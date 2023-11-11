@@ -13,7 +13,7 @@ public class RedBackstageStart extends AutoRedAlliance {
 
     @Override
     public void runOpMode() throws InterruptedException{
-        Bot.initRobot(hardwareMap);
+        Bot.initRobot(hardwareMap, true);
         Bot.setLinearOp(this);
 
         telemetry.addLine("Awaiting Start");

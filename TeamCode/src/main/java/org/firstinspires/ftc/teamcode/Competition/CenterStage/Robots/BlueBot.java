@@ -39,7 +39,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         public BlueBot(){}
 
         // Initialization Method
-        public void initRobot(HardwareMap hwMap) {
+        public void initRobot(HardwareMap hwMap, boolean isAuto) {
             hwBot = hwMap;
 
             // Drivetrain Motors HW Mapping
@@ -48,9 +48,9 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             rearLeftMotor = hwBot.dcMotor.get("rear_left_motor");//Port 2 - Control
             rearRightMotor = hwBot.dcMotor.get("rear_right_motor");//Port 3 - Control
 
-            frontLeftMotor.setDirection(DcMotor.Direction.FORWARD);
+            frontLeftMotor.setDirection(DcMotor.Direction.REVERSE);
             rearLeftMotor.setDirection(DcMotor.Direction.FORWARD);
-            frontRightMotor.setDirection(DcMotor.Direction.REVERSE);
+            frontRightMotor.setDirection(DcMotor.Direction.FORWARD);
             rearRightMotor.setDirection(DcMotor.Direction.REVERSE);
 
             setMotorRunModes(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -72,11 +72,15 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             pixelArmRotator.setDirection(DcMotor.Direction.FORWARD); //check direction b/f testing
             pixelArmRotator.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-            //Pixel Claw Mechanism HW Mapping
+            //Pixel Claw Mechanism HW Mapping/
             pixelClawLeft = hwBot.servo.get("pixel_claw_left");//Port 0 - Expansion
             pixelClawLeft.setDirection(Servo.Direction.FORWARD);
             pixelClawRight = hwBot.servo.get("pixel_claw_right");//Port 1 - Expansion
             pixelClawRight.setDirection(Servo.Direction.FORWARD);
+
+            if (isAuto) {
+                closePixelClaw();
+            }
 
             //Pixel Wrist HW Mapping
             pixelWrist = hwBot.servo.get("pixel_wrist");//Port 2 - Expansion
@@ -126,10 +130,8 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         // **********  Pixel Arm Rotating Methods  ************
 
-        public void rotatePixelArmUp(double power) {
-            pixelArmRotator.setPower(Math.abs(power));
+        public void rotatePixelArmUp(double power) {pixelArmRotator.setPower(Math.abs(power));
         }
-
         public void rotatePixelArmDown(double power) {
             pixelArmRotator.setPower(-Math.abs(power));
         }
@@ -137,6 +139,8 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         public void stopPixelArmRotation() {
             pixelArmRotator.setPower(0);
         }
+
+
 
         // ********** End Game Arm Rotating Methods **********
         public void rotateEndGameArmUp(double position) {

@@ -34,7 +34,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
         @Override
         public void init () {
-            BlueBot.initRobot(hardwareMap);
+            BlueBot.initRobot(hardwareMap, false);
         }
 
         public void init_loop() {}
@@ -106,10 +106,10 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
         public void pixelArmControl() {
 
             // Pixel Arm Extension and Retraction
-            if (gamepad2.right_stick_y > 0.1) {
+            if (gamepad2.right_stick_y < -0.1) {
                 BlueBot.extendPixelArm(pixelArmPower);
             }
-            else if (gamepad2.right_stick_y < -0.1) {
+            else if (gamepad2.right_stick_y > 0.1) {
                 BlueBot.retractPixelArm(pixelArmPower);
             }
             else {
@@ -131,10 +131,10 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
         public void endGameControl() {
 
             // End Game Extension/Retraction
-            if (gamepad1.dpad_up) {
+            if (gamepad2.dpad_up) {
                 BlueBot.extendEndGameArm(endGameArmPower);
             }
-            else if (gamepad1.dpad_down) {
+            else if (gamepad2.dpad_down) {
                 BlueBot.retractEndGameArm(endGameArmPower);
             }
             else {
@@ -142,10 +142,10 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             }
 
             // End Game Rotation
-            if (gamepad1.dpad_left) {
+            if (gamepad2.dpad_left) {
                 BlueBot.rotateEndGameArmUp(endGameUpPosition);
             }
-            else if (gamepad1.dpad_right) {
+            else if (gamepad2.dpad_right) {
                 BlueBot.rotateEndGameArmDown(endGameDownPosition);
             }
 
@@ -158,11 +158,12 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             if(gamepad2.left_trigger > 0.1){
                 BlueBot.openPixelClaw();
             }
-            else if(gamepad2.right_trigger > 0.1){
+            if(gamepad2.right_trigger > 0.1){
                 BlueBot.closePixelClaw();
             }
-
         }
+
+
         // Telemetry Controls Method for EndGame Extension/Lifting and Rotation
         public void telemetryOutput() {
 

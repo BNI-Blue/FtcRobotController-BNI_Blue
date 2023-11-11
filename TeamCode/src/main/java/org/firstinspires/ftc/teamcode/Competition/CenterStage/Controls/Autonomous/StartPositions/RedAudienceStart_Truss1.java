@@ -13,7 +13,7 @@ public class RedAudienceStart_Truss1 extends AutoRedAlliance {
 
     @Override
     public void runOpMode() throws InterruptedException{
-        Bot.initRobot(hardwareMap);
+        Bot.initRobot(hardwareMap, true);
         Bot.setLinearOp(this);
 
         telemetry.addLine("Awaiting Start");
@@ -27,6 +27,8 @@ public class RedAudienceStart_Truss1 extends AutoRedAlliance {
 
             // INSERT AUTO CODE BELOW
 
+            Bot.rotatePixelArmDown(.5);
+            sleep(1000);
 
             Bot.driveForward(.25, .28);
             sleep(100);

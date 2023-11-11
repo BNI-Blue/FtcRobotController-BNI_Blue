@@ -20,7 +20,7 @@ public class RedBackstageStart_CamTest extends AutoRedAlliance {
     public void runOpMode() throws InterruptedException{
 
         //Initialize Robot, Initialize Camera, and Integrate Linear OP
-        Bot.initRobot(hardwareMap);
+        Bot.initRobot(hardwareMap, true);
         initCamera();
         Bot.setLinearOp(this);
 
@@ -67,7 +67,6 @@ public class RedBackstageStart_CamTest extends AutoRedAlliance {
             telemetry.update();
             sleep(1000);
 
-            positionToDropPixel();
 
             sleep(3000);
 
