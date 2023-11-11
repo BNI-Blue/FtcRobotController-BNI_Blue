@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoBlueAlliance;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
-//@Disabled
+@Disabled
 @Autonomous(name="Blue:Audience:Start")
 public class BlueAudienceStart_Truss2 extends AutoBlueAlliance {
 

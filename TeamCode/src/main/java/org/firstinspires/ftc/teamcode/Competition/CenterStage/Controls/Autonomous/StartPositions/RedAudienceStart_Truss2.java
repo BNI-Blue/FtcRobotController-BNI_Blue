@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRedAlliance;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
-//@Disabled
+@Disabled
 @Autonomous(name="Red:Audience:Start")
 public class RedAudienceStart_Truss2 extends AutoRedAlliance {
 
@@ -24,7 +24,7 @@ public class RedAudienceStart_Truss2 extends AutoRedAlliance {
             //INSERT AUTO CODE BELOW
 
             Bot.rotatePixelArmDown(.5);
-            sleep(1000);
+            sleep(500);
 
             Bot.driveForward(.5, 3);
             sleep(100);
