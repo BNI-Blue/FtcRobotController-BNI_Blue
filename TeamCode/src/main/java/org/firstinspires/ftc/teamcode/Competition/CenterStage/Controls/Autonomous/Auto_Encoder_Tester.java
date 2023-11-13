@@ -20,7 +20,7 @@ public class Auto_Encoder_Tester extends AutoMain{
     public void runOpMode() throws InterruptedException {
 
         if (isCompetition) {
-            Bot.initRobot(hardwareMap, true);
+            Bot.initRobot(hardwareMap);
             Bot.setLinearOp(this);
         } else {
             programBot.initRobot(hardwareMap);

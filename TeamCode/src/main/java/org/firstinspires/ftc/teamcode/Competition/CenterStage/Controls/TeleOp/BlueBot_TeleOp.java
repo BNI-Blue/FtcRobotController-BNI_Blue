@@ -34,7 +34,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
         @Override
         public void init () {
-            BlueBot.initRobot(hardwareMap, false);
+            BlueBot.initRobot(hardwareMap);
         }
 
         public void init_loop() {}

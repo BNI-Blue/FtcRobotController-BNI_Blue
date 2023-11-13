@@ -39,7 +39,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         public BlueBot(){}
 
         // Initialization Method
-        public void initRobot(HardwareMap hwMap, boolean isAuto) {
+        public void initRobot(HardwareMap hwMap) {
             hwBot = hwMap;
 
             // Drivetrain Motors HW Mapping
@@ -78,9 +78,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             pixelClawRight = hwBot.servo.get("pixel_claw_right");//Port 1 - Expansion
             pixelClawRight.setDirection(Servo.Direction.FORWARD);
 
-            if (isAuto) {
-                closePixelClaw();
-            }
+
 
             //Pixel Wrist HW Mapping
             pixelWrist = hwBot.servo.get("pixel_wrist");//Port 2 - Expansion
@@ -116,7 +114,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             pixelClawRight.setPosition(0.83);    //0.83
         }
         public void closePixelClaw(){
-            pixelClawLeft.setPosition(0.168);    //0.168
+            pixelClawLeft.setPosition(0.2);    //0.168
             pixelClawRight.setPosition(1.0);     //1.0
         }
 
