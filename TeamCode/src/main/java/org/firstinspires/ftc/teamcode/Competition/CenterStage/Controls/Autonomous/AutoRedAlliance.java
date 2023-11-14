@@ -3,7 +3,6 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomo
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPosition;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPositionPipeline;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
 
 public abstract class AutoRedAlliance extends AutoMain{
 
@@ -70,5 +69,30 @@ public abstract class AutoRedAlliance extends AutoMain{
         telemetry.update();
         sleep(1000);
     }
+
+    // Red Audience Section
+
+    public void deliverPurpleRedBack(){
+        switch(propPosition){
+            case FOUR:
+                Bot.driveForward(.5,1);
+                Bot.rotateRightNew(.5,1);
+                break;
+            case FIVE:
+                Bot.driveForward(.5,1);
+                Bot.rotateLeftNew(.5,1);
+                break;
+            case SIX:
+                Bot.driveForward(.5,1);
+                Bot.strafeRightNew(.5,1);
+                break;
+            default:
+                Bot.driveForward(.5,1);
+                break;
+
+        }
+    }
+
+    // Red Backstage Section
 
 }

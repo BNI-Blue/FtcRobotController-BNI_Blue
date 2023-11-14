@@ -1,8 +1,8 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions.RedToPixelBackdrop;
 
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRedAlliance;
 
-public class AutoRedTwoPixelBackdrop extends RedTwoPixelBackdrop{
+public class AutoRedTwoPixelBackdrop extends AutoRedAlliance {
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -17,7 +17,7 @@ public class AutoRedTwoPixelBackdrop extends RedTwoPixelBackdrop{
         while (opModeIsActive()){
             CameraDetection();
 
-            deliverPurple(Bot);
+            deliverPurpleRedBack();
 
 
         }
