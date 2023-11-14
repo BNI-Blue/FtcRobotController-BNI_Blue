@@ -163,6 +163,14 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             }
         }
 
+        public void planeControl (){
+            if(gamepad2.a){
+                BlueBot.launchAirPlane(1);
+            }
+            //is there a need for a else statement for "Stop Plane Launch" or
+            //is it unnecessary bc it is a boolean
+        }
+
 
         // Telemetry Controls Method for EndGame Extension/Lifting and Rotation
         public void telemetryOutput() {

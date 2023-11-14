@@ -17,25 +17,45 @@ public abstract class AutoBlueAlliance extends AutoMain{
     public BlueBot Bot = new BlueBot();
 
     // Common method for BLUE alliance positioning to drop pixel
-//    public void positionToDropPixel() {
-//
-//        if (propPosition == TeamPropPosition.ONE) {
-//            Bot.strafeLeftNew(.40, 1);
-//            telemetry.addLine("Position ONE: Staffe Left");
-//            telemetry.update();
-//            sleep(1000);
-//        }
-//        else if (propPosition == TeamPropPosition.TWO) {
-//            telemetry.addLine("Position TWO: Hold Position");
-//            telemetry.update();
-//            sleep(1000);
-//        }
-//        else {
-//            Bot.strafeRightNew(.40, 1);
-//            telemetry.addLine("Position THREE: Staffe Right");
-//            telemetry.update();
-//            sleep(1000);
-//        }
+    public void positionToDropPixel() {
+
+        if (propPosition == TeamPropPosition.ONE) {
+            Bot.strafeLeftNew(.40, 1);
+            telemetry.addLine("Position ONE: Strafe Left");
+            telemetry.update();
+            sleep(1000);
+        }
+        else if (propPosition == TeamPropPosition.TWO) {
+            telemetry.addLine("Position TWO: Hold Position");
+            telemetry.update();
+            sleep(1000);
+        }
+        else {
+            Bot.strafeRightNew(.40, 1);
+            telemetry.addLine("Position THREE: Strafe Right");
+            telemetry.update();
+            sleep(1000);
+        }
 
     }
+
+    public void CameraDetection () {
+        propPosition = pipeline.getAnalysis();
+        telemetry.addData("Position Detected: ", propPosition);
+        telemetry.update();
+        sleep(1000);
+
+        // Backup detection after first detection
+        propPosition = pipeline.getAnalysis();
+        telemetry.addData("Position Detected: ", propPosition);
+        telemetry.update();
+        sleep(1000);
+
+        // Stop Camera Detection
+        stopCamera();
+        telemetry.addLine("Stopping Camera");
+        telemetry.update();
+        sleep(1000);
+    }
+}
 

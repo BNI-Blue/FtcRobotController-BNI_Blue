@@ -23,7 +23,7 @@ public class BlueBackstageStart extends AutoBlueAlliance {
 
         while(opModeIsActive()){
 
-            // INSERT AUTO CODE BELOW
+            // INSERT AUTO CODE BELO
 
 
             Bot.driveForward(0.5,.5);

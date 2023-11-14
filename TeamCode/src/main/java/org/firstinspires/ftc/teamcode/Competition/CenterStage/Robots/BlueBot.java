@@ -27,6 +27,9 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         public DcMotor endgameArm = null;
         public Servo endGameRotator = null;
 
+        //Airplane Launcher Variables
+        public DcMotor planeLaunch = null;
+
         //Gyro Variables
         public BNO055IMU imu;
         public Orientation angles;
@@ -92,6 +95,10 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             endgameArm = hwBot.dcMotor.get("end_game_arm");//Port 1 - Expansion
             endgameArm.setDirection(DcMotorSimple.Direction.FORWARD);
             endgameArm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+            planeLaunch = hwBot.dcMotor.get("plane_launcher");//Port_ - ______
+            planeLaunch.setDirection(DcMotorSimple.Direction.FORWARD);
+            planeLaunch.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         }
 
@@ -160,6 +167,16 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         public void stopEndGameArm(){
             endgameArm.setPower(0);
         }
+
+        // *********** Airplane Launcher Methods **************
+        public void launchAirPlane(double power) {
+            planeLaunch.setPower(Math.abs(power));
+        }
+        public void stopPlane(){
+            planeLaunch.setPower(0);
+        }
+
+
 
 
     }

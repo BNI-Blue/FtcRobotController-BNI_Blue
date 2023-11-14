@@ -15,25 +15,60 @@ public abstract class AutoRedAlliance extends AutoMain{
     public BlueBot Bot = new BlueBot();
 
     // Common method for RED alliance positioning to drop pixel
-//    public void positionToDropPixel() {
+    public void positionToDropPixel() {
 
-//        if (propPosition == TeamPropPosition.FOUR) {
-//            Bot.strafeLeftNew(.40, 1);
-//            telemetry.addLine("Position FOUR: Staffe Left");
-//            telemetry.update();
-//            sleep(1000);
-//        }
-//        else if (propPosition == TeamPropPosition.FIVE) {
-//            telemetry.addLine("Position FIVE: Hold Position");
-//            telemetry.update();
-//            sleep(1000);
-//        }
-//        else {
-//            Bot.strafeRightNew(.40, 1);
-//            telemetry.addLine("Position SIX: Staffe Right");
-//            telemetry.update();
-//            sleep(1000);
-//        }
-//
-//    }
+        if (propPosition == TeamPropPosition.FOUR) {
+            Bot.strafeLeftNew(.40, 1);
+            telemetry.addLine("Position FOUR: Strafe Left");
+            telemetry.update();
+            sleep(1000);
+        }
+        else if (propPosition == TeamPropPosition.FIVE) {
+            telemetry.addLine("Position FIVE: Hold Position");
+            telemetry.update();
+            sleep(1000);
+        }
+        else {
+            Bot.strafeRightNew(.40, 1);
+            telemetry.addLine("Position SIX: Strafe Right");
+            telemetry.update();
+            sleep(1000);
+        }
+
+
+
+        switch (propPosition) {
+
+            case FOUR:
+                Bot.driveForward(.5, 1);
+                break;
+            case FIVE:
+                Bot.driveForward(.4, 1);
+                break;
+            case SIX:
+                Bot.driveForward(.7, 1);
+                break;
+
+        }
+
+    }
+    public void CameraDetection () {
+        propPosition = pipeline.getAnalysis();
+        telemetry.addData("Position Detected: ", propPosition);
+        telemetry.update();
+        sleep(1000);
+
+        // Backup detection after first detection
+        propPosition = pipeline.getAnalysis();
+        telemetry.addData("Position Detected: ", propPosition);
+        telemetry.update();
+        sleep(1000);
+
+        // Stop Camera Detection
+        stopCamera();
+        telemetry.addLine("Stopping Camera");
+        telemetry.update();
+        sleep(1000);
+    }
+
 }
