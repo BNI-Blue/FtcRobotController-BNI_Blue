@@ -2,7 +2,7 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomo
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPosition;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPositionPipeline;
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
 
 public abstract class AutoRedAlliance extends AutoMain{
 
@@ -10,14 +10,14 @@ public abstract class AutoRedAlliance extends AutoMain{
     public TeamPropPositionPipeline pipeline = new TeamPropPositionPipeline("RED", 140);
 
     // Construct Program Bot or Competiton Bot for all autonomous red paths
-    //public ProgramBot Bot = new ProgramBot();
-    public BlueBot Bot = new BlueBot();
+    public ProgramBot Bot = new ProgramBot();
+    //public BlueBot Bot = new BlueBot();
 
     // Common method for RED alliance positioning to drop pixel
     public void positionToDropPixel() {
 
         if (propPosition == TeamPropPosition.FOUR) {
-            Bot.strafeLeftNew(.40, 1);
+            Bot.strafeLeft(.40, 1);
             telemetry.addLine("Position FOUR: Strafe Left");
             telemetry.update();
             sleep(1000);
@@ -28,7 +28,7 @@ public abstract class AutoRedAlliance extends AutoMain{
             sleep(1000);
         }
         else {
-            Bot.strafeRightNew(.40, 1);
+            Bot.strafeRight(.40, 1);
             telemetry.addLine("Position SIX: Strafe Right");
             telemetry.update();
             sleep(1000);
@@ -76,15 +76,15 @@ public abstract class AutoRedAlliance extends AutoMain{
         switch(propPosition){
             case FOUR:
                 Bot.driveForward(.5,1);
-                Bot.rotateRightNew(.5,1);
+                Bot.rotateRight(.5,1);
                 break;
             case FIVE:
                 Bot.driveForward(.5,1);
-                Bot.rotateLeftNew(.5,1);
+                Bot.rotateLeft(.5,1);
                 break;
             case SIX:
                 Bot.driveForward(.5,1);
-                Bot.strafeRightNew(.5,1);
+                Bot.strafeRight(.5,1);
                 break;
             default:
                 Bot.driveForward(.5,1);

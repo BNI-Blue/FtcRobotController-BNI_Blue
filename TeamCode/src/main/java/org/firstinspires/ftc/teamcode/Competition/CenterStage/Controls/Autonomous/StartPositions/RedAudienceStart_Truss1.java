@@ -5,7 +5,6 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRedAlliance;
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
 @Disabled
 @Autonomous(name= "Red:Audience:Start_1")
@@ -32,7 +31,7 @@ public class RedAudienceStart_Truss1 extends AutoRedAlliance {
             sleep(100);
 
 
-            Bot.rotateRightNew(0.25, 3);
+            Bot.rotateRight(0.25, 3);
             sleep(100);
 
 

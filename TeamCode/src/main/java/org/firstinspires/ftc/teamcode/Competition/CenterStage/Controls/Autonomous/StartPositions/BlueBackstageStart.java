@@ -1,10 +1,8 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoBlueAlliance;
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
 //@Disabled
 @Autonomous(name= "Blue:Backstage:Start")
@@ -29,7 +27,7 @@ public class BlueBackstageStart extends AutoBlueAlliance {
             Bot.driveForward(0.5,.5);
             sleep(100);
 
-            Bot.rotateLeftNew(0.5,2.6);
+            Bot.rotateLeft(0.5,2.6);
             sleep(100);
 
             Bot.driveForward(0.5,3.6);

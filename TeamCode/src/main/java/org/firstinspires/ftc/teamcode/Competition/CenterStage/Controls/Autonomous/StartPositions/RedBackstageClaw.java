@@ -3,11 +3,11 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomo
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoBlueAlliance;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRedAlliance;
 
 @Disabled
 @Autonomous(name = "Red:Backstage:Claw")
-public class RedBackstageClaw extends AutoBlueAlliance {
+public class RedBackstageClaw extends AutoRedAlliance {
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -27,27 +27,16 @@ public class RedBackstageClaw extends AutoBlueAlliance {
             Bot.driveForward(.5, .5);
             sleep(100);
 
-            Bot.rotateRightNew(.5, 2.9);
+            Bot.rotateRight(.5, 2.9);
             sleep(100);
 
             Bot.driveForward(.5, 2.6);
             sleep(100);//everything from here down needs testing
 
-            Bot.strafeLeftNew(.5, 2);
+            Bot.strafeLeft(.5, 2);
             sleep(100);
 
             Bot.driveForward(.5, 2);
-            sleep(100);
-
-            Bot.rotatePixelArmUp(.5);
-            sleep(300);
-            Bot.rotatePixelArmUp(0);
-
-            Bot.extendPixelArm(1);
-            sleep(1000);
-            Bot.extendPixelArm(0);
-
-            Bot.openPixelClaw();
             sleep(100);
 
             Bot.driveBack(.5, .7);

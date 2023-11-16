@@ -43,12 +43,12 @@ public class Auto_Encoder_Tester extends AutoMain{
 
             telemetry.addLine("Rotating Left");
             telemetry.update();
-            Bot.strafeLeftNew(.40, 2);
+            Bot.strafeLeft(.40, 2);
             sleep(1000);
 
             telemetry.addLine("Rotating Right");
             telemetry.update();
-            Bot.strafeRightNew(.75, 2);
+            Bot.strafeRight(.75, 2);
             sleep(1000);
 
             telemetry.addLine("Driving Backwards");
@@ -58,12 +58,12 @@ public class Auto_Encoder_Tester extends AutoMain{
 
             telemetry.addLine("Strafe Left");
             telemetry.update();
-            Bot.rotateLeftNew(.5, 2);
+            Bot.rotateLeft(.5, 2);
             sleep(1000);
 
             telemetry.addLine("Strafe Right");
             telemetry.update();
-            Bot.rotateRightNew(.5, 2);
+            Bot.rotateRight(.5, 2);
             sleep(1000);
 
 
