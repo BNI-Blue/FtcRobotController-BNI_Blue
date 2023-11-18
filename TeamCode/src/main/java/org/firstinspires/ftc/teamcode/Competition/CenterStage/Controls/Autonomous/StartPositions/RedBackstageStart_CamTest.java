@@ -14,8 +14,6 @@ import org.firstinspires.ftc.teamcode.Lab.BNIVision;
 @Autonomous(name="Red:Backstage:Start:CamTest")
 public class RedBackstageStart_CamTest extends AutoRedAlliance {
 
-    public boolean isCompetition = false;
-
 
     @Override
     public void runOpMode() throws InterruptedException{

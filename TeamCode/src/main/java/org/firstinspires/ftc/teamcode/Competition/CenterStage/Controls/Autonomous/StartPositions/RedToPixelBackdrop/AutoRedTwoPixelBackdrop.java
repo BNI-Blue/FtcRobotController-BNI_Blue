@@ -15,6 +15,7 @@ public class AutoRedTwoPixelBackdrop extends AutoRedAlliance {
         waitForStart();
 
         while (opModeIsActive()){
+
             CameraDetection();
 
             deliverPurpleRedBack();
