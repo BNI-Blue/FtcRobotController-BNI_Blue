@@ -2,9 +2,11 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomo
 
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoBlueAlliance;
 
+@Disabled
 @Autonomous(name="Blue:Audience:Start")
 public class BlueAudienceStart_Truss2 extends AutoBlueAlliance {
 

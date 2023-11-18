@@ -1,8 +1,11 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions.RedToPixelBackdrop;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRedAlliance;
 
-public class AutoRedTwoPixelBackdrop extends AutoRedAlliance {
+@Autonomous(name = "Red:Backstage:Start:Cam")
+public class RedBackstageCam extends AutoRedAlliance {
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -18,10 +21,12 @@ public class AutoRedTwoPixelBackdrop extends AutoRedAlliance {
 
             CameraDetection();
 
-            deliverPurpleRedBack();
+            positionToDropRedBack();
 
+            sleep(3000);
+            requestOpModeStop();
 
         }
-
+        idle();
     }
 }

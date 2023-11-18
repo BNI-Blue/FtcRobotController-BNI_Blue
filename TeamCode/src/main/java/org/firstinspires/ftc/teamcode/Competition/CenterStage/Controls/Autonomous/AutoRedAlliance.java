@@ -14,85 +14,118 @@ public abstract class AutoRedAlliance extends AutoMain{
     //public BlueBot Bot = new BlueBot();
 
     // Common method for RED alliance positioning to drop pixel
-    public void positionToDropPixel() {
+    public void positionToDropRedBack() {
 
         if (propPosition == TeamPropPosition.FOUR) {
-            Bot.strafeLeft(.40, 1);
-            telemetry.addLine("Position FOUR: Strafe Left");
-            telemetry.update();
-            sleep(1000);
+            Bot.strafeRight(.5, .5);
+            Bot.driveForward(.5, 3);
+            Bot.rotateLeft(.5, 2.5);
+            sleep(50);
+            Bot.rotateRight(.5, 5.5);
+            Bot.driveForward(.5, 3);
+            Bot.strafeLeft(.5,1);
+            sleep(100);
         }
         else if (propPosition == TeamPropPosition.FIVE) {
-            telemetry.addLine("Position FIVE: Hold Position");
-            telemetry.update();
-            sleep(1000);
+            Bot.strafeRight(.5, .5);
+            Bot.driveForward(.5, 2.5);
+            sleep(50);
+            Bot.rotateRight(.5, 2.9);
+            Bot.driveForward(.5, 3);
+            Bot.strafeLeft(.5, .5);
+            sleep(100);
         }
         else {
-            Bot.strafeRight(.40, 1);
-            telemetry.addLine("Position SIX: Strafe Right");
-            telemetry.update();
-            sleep(1000);
+            Bot.strafeRight(.5, .5);
+            Bot.driveForward(.5, 2.5);
+            sleep(50);
+            Bot.driveBack(.5, 1);
+            Bot.rotateRight(.5, 2.7);
+            Bot.driveForward(.5, 3);
+            Bot.strafeLeft(.5, 1.25);
+            sleep(100);
         }
 
+//        switch (propPosition) {
+//
+//            case FOUR:
+//                Bot.driveForward(.5, 1);
+//                break;
+//            case FIVE:
+//                Bot.driveForward(.4, 1);
+//                break;
+//            case SIX:
+//                Bot.driveForward(.7, 1);
+//                break;
+//
+//        }
 
+    }
 
-        switch (propPosition) {
+    public void positionToDropRedAud(){
+        if(propPosition == TeamPropPosition.FOUR){
+            Bot.driveForward(.5, 2);
+            Bot.strafeLeft(.5, 1.5);
+            sleep(50);
+            Bot.strafeRight(.5, 1.5);
+            Bot.driveForward(.5, 3.5);
+            Bot.rotateRight(.5, 3);
+            Bot.driveForward(.5, 8);
+            Bot.strafeRight(.5, 4);
 
-            case FOUR:
-                Bot.driveForward(.5, 1);
-                break;
-            case FIVE:
-                Bot.driveForward(.4, 1);
-                break;
-            case SIX:
-                Bot.driveForward(.7, 1);
-                break;
+        }
+        else if (propPosition == TeamPropPosition.FIVE){
+            Bot.strafeLeft(.5, .5);
+            Bot.driveForward(.5, 2);
+            sleep(100);
+            Bot.strafeLeft(.5, 1.5);
+            Bot.driveForward(.5, 4.5);
+            Bot.rotateRight(.5, 3);
+            Bot.driveForward(.5,9);
+            Bot.strafeRight(.5,    .5);
+        }
+        else{
 
         }
 
     }
+
     public void CameraDetection () {
         propPosition = pipeline.getAnalysis();
         telemetry.addData("Position Detected: ", propPosition);
         telemetry.update();
         sleep(1000);
 
-        // Backup detection after first detection
-        propPosition = pipeline.getAnalysis();
-        telemetry.addData("Position Detected: ", propPosition);
-        telemetry.update();
-        sleep(1000);
-
-        // Stop Camera Detection
         stopCamera();
         telemetry.addLine("Stopping Camera");
         telemetry.update();
         sleep(1000);
+
     }
 
     // Red Audience Section
 
-    public void deliverPurpleRedBack(){
-        switch(propPosition){
-            case FOUR:
-                Bot.driveForward(.5,1);
-                Bot.rotateRight(.5,1);
-                break;
-            case FIVE:
-                Bot.driveForward(.5,1);
-                Bot.rotateLeft(.5,1);
-                break;
-            case SIX:
-                Bot.driveForward(.5,1);
-                Bot.strafeRight(.5,1);
-                break;
-            default:
-                Bot.driveForward(.5,1);
-                break;
+//    public void deliverPurpleRedAud(){
+//        switch(propPosition){
+//            case FOUR:
+//                Bot.driveForward(.5,1);
+//                break;
+//            case FIVE:
+//                Bot.driveForward(.5,1);
+//                Bot.rotateLeft(.5,1);
+//                break;
+//            case SIX:
+//                Bot.driveForward(.5,1);
+//                Bot.strafeRight(.5,1);
+//                break;
+//            default:
+//                Bot.driveForward(.5,1);
+//                Bot.rotateRight(.5, 1);
+//                break;
+//
+//        }
+//    }
 
-        }
-    }
 
-    // Red Backstage Section
 
 }

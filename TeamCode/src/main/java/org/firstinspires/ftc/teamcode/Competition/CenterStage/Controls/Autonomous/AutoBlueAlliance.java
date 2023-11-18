@@ -14,7 +14,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
     //public BlueBot Bot = new BlueBot();
 
     // Common method for BLUE alliance positioning to drop pixel
-    public void positionToDropPixel() {
+    public void positionToDropPixelBlue() {
 
         if (propPosition == TeamPropPosition.ONE) {
             Bot.strafeLeft(.40, 1);
@@ -54,5 +54,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
         telemetry.update();
         sleep(1000);
     }
+
+
 }
 
