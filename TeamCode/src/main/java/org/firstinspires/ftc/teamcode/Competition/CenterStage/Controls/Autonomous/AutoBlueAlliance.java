@@ -14,35 +14,32 @@ public abstract class AutoBlueAlliance extends AutoMain{
     //public BlueBot Bot = new BlueBot();
 
     // Common method for BLUE alliance positioning to drop pixel
-    public void positionToDropPixelBlue() {
+    public void positionToDropBlueBack() {
 
         if (propPosition == TeamPropPosition.ONE) {
-            Bot.strafeLeft(.40, 1);
-            telemetry.addLine("Position ONE: Strafe Left");
-            telemetry.update();
-            sleep(1000);
+            Bot.driveForward(.5, 2);
+            Bot.strafeLeft(.5, 1.5);
+            sleep(50);
+            Bot.strafeLeft(.5, 3);
+            Bot.driveForward(.5, 2);
+            Bot.rotateLeft(.5, 2.5);
+            Bot.driveForward(.5, .5);
+            //does backstage park inside or outside?
+
         }
         else if (propPosition == TeamPropPosition.TWO) {
-            telemetry.addLine("Position TWO: Hold Position");
-            telemetry.update();
             sleep(1000);
         }
-        else {
-            Bot.strafeRight(.40, 1);
-            telemetry.addLine("Position THREE: Strafe Right");
-            telemetry.update();
-            sleep(1000);
-        }
+//        else {
+//            Bot.strafeRight(.40, 1);
+//            telemetry.addLine("Position THREE: Strafe Right");
+//            telemetry.update();
+//            sleep(1000);
+//        }
 
     }
 
     public void CameraDetection () {
-        propPosition = pipeline.getAnalysis();
-        telemetry.addData("Position Detected: ", propPosition);
-        telemetry.update();
-        sleep(1000);
-
-        // Backup detection after first detection
         propPosition = pipeline.getAnalysis();
         telemetry.addData("Position Detected: ", propPosition);
         telemetry.update();

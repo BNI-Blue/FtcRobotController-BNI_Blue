@@ -85,7 +85,18 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.strafeRight(.5,    .5);
         }
         else{
-
+            Bot.strafeLeft(.5, .5);
+            Bot.driveForward(.5, 3);
+            Bot.rotateRight(.5, 3.2);
+            sleep(50);
+            Bot.rotateLeft(.5, 2.7);
+            Bot.strafeLeft(.5, 1);
+            Bot.driveForward(.5, 2.5);
+            Bot.rotateRight(.5, 3.1);
+            Bot.driveForward(.5, 9);
+            Bot.strafeRight(.5, 5);
+            Bot.strafeLeft(.5, 6);
+            Bot.driveForward(.5, .5);
         }
 
     }
@@ -103,7 +114,7 @@ public abstract class AutoRedAlliance extends AutoMain{
 
     }
 
-    // Red Audience Section
+    // Red Audience Section Switch Case
 
 //    public void deliverPurpleRedAud(){
 //        switch(propPosition){

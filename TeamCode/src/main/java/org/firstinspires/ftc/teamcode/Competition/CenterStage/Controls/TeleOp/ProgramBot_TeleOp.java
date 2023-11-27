@@ -101,7 +101,13 @@ public class ProgramBot_TeleOp extends ProgramBot {
         }
         // Driving Speed Control Method
         public void speedControl() {
+            if(gamepad1.dpad_up){
+                speedMultiply = 1;
+            }
 
+            if(gamepad1.dpad_down){
+                speedMultiply = 0.5;
+            }
         }
     }
 
