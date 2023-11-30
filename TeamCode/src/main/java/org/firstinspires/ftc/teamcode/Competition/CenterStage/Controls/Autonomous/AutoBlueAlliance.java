@@ -24,31 +24,82 @@ public abstract class AutoBlueAlliance extends AutoMain{
             Bot.driveForward(.5, 2);
             Bot.rotateLeft(.5, 2.5);
             Bot.driveForward(.5, .5);
-            //does backstage park inside or outside?
-
+            Bot.strafeLeft(.5, 1);
+            Bot.driveForward(.5, 1);
+            //backstage parks outside
         }
         else if (propPosition == TeamPropPosition.TWO) {
-            sleep(1000);
+            Bot.strafeLeft(.5, .5);
+            Bot.driveForward(.5, 2.5);
+            sleep(50);
+            Bot.rotateLeft(.5, 2.9);
+            Bot.driveForward(.5, 3);
+            Bot.strafeRight(.5, .5);
+            sleep(100);
+            Bot.strafeLeft(.5, 1);
+            Bot.driveForward(.5, 1);
         }
-//        else {
-//            Bot.strafeRight(.40, 1);
-//            telemetry.addLine("Position THREE: Strafe Right");
-//            telemetry.update();
-//            sleep(1000);
-//        }
-
+        else {
+            Bot.strafeLeft(.5, .5);
+            Bot.driveForward(.5, 2.5);
+            Bot.rotateRight(.5, 2.5);
+            sleep(50);
+            Bot.rotateLeft(.5, 5.5);
+            Bot.driveForward(.5, 3);
+            Bot.strafeRight(.5, 1);
+            sleep(50);
+            Bot.strafeLeft(.5, 1.5);
+            Bot.driveForward(.5, .5);
+        }
+    }
+    public void positionToDropBlueAud() {
+        if (propPosition == TeamPropPosition.ONE) {
+            Bot.strafeRight(.5, .5);
+            Bot.driveForward(.5, 3);
+            Bot.rotateLeft(.5, 3.2);
+            sleep(50);
+            Bot.rotateRight(.5, 2.7);
+            Bot.strafeRight(.5, 1);
+            Bot.driveForward(.5, 2.5);
+            Bot.rotateLeft(.5, 3.1);
+            Bot.driveForward(.5, 9);
+            Bot.strafeLeft(.5, 5);
+            sleep(100);
+            Bot.strafeRight(.5, 6);
+            Bot.driveForward(.5, .5);
+        }
+        else if (propPosition == TeamPropPosition.TWO) {
+            Bot.strafeRight(.5, .5);
+            Bot.driveForward(.5, 2);
+            sleep(100);
+            Bot.strafeRight(.5, 1.5);
+            Bot.driveForward(.5, 4.5);
+            Bot.rotateLeft(.5, 3);
+            Bot.driveForward(.5,9);
+            Bot.strafeLeft(.5, .8);
+            sleep(100);
+            Bot.strafeLeft(.5,    .5);
+        }
+        else {
+            Bot.driveForward(.5, 2);
+            Bot.strafeRight(.5, 1.5);
+            sleep(50);
+            Bot.strafeLeft(.5, 1.5);
+            Bot.driveForward(.5, 3.5);
+            Bot.rotateLeft(.5, 3);
+            Bot.driveForward(.5, 8);
+            Bot.strafeLeft(.5, 1);
+            Bot.strafeLeft(.5, 4);
+            Bot.driveForward(.5, 1);
+        }
     }
 
     public void CameraDetection () {
         propPosition = pipeline.getAnalysis();
-        telemetry.addData("Position Detected: ", propPosition);
-        telemetry.update();
         sleep(1000);
 
         // Stop Camera Detection
         stopCamera();
-        telemetry.addLine("Stopping Camera");
-        telemetry.update();
         sleep(1000);
     }
 
