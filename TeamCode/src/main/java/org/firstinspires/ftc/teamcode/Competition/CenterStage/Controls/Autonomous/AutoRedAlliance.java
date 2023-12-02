@@ -73,7 +73,6 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.rotateRight(.5, 3);
             Bot.driveForward(.5, 8);
             Bot.strafeRight(.5, 4);
-
         }
         else if (propPosition == TeamPropPosition.FIVE){
             Bot.strafeLeft(.5, .5);
