@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomo
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPosition;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPositionPipeline;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
 
 public abstract class AutoBlueAlliance extends AutoMain{
@@ -10,7 +11,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
     public TeamPropPositionPipeline pipeline = new TeamPropPositionPipeline("BLUE", 140);
 
     // Construct Program Bot or Competiton Bot for all autonomous red paths
-    public ProgramBot Bot = new ProgramBot();
+    public BlueBot Bot = new BlueBot();
     //public BlueBot Bot = new BlueBot();
 
     // Common method for BLUE alliance positioning to drop pixel

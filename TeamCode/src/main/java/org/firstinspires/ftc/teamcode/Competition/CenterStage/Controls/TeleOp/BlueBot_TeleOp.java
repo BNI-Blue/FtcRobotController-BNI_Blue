@@ -26,8 +26,8 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
         public double pixelArmRotatorPower = 0.95;
         public double pixelArmPower = 0.7;
         public double endGameArmPower = 0.95;
-        public double endGameUpPosition = 0.7;
-        public double endGameDownPosition = 0.2;
+        public double endGameUpPosition = 1;
+        public double endGameDownPosition = 0;
 
         // Construct the physical robot object
         public BlueBot BlueBot = new BlueBot();
@@ -110,7 +110,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
                 BlueBot.extendPixelArm(pixelArmPower);
             }
             else if (gamepad2.right_stick_y > 0.1) {
-                BlueBot.retractPixelArm(pixelArmPower);
+                BlueBot.retractPixelArm(pixelArmPower * 0.7);
             }
             else {
                 BlueBot.stopPixelArm();
@@ -121,7 +121,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
                 BlueBot.rotatePixelArmUp(pixelArmRotatorPower);
             }
             else if (gamepad2.left_stick_y > 0.1) {
-                BlueBot.rotatePixelArmDown(pixelArmRotatorPower);
+                BlueBot.rotatePixelArmDown(gamepad2.left_stick_y * 1);
             }
             else {
                 BlueBot.stopPixelArmRotation();
@@ -147,6 +147,9 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             }
             else if (gamepad2.dpad_right) {
                 BlueBot.rotateEndGameArmDown(endGameDownPosition);
+            }
+            else {
+                BlueBot.endGameRotator.setPower(0);
             }
 
 

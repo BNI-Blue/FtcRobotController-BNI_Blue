@@ -4,7 +4,6 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoBlueAlliance;
 
-//@Disabled
 @Autonomous(name= "Blue:Backstage:Start")
 public class BlueBackstageStart extends AutoBlueAlliance {
 
@@ -12,6 +11,8 @@ public class BlueBackstageStart extends AutoBlueAlliance {
     public void runOpMode() throws InterruptedException{
         Bot.initRobot(hardwareMap);
         Bot.setLinearOp(this);
+
+        Bot.closePixelClaw();
 
         telemetry.addLine("Awaiting Start");
         telemetry.update();
@@ -27,10 +28,10 @@ public class BlueBackstageStart extends AutoBlueAlliance {
             Bot.driveForward(0.5,.5);
             sleep(100);
 
-            Bot.rotateLeft(0.5,2.6);
+            Bot.strafeLeft(0.5,2.7);
             sleep(100);
 
-            Bot.driveForward(0.5,3.6);
+            Bot.driveForward(0.5,3.7);
             sleep(100);
 
             // INSERT AUTO CODE ABOVE

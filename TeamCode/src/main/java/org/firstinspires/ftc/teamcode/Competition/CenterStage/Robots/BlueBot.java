@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -25,7 +26,8 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         // End Game Arm Variables
         public DcMotor endgameArm = null;
-        public Servo endGameRotator = null;
+        public CRServo endGameRotator = null;
+
 
         //Airplane Launcher Variables
         public DcMotor planeLaunch = null;
@@ -88,8 +90,9 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             pixelWrist.setDirection(Servo.Direction.FORWARD);
 
             // End Game Rotational Mechanism (Servo and Motor) HW Mapping
-            endGameRotator = hwBot.servo.get("end_game_rotator");//Port 3 - Expansion
-            endGameRotator.setDirection(Servo.Direction.FORWARD);
+            endGameRotator = hwBot.crservo.get("end_game_rotator");//Port 5 - Expansion
+//            endGameRotator = hwMap.ser
+            endGameRotator.setDirection(CRServo.Direction.FORWARD);
 
             // End Game Arm Lifting HW Mapping
             endgameArm = hwBot.dcMotor.get("end_game_arm");//Port 1 - Expansion
@@ -121,7 +124,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             pixelClawRight.setPosition(0.269);   //0.269
         }
         public void closePixelClaw(){
-            pixelClawLeft.setPosition(0.468);    //0.468
+            pixelClawLeft.setPosition(0.51);    //0.468
             pixelClawRight.setPosition(0.367);   //0.367
         }
 
@@ -149,10 +152,11 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         // ********** End Game Arm Rotating Methods **********
         public void rotateEndGameArmUp(double position) {
-            endGameRotator.setPosition(position);
+            endGameRotator.setPower(1);
+
         }
 
-        public void rotateEndGameArmDown (double position) {endGameRotator.setPosition(position);
+        public void rotateEndGameArmDown (double position) {endGameRotator.setPower(-1);
         }
 
         // ********** End Game Arm Extension and Lifting Methods **********
