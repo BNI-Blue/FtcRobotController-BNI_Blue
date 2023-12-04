@@ -61,33 +61,53 @@ public class MecanumDrive extends OpMode {
     }
 
     public void strafeLeft(double speed) {
+       //old strafe left
+//        frontLeftMotor.setPower(-speed);
+//        frontRightMotor.setPower(speed);
+//        rearLeftMotor.setPower(speed);
+//        rearRightMotor.setPower(-speed);
+        //new strafe left
+        frontLeftMotor.setPower(-speed);
+        frontRightMotor.setPower(speed);
+        rearLeftMotor.setPower(-speed);
+        rearRightMotor.setPower(speed);
+    }
+
+    public void strafeRight(double speed) {
+        //old strafe right
+//        frontLeftMotor.setPower(speed);
+//        frontRightMotor.setPower(-speed);
+//        rearLeftMotor.setPower(-speed);
+//        rearRightMotor.setPower(speed);
+        //new strafe right
+        frontLeftMotor.setPower(speed);
+        frontRightMotor.setPower(-speed);
+        rearLeftMotor.setPower(speed);
+        rearRightMotor.setPower(-speed);
+    }
+
+    public void rotateLeft(double speed) {
+        //old rotate left
+//        frontLeftMotor.setPower(-speed);
+//        frontRightMotor.setPower(speed);
+//        rearLeftMotor.setPower(-speed);
+//        rearRightMotor.setPower(speed);
+        //new rotate left
         frontLeftMotor.setPower(-speed);
         frontRightMotor.setPower(speed);
         rearLeftMotor.setPower(speed);
         rearRightMotor.setPower(-speed);
-
-    }
-
-    public void strafeRight(double speed) {
-        frontLeftMotor.setPower(speed);
-        frontRightMotor.setPower(-speed);
-        rearLeftMotor.setPower(-speed);
-        rearRightMotor.setPower(speed);
-
-    }
-
-    public void rotateLeft(double speed) {
-        frontLeftMotor.setPower(-speed);
-        frontRightMotor.setPower(speed);
-        rearLeftMotor.setPower(-speed);
-        rearRightMotor.setPower(speed);
-
-
     }
 
     public void rotateRight(double speed) {
-        frontLeftMotor.setPower(speed);
-        frontRightMotor.setPower(-speed);
+        //old rotate right
+//        frontLeftMotor.setPower(speed);
+//        frontRightMotor.setPower(-speed);
+//        rearLeftMotor.setPower(speed);
+//        rearRightMotor.setPower(-speed);
+        //new rotate right
+        frontLeftMotor.setPower(-speed);
+        frontRightMotor.setPower(speed);
         rearLeftMotor.setPower(speed);
         rearRightMotor.setPower(-speed);
     }

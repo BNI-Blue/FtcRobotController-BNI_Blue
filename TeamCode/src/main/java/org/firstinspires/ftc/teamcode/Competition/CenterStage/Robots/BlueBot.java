@@ -127,6 +127,18 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             pixelClawLeft.setPosition(0.51);    //0.468
             pixelClawRight.setPosition(0.367);   //0.367
         }
+        public void openPixelClawLeft(){
+            pixelClawLeft.setPosition(0.592);
+        }
+        public void openPixelClawRight(){
+            pixelClawRight.setPosition(0.269);
+        }
+        public void closePixelClawLeft(){
+            pixelClawLeft.setPosition(0.51);
+        }
+        public void closePixelClawRight(){
+            pixelClawRight.setPosition(0.367);
+        }
 
         //************** Pixel Wrist Up & Down ******************
         public void rotatePixelWristUp(){
