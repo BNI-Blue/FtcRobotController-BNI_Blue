@@ -25,7 +25,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
         public double pixelArmRotatorPower = 0.95;
         public double pixelArmPower = 0.7;
-        public double endGameArmPower = 0.95;
+        public double endGameArmPower = 1;
         public double endGameUpPosition = 1;
         public double endGameDownPosition = 0;
 
