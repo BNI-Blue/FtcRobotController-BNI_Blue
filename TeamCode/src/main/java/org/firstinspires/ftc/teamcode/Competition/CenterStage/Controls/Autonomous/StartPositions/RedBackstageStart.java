@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRedAlliance;
-
+@Disabled
 @Autonomous(name="Red:Backstage:Start")
 public class RedBackstageStart extends AutoRedAlliance {
 

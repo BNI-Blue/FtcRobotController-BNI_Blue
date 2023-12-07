@@ -106,10 +106,10 @@ public class MecanumDrive extends OpMode {
 //        rearLeftMotor.setPower(speed);
 //        rearRightMotor.setPower(-speed);
         //new rotate right
-        frontLeftMotor.setPower(-speed);
-        frontRightMotor.setPower(speed);
-        rearLeftMotor.setPower(speed);
-        rearRightMotor.setPower(-speed);
+        frontLeftMotor.setPower(speed);
+        frontRightMotor.setPower(-speed);
+        rearLeftMotor.setPower(-speed);
+        rearRightMotor.setPower(speed);
     }
 
     public void diagonalLeftForward(double speed) {
