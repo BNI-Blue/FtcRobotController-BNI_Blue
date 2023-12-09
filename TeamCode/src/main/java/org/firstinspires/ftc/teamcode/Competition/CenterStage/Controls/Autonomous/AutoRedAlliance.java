@@ -18,14 +18,15 @@ public abstract class AutoRedAlliance extends AutoMain{
     public void positionToDropRedBack() {
 
         if (propPosition == TeamPropPosition.FOUR) {
-            telemetry.addLine("Four");
-            telemetry.update();
             Bot.strafeRight(.5, .5);
             Bot.driveForward(.5, 3);
-            Bot.rotateLeft(.5, 2.5);
+            Bot.rotatePixelArmDown(.5);
+            sleep(1200);
+            Bot.stopPixelArmRotation();
             Bot.extendPixelArm(.5);
-            sleep(600);
+            sleep(400);
             Bot.stopPixelArm();
+//            Bot.rotateLeft(.5, 2.5);
 //            Bot.openPixelClawLeft();
 //            Bot.retractPixelArm(.5);
 //            sleep(50);
@@ -49,8 +50,6 @@ public abstract class AutoRedAlliance extends AutoMain{
 //            sleep(100);
         }
         else if (propPosition == TeamPropPosition.FIVE) {
-            telemetry.addLine("Five");
-            telemetry.update();
             Bot.strafeRight(.5, .5);
             Bot.driveForward(.5, 2.5);
 //          Bot.extendPixelArm(.5);
@@ -79,8 +78,6 @@ public abstract class AutoRedAlliance extends AutoMain{
             sleep(100);
         }
         else {
-            telemetry.addLine("Six");
-            telemetry.update();
             Bot.strafeRight(.5, .5);
             Bot.driveForward(.5, 2.5);
 //          Bot.extendPixelArm(.5);
