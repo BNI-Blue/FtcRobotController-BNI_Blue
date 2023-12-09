@@ -49,6 +49,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             endGameControl();
             clawControl();
             telemetryOutput();
+            launcherControl();
 
         }
 
@@ -166,12 +167,13 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             }
         }
 
-        public void planeControl (){
+        public void launcherControl (){
             if(gamepad2.a){
                 BlueBot.launchAirPlane(1);
             }
-            //is there a need for a else statement for "Stop Plane Launch" or
-            //is it unnecessary bc it is a boolean
+            else{
+                BlueBot.launchAirPlane(0);
+            }
         }
 
 
@@ -184,6 +186,8 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             telemetry.addData("pwr", "RR mtr: " + rearRightSpeed);
             telemetry.update();
         }
+
+
         // Driving Speed Control Method
         public void speedControl() {
 
