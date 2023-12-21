@@ -174,6 +174,12 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             else{
                 BlueBot.launchAirPlane(0);
             }
+            if (gamepad2.b) {
+                BlueBot.launchAirPlanePusher();
+            }
+            else {
+                BlueBot.restAirPlanePusher();
+            }
         }
 
 

@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
+import com.qualcomm.hardware.rev.RevBlinkinLedDriver;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -31,6 +32,10 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         //Airplane Launcher Variables
         public DcMotor planeLaunch = null;
+        public Servo planePusher = null;
+
+        public double airplanePusher_Rest = 1.0;
+        public double airplanePusher_Launch = 0.8;
 
         //Gyro Variables
         public BNO055IMU imu;
@@ -38,6 +43,10 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         public Acceleration gravity;
         public final double SPEED = .3;
         public final double TOLERANCE = .4;
+
+        // LED Variables
+        RevBlinkinLedDriver blinkinLedDriver;
+        RevBlinkinLedDriver.BlinkinPattern pattern;
 
 
         // Constructors
@@ -84,14 +93,12 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             pixelClawRight.setDirection(Servo.Direction.FORWARD);
 
 
-
             //Pixel Wrist HW Mapping
             pixelWrist = hwBot.servo.get("pixel_wrist");//Port 2 - Expansion
             pixelWrist.setDirection(Servo.Direction.FORWARD);
 
             // End Game Rotational Mechanism (Servo and Motor) HW Mapping
             endGameRotator = hwBot.crservo.get("end_game_rotator");//Port 5 - Expansion
-//            endGameRotator = hwMap.ser
             endGameRotator.setDirection(CRServo.Direction.FORWARD);
 
             // End Game Arm Lifting HW Mapping
@@ -99,9 +106,20 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             endgameArm.setDirection(DcMotorSimple.Direction.FORWARD);
             endgameArm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
+            // End game airplane launcher
             planeLaunch = hwBot.dcMotor.get("plane_launcher");//Port_ - ______
             planeLaunch.setDirection(DcMotorSimple.Direction.FORWARD);
             planeLaunch.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+            planePusher = hwBot.servo.get("plane_pusher");//Port 2 - Expansion
+            planePusher.setDirection(Servo.Direction.FORWARD);
+            restAirPlanePusher();
+
+            //LED Control
+            blinkinLedDriver = hardwareMap.get(RevBlinkinLedDriver.class, "led");
+            pattern = RevBlinkinLedDriver.BlinkinPattern.RAINBOW_RAINBOW_PALETTE;
+            blinkinLedDriver.setPattern(pattern);
+
 
         }
 
@@ -190,6 +208,14 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         }
         public void stopPlane(){
             planeLaunch.setPower(0);
+        }
+
+        public void launchAirPlanePusher () {
+            planePusher.setPosition(airplanePusher_Launch);
+        }
+
+        public void restAirPlanePusher () {
+            planePusher.setPosition(airplanePusher_Rest);
         }
 
 
