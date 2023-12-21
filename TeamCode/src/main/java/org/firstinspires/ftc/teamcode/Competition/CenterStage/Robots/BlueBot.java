@@ -46,8 +46,6 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         // LED Variables
         RevBlinkinLedDriver blinkinLedDriver;
-        RevBlinkinLedDriver.BlinkinPattern pattern;
-
 
         // Constructors
         public BlueBot(){}
@@ -116,9 +114,8 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             restAirPlanePusher();
 
             //LED Control
-            blinkinLedDriver = hardwareMap.get(RevBlinkinLedDriver.class, "led");
-            pattern = RevBlinkinLedDriver.BlinkinPattern.RAINBOW_RAINBOW_PALETTE;
-            blinkinLedDriver.setPattern(pattern);
+            blinkinLedDriver = hwBot.get(RevBlinkinLedDriver.class, "led");
+            blinkinLedDriver.setPattern(RevBlinkinLedDriver.BlinkinPattern.RAINBOW_RAINBOW_PALETTE);
 
 
         }
