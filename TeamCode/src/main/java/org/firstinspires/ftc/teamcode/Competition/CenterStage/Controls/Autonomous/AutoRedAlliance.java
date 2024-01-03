@@ -14,7 +14,6 @@ public abstract class AutoRedAlliance extends AutoMain{
 
     // Construct Program Bot or Competiton Bot for all autonomous red paths
     public BlueBot Bot = new BlueBot();
-    //public BlueBot Bot = new BlueBot();
 
     // Common method for RED alliance positioning to drop pixel
     public void positionToDropRedBack() {
@@ -25,16 +24,16 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.rotateLeft(.5, 2.5);
             Bot.rotateEndGameArmDown(endGameDownPosition);
             Bot.rotatePixelArmDown(.5);
-            sleep(1200);
+            sleep(50);
             Bot.stopPixelArmRotation();
             Bot.extendPixelArm(.5);
-            sleep(400);
+            sleep(50);
             Bot.stopPixelArm();
-//            Bot.openPixelClawRight();
-//            Bot.retractPixelArm(.5);
-//            sleep(50);
-//            Bot.closePixelClawRight();
-//            Bot.rotateRight(.5, 5.5);
+            Bot.openPixelClawRight();
+            Bot.retractPixelArm(.5);
+            sleep(50);
+            Bot.closePixelClawRight();
+            Bot.rotateRight(.5, 5.5);
 //            Bot.driveForward(.5, 3);
 //            Bot.strafeLeft(.5,1);
 //            Bot.rotatePixelArmUp(.5);
@@ -43,9 +42,9 @@ public abstract class AutoRedAlliance extends AutoMain{
 //            sleep(50);
 //            Bot.openPixelClawLeft();
 //            Bot.driveBack(.5, 1);
+//            Bot.closePixelClawLeft();
 //            Bot.retractPixelArm(.5);
 //            sleep(50);
-//            Bot.closePixelClawLeft();
 //            Bot.rotatePixelArmDown(.5);
 //            sleep(50);
 //            Bot.strafeRight(.5, 1.5);
@@ -58,9 +57,9 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.extendPixelArm(.5);
             sleep(50);
             Bot.openPixelClawRight();
-//          Bot.retractPixelArm(.5);
-//          sleep(50);
-//          Bot.closePixelClawRight();
+            Bot.retractPixelArm(.5);
+            sleep(50);
+            Bot.closePixelClawRight();
             sleep(50);
             Bot.rotateRight(.5, 2.9);
             Bot.driveForward(.5, 3);
@@ -71,9 +70,9 @@ public abstract class AutoRedAlliance extends AutoMain{
 //          sleep(50);
 //          Bot.openPixelClawLeft();
 //          Bot.driveBack(.5, 1);
+//          Bot.closePixelClawLeft();
 //          Bot.retractPixelArm(.5);
 //          sleep(50);
-//          Bot.closePixelClawLeft();
 //          Bot.rotatePixelArmDown(.5);
 //          sleep(50);
             Bot.strafeRight(.5, 1);
@@ -99,9 +98,9 @@ public abstract class AutoRedAlliance extends AutoMain{
 //          sleep(50);
 //          Bot.openPixelClawLeft();
 //          Bot.driveBack(.5, 1);
+//          Bot.closePixelClawLeft();
 //          Bot.retractPixelArm(.5);
 //          sleep(50);
-//          Bot.closePixelClawLeft();
 //          Bot.rotatePixelArmDown(.5);
 //          sleep(50);
             Bot.strafeRight(.5, .5);
