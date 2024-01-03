@@ -169,7 +169,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
         public void launcherControl (){
             if(gamepad2.a){
-                BlueBot.launchAirPlane(1);
+                BlueBot.launchAirPlane(-1);
             }
             else{
                 BlueBot.launchAirPlane(0);

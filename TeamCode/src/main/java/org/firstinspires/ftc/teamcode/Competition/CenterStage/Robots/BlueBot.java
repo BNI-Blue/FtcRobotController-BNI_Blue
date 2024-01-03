@@ -201,7 +201,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         // *********** Airplane Launcher Methods **************
         public void launchAirPlane(double power) {
-            planeLaunch.setPower(Math.abs(power));
+            planeLaunch.setPower(power);
         }
         public void stopPlane(){
             planeLaunch.setPower(0);
