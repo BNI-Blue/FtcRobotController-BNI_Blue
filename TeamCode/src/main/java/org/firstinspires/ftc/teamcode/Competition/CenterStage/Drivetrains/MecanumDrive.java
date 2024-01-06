@@ -4,6 +4,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
+
 public class MecanumDrive extends OpMode {
     public DcMotor frontLeftMotor;
     public DcMotor frontRightMotor;
@@ -141,6 +143,11 @@ public class MecanumDrive extends OpMode {
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition() ) < ticks && LinearOp.opModeIsActive()) ) {
             driveForward(speed);
+            LinearOp.telemetry.addData("FL tickes", frontLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FR tickes", frontRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RL tickes", rearLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RR tickes", rearRightMotor.getCurrentPosition());
+            LinearOp.telemetry.update();
         }
         stopMotors();
     }
@@ -152,6 +159,11 @@ public class MecanumDrive extends OpMode {
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition() ) < ticks && LinearOp.opModeIsActive() ) ){
             driveBack(speed);
+            LinearOp.telemetry.addData("FL tickes", frontLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FR tickes", frontRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RL tickes", rearLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RR tickes", rearRightMotor.getCurrentPosition());
+            LinearOp.telemetry.update();
         }
         stopMotors();
 
@@ -164,6 +176,11 @@ public class MecanumDrive extends OpMode {
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition() ) < ticks && LinearOp.opModeIsActive()) ){
             rotateLeft(speed);
+            LinearOp.telemetry.addData("FL tickes", frontLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FR tickes", frontRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RL tickes", rearLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RR tickes", rearRightMotor.getCurrentPosition());
+            LinearOp.telemetry.update();
         }
         stopMotors();
     }
@@ -175,6 +192,11 @@ public class MecanumDrive extends OpMode {
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition() ) < ticks && LinearOp.opModeIsActive()) ) {
             rotateRight(speed);
+            LinearOp.telemetry.addData("FL tickes", frontLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FR tickes", frontRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RL tickes", rearLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RR tickes", rearRightMotor.getCurrentPosition());
+            LinearOp.telemetry.update();
         }
         stopMotors();
 
@@ -187,6 +209,11 @@ public class MecanumDrive extends OpMode {
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition() ) < ticks) && LinearOp.opModeIsActive()) {
             strafeRight(speed);
+            LinearOp.telemetry.addData("FL tickes", frontLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FR tickes", frontRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RL tickes", rearLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RR tickes", rearRightMotor.getCurrentPosition());
+            LinearOp.telemetry.update();
         }
         stopMotors();
     }
@@ -198,6 +225,11 @@ public class MecanumDrive extends OpMode {
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition() ) < ticks ) && LinearOp.opModeIsActive()) {
             strafeLeft(speed);
+            LinearOp.telemetry.addData("FL tickes", frontLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FR tickes", frontRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RL tickes", rearLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RR tickes", rearRightMotor.getCurrentPosition());
+            LinearOp.telemetry.update();
         }
         stopMotors();
 

@@ -1,6 +1,5 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Testers;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -8,7 +7,7 @@ import com.qualcomm.robotcore.util.Range;
 
 @TeleOp(name = "Grabber Arm - Calibrate")
 
-public class twoServo_Callibrate extends OpMode {
+public class grabberArm_Calibrate extends OpMode {
 
     private Servo grabberArmLeft = null;
     private double grabberLeftArmPos = 0.5;

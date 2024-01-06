@@ -10,6 +10,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
 import org.firstinspires.ftc.teamcode.Lab.BNIVision;
 
+@Disabled
 @Autonomous(name="Start:CamTest")
 public class RedBackstageStart_CamTest extends AutoRedAlliance {
 

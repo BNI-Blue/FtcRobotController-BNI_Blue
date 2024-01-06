@@ -143,10 +143,10 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             }
 
             // End Game Rotation
-            if (gamepad2.dpad_left) {
+            if (gamepad2.dpad_right) {
                 BlueBot.rotateEndGameArmUp(endGameUpPosition);
             }
-            else if (gamepad2.dpad_right) {
+            else if (gamepad2.dpad_left) {
                 BlueBot.rotateEndGameArmDown(endGameDownPosition);
             }
             else {
@@ -165,6 +165,9 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             if(gamepad2.right_trigger > 0.1){
                 BlueBot.closePixelClaw();
             }
+            telemetry.addData("left arm", BlueBot.pixelClawLeft.getPosition());
+            telemetry.addData("right arm", BlueBot.pixelClawRight.getPosition());
+            telemetry.update();
         }
 
         public void launcherControl (){

@@ -29,6 +29,7 @@ public class twoServo_Callibrate extends OpMode {
     @Override
     public void init () {
         grabberArmLeft = hardwareMap.servo.get("pixel_claw_left");
+        grabberArmLeft.setDirection(Servo.Direction.REVERSE);
         grabberArmLeft.setPosition(grabberLeftArmPos);
         grabberArmRight = hardwareMap.servo.get("pixel_claw_right");
         grabberArmRight.setPosition((grabberRightArmPos));

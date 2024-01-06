@@ -86,7 +86,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
             //Pixel Claw Mechanism HW Mapping/
             pixelClawLeft = hwBot.servo.get("pixel_claw_left");//Port 0 - Expansion
-            pixelClawLeft.setDirection(Servo.Direction.FORWARD);
+            pixelClawLeft.setDirection(Servo.Direction.REVERSE);
             pixelClawRight = hwBot.servo.get("pixel_claw_right");//Port 1 - Expansion
             pixelClawRight.setDirection(Servo.Direction.FORWARD);
 
@@ -135,33 +135,33 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         // ************* Pixel Claw Open & Close ********************
         public void openPixelClaw(){
-            pixelClawLeft.setPosition(0.592);    //0.592
-            pixelClawRight.setPosition(0.269);   //0.269
+            pixelClawLeft.setPosition(0.55);    //0.552233
+            pixelClawRight.setPosition(0.586);   //0.586
         }
         public void closePixelClaw(){
-            pixelClawLeft.setPosition(0.51);    //0.468
-            pixelClawRight.setPosition(0.367);   //0.367
+            pixelClawLeft.setPosition(0.71);    //0.71
+            pixelClawRight.setPosition(0.78);   //0.78
         }
         public void openPixelClawLeft(){
-            pixelClawLeft.setPosition(0.592);
+            pixelClawLeft.setPosition(0.55);
         }
         public void openPixelClawRight(){
-            pixelClawRight.setPosition(0.269);
+            pixelClawRight.setPosition(0.586);
         }
         public void closePixelClawLeft(){
-            pixelClawLeft.setPosition(0.51);
+            pixelClawLeft.setPosition(0.71);
         }
         public void closePixelClawRight(){
-            pixelClawRight.setPosition(0.367);
+            pixelClawRight.setPosition(0.78);
         }
 
-        //************** Pixel Wrist Up & Down ******************
-        public void rotatePixelWristUp(){
-            pixelWrist.setPosition(0.4);
-        }
-        public void rotatePixelWristDown(){
-            pixelWrist.setPosition(0.1);
-        }
+//        //************** Pixel Wrist Up & Down ******************
+//        public void rotatePixelWristUp(){
+//            pixelWrist.setPosition(0.4);
+//        }
+//        public void rotatePixelWristDown(){
+//            pixelWrist.setPosition(0.1);
+//        }
 
         // **********  Pixel Arm Rotating Methods  ************
 
@@ -179,11 +179,14 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         // ********** End Game Arm Rotating Methods **********
         public void rotateEndGameArmUp(double position) {
-            endGameRotator.setPower(1);
+            endGameRotator.setPower(-1);
 
         }
 
-        public void rotateEndGameArmDown (double position) {endGameRotator.setPower(-1);
+        public void rotateEndGameArmDown (double position) {endGameRotator.setPower(1);
+        }
+
+        public void rotateEndGameArmStop (double position) {endGameRotator.setPower(0);
         }
 
         // ********** End Game Arm Extension and Lifting Methods **********
