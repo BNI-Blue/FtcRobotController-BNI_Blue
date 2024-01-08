@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRedAlliance;
 
-@Disabled
+
 @Autonomous(name = "Red:Audience:Start:Cam")
 public class RedAudienceCam extends AutoRedAlliance {
     @Override

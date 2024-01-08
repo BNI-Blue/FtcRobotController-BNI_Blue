@@ -117,6 +117,8 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             blinkinLedDriver = hwBot.get(RevBlinkinLedDriver.class, "led");
             blinkinLedDriver.setPattern(RevBlinkinLedDriver.BlinkinPattern.BLACK);
 
+             closePixelClaw();
+
 
         }
 
