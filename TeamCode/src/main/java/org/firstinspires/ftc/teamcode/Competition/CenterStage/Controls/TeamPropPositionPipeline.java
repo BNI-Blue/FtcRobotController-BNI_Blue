@@ -80,7 +80,7 @@ public class TeamPropPositionPipeline extends OpenCvPipeline {
 
         inputToCbCr(input);
 
-        // Draw Rectagnles of Detection Areas
+        // Draw Rectangles of Detection Areas
         Imgproc.rectangle(input, region1_pointA, region1_pointB, BLUE, 2);
         Imgproc.rectangle(input, region2_pointA, region2_pointB, BLUE, 2);
         Imgproc.rectangle(input, region3_pointA, region3_pointB, BLUE, 2);
