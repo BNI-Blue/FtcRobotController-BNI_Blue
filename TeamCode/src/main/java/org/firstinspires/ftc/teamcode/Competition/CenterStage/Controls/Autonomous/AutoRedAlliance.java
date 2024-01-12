@@ -21,9 +21,9 @@ public abstract class AutoRedAlliance extends AutoMain{
     public void positionToDropRedBack() {
 
         if (propPosition == TeamPropPosition.FOUR) {
-            Bot.rotatePixelArmDown(.5);
-            sleep(1250);
-            Bot.stopPixelArmRotation();
+//            Bot.rotatePixelArmDown(.5);
+//            sleep(1250);
+//            Bot.stopPixelArmRotation();
 
             Bot.driveForward(.5, 2.3);
             Bot.rotateLeft(.5, 2.3);
@@ -49,63 +49,69 @@ public abstract class AutoRedAlliance extends AutoMain{
             sleep(1300);
             Bot.stopPixelArmRotation();
             Bot.extendPixelArm(.5);
-            sleep(1700);
+            sleep(1600);
             Bot.stopPixelArm();
             sleep(100);
             Bot.openPixelClawLeft();
-//            Bot.driveBack(.5, 1);
-//            Bot.closePixelClawLeft();
-//            Bot.retractPixelArm(.5);
-//            sleep(50);
-//            Bot.rotatePixelArmDown(.5);
-//            sleep(50);
-//            PARKING
-//            Bot.strafeRight(.5, 1.5);
-//            Bot.driveForward(.5, .5);
-//            Bot.openPixelClawLeft();
-//            sleep(100);
+            sleep(500);
+            Bot.closePixelClawLeft();
+            Bot.retractPixelArm(.5);
+            sleep(1500);
+            Bot.rotatePixelArmDown(.5);
+            sleep(800);
+            Bot.stopPixelArmRotation();
+//          PARKING
+            Bot.strafeRight(.5, 4.5);
+            Bot.driveForward(.5, .5);
         }
         else if (propPosition == TeamPropPosition.FIVE) {
-            Bot.rotatePixelArmDown(.5);
-            sleep(1250);
-            Bot.stopPixelArmRotation();
-            Bot.driveForward(.5, 2.5);
+//            Bot.rotatePixelArmDown(.5);
+//            sleep(1250);
+//            Bot.stopPixelArmRotation();
+
+            Bot.driveForward(.5, 2.3);
             Bot.rotateEndGameArmDown(0);
             sleep(2000);
             Bot.rotateEndGameArmStop(.5);
             Bot.extendPixelArm(.5);
-            sleep(500);
+            sleep(750);
             Bot.stopPixelArm();
             Bot.openPixelClawRight();
             sleep(500);
             Bot.retractPixelArm(.5);
-            sleep(50);
+            sleep(450);
             Bot.stopPixelArm();
             Bot.closePixelClawRight();
             sleep(500);
+            Bot.driveBack(.5, 1);
             Bot.rotateRight(.5, 2.9);
             Bot.driveForward(.5, 3);
-//          Bot.strafeLeft(.5, .5);
-//          Bot.rotatePixelArmUp(.5);
-//          sleep(50);
-//          Bot.extendPixelArm(.5);
-//          sleep(50);
-//          Bot.openPixelClawLeft();
-//          Bot.driveBack(.5, 1);
-//          Bot.closePixelClawLeft();
-//          Bot.retractPixelArm(.5);
-//          sleep(50);
-//          Bot.rotatePixelArmDown(.5);
-//          sleep(50);
-            Bot.strafeRight(.5, 2.5);
-            Bot.driveForward(.5, .5);
+            Bot.strafeLeft(.5, 2);
+
+            Bot.rotatePixelArmUp(1);
+            sleep(1500);
+            Bot.stopPixelArmRotation();
+            Bot.extendPixelArm(.5);
+            sleep(1250);
+            Bot.stopPixelArm();
             Bot.openPixelClawLeft();
-            sleep(100);
+            sleep(500);
+            Bot.closePixelClawLeft();
+            Bot.retractPixelArm(.5);
+            sleep(1400);
+            Bot.rotatePixelArmDown(.75);
+            sleep(500);
+
+            /////////////////////////////////////////
+            Bot.stopPixelArmRotation();
+            Bot.strafeRight(.5, 2);
+            Bot.driveForward(.5, .5);
         }
         else {
-            Bot.rotatePixelArmDown(.5);
-            sleep(1250);
-            Bot.stopPixelArmRotation();
+//            Bot.rotatePixelArmDown(.5);
+//            sleep(1250);
+//            Bot.stopPixelArmRotation();
+
             Bot.driveForward(.5, 2.5);
             Bot.rotateEndGameArmDown(0);
             sleep(2000);
@@ -132,6 +138,7 @@ public abstract class AutoRedAlliance extends AutoMain{
 //          sleep(50);
 //          Bot.rotatePixelArmDown(.5);
 //          sleep(50);
+        //    Bot.stopPixelArmRotation();
             Bot.strafeRight(.5, .5);
             Bot.driveForward(.5 ,5.);
             Bot.openPixelClawLeft();
@@ -158,6 +165,7 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.rotatePixelArmDown(.5);
             sleep(1250);
             Bot.stopPixelArmRotation();
+
             Bot.driveForward(.5, 2);
             Bot.strafeLeft(.5, 1.5);
             Bot.extendPixelArm(.5);
@@ -182,6 +190,7 @@ public abstract class AutoRedAlliance extends AutoMain{
 //          Bot.closePixelClawLeft();
 //          Bot.rotatePixelArmDown(.5);
 //          sleep(50);
+//            Bot.stopPixelArmRotation();
  //           Bot.strafeLeft(.5, 1);
    //         Bot.driveForward(.5, .5);
         }
@@ -189,6 +198,7 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.rotatePixelArmDown(.5);
             sleep(1250);
             Bot.stopPixelArmRotation();
+
             Bot.driveForward(.5, 2);
             Bot.extendPixelArm(.5);
             sleep(500);
@@ -212,6 +222,7 @@ public abstract class AutoRedAlliance extends AutoMain{
 //          Bot.closePixelClawRight();
 //          Bot.rotatePixelArmDown(.5);
 //          sleep(50);
+//            Bot.stopPixelArmRotation();
 //            Bot.strafeLeft(.5, 1.5);
   //          Bot.driveForward(.5, .5);
         }
@@ -219,6 +230,7 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.rotatePixelArmDown(.5);
             sleep(1250);
             Bot.stopPixelArmRotation();
+
             Bot.driveForward(.5, 3);
             Bot.rotateRight(.5, 3.2);
             Bot.extendPixelArm(.5);
@@ -227,12 +239,12 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.retractPixelArm(.5);
             sleep(50);
           Bot.closePixelClawLeft();
-//            Bot.rotateLeft(.5, 2.7);
-//            Bot.strafeLeft(.5, 1);
-//            Bot.driveForward(.5, 2.5);
-//            Bot.rotateRight(.5, 3.1);
-//            Bot.driveForward(.5, 9);
-//            Bot.strafeRight(.5, 5);
+//          Bot.rotateLeft(.5, 2.7);
+//          Bot.strafeLeft(.5, 1);
+//          Bot.driveForward(.5, 2.5);
+//          Bot.rotateRight(.5, 3.1);
+//          Bot.driveForward(.5, 9);
+//          Bot.strafeRight(.5, 5);
 //          Bot.rotatePixelArmUp(.5);
 //          sleep(50);
 //          Bot.extendPixelArm(.5);
@@ -243,9 +255,10 @@ public abstract class AutoRedAlliance extends AutoMain{
 //          sleep(50);
 //          Bot.closePixelClawRight();
 //          Bot.rotatePixelArmDown(.5);
-////          sleep(50);
-//            Bot.strafeLeft(.5, 6);
-//            Bot.driveForward(.5, .5);
+//          sleep(50);
+//          Bot.stopPixelArmRotation();
+//          Bot.strafeLeft(.5, 6);
+//          Bot.driveForward(.5, .5);
         }
 
     }
