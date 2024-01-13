@@ -9,27 +9,27 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomou
 public class RedBackstageCam extends AutoRedAlliance {
 
     @Override
-    public void runOpMode() throws InterruptedException {
+public void runOpMode() throws InterruptedException {
 
-        Bot.initRobot(hardwareMap);
-        initCamera();
-        Bot.setLinearOp(this);
-        startPipeline(pipeline);
+    Bot.initRobot(hardwareMap);
+    initCamera();
+    Bot.setLinearOp(this);
+    startPipeline(pipeline);
 
-        waitForStart();
+    waitForStart();
 
-        while (opModeIsActive()){
+    while (opModeIsActive()){
 
-            CameraDetection();
+        CameraDetection();
 
-            positionToDropRedBack();
+        positionToDropRedBack();
 
 //            placePixelBackdrop();
 
-            sleep(3000);
-            requestOpModeStop();
+        sleep(1000);
+        requestOpModeStop();
 
-        }
-        idle();
     }
+    idle();
+}
 }

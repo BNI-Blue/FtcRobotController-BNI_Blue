@@ -123,9 +123,13 @@ public abstract class AutoRedAlliance extends AutoMain{
             sleep(500);
             Bot.closePixelClawRight();
             sleep(500);
-            Bot.rotateRight(.5, 2.2);
-            Bot.driveForward(.5, 3);
-            Bot.strafeLeft(.5, 1.25);
+
+
+            Bot.driveForward(.5, 2.5);
+            sleep(100);
+            Bot.strafeLeft(.5, 2);
+            sleep(100);
+
 //          Bot.rotatePixelArmUp(.5);
 //          sleep(50);
 //          Bot.stopPixelArmRotation();
@@ -141,8 +145,11 @@ public abstract class AutoRedAlliance extends AutoMain{
 //          Bot.rotatePixelArmDown(.5);
 //          sleep(50);
 //          Bot.stopPixelArmRotation();
-            Bot.strafeRight(.5, .75);
-            Bot.driveForward(.5 ,5.);
+
+       //     Bot.strafeRight(.5, .75);
+         //   sleep(100);
+           // Bot.driveForward(.5 ,.5);
+           // sleep(100);
         }
 
 //        switch (propPosition) {

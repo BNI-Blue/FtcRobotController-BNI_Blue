@@ -111,6 +111,9 @@ public class TeamPropPositionPipeline extends OpenCvPipeline {
                 position = TeamPropPosition.THREE;
                 Imgproc.rectangle(input, region3_pointA, region3_pointB, GREEN, -1);
             }
+            //delete the line below for actual auto
+            position = TeamPropPosition.THREE;
+            //delete the line above for actual auto
             return input;
         }
         else {

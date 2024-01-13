@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.AckerBot;
 
+@Disabled
 @Autonomous(name= "Encoder Tester")
 public class Auto_Encoder_Tester extends AutoMain{
     // Construct Competition and Programming Robots

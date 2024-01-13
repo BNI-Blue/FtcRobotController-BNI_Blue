@@ -18,106 +18,130 @@ public abstract class AutoBlueAlliance extends AutoMain{
     public void positionToDropBlueBack() {
 
         if (propPosition == TeamPropPosition.ONE) {
-            Bot.driveForward(.5, 1.85);
-            Bot.strafeLeft(.5, 1.25);
+            Bot.driveForward(.5, 2);
+            sleep(100);
+            Bot.rotateLeft(.5, 1.6);
+            sleep(100);
+            Bot.rotateEndGameArmDown(0);
+            sleep(2000);
+            Bot.rotateEndGameArmStop(.5);
+            Bot.openPixelClawRight();
+            sleep(500);
+            Bot.closePixelClawRight();
+            sleep(500);
+            Bot.driveBack(.5, .2);
+            Bot.strafeLeft(.5, 2);
+            sleep(100);
+            Bot.rotateLeft(.5, 1.1);
+            sleep(100);
+            Bot.driveForward(.5, 3.25);
+            sleep(100);
+            Bot.strafeRight(.5, 2.2);
+            sleep(100);
+
+//            Bot.rotatePixelArmUp(.5);
+//            sleep(1300);
+//            Bot.stopPixelArmRotation();
+//            Bot.extendPixelArm(.5);
+//            sleep(1200);
+//            Bot.stopPixelArm();
+//            Bot.openPixelClawLeft();
+//            sleep(500);
+//            Bot.retractPixelArm(.5);
+//            sleep(1150);
+//            Bot.stopPixelArm();
+//            Bot.closePixelClawLeft();
+//            sleep(500);
+//            Bot.rotatePixelArmDown(.5);
+//            sleep(1200);
+//            Bot.stopPixelArmRotation();
+
+//            Bot.strafeLeft(.5, 1);
+//            sleep(100);
+//            Bot.driveForward(.5, .5);
+//            sleep(100);
+            //backstage parks outside
+        }
+        else if (propPosition == TeamPropPosition.TWO) {
+            Bot.driveForward(.5, 2);
+            Bot.strafeLeft(.5, .75);
             Bot.rotateEndGameArmDown(0);
             sleep(2000);
             Bot.rotateEndGameArmStop(.5);
             Bot.extendPixelArm(.5);
-            sleep(150);
-            Bot.openPixelClawRight();
             sleep(500);
-            Bot.retractPixelArm(.5);
+            Bot.stopPixelArm();
+            Bot.openPixelClawRight();
             sleep(500);
             Bot.closePixelClawRight();
-            Bot.strafeLeft(.5, 3);
-            Bot.driveForward(.5, 2);
-            Bot.rotateLeft(.5, 2.5);
-            Bot.driveForward(.5, .5);
-
-            Bot.rotatePixelArmUp(.5);
-            sleep(1300);
-            Bot.stopPixelArmRotation();
-            Bot.extendPixelArm(.5);
-            sleep(1200);
-            Bot.stopPixelArm();
-            Bot.openPixelClawLeft();
-            sleep(500);
-            Bot.retractPixelArm(.5);
-            sleep(1150);
-            Bot.stopPixelArm();
-            Bot.closePixelClawLeft();
-            sleep(500);
-            Bot.rotatePixelArmDown(.5);
-            sleep(1200);
-            Bot.stopPixelArmRotation();
-
-            Bot.strafeLeft(.5, 1);
-            Bot.driveForward(.5, .5);
-            //backstage parks outside
-        }
-        else if (propPosition == TeamPropPosition.TWO) {
-            Bot.driveForward(.5, 2.5);
-            Bot.extendPixelArm(.5);
-            sleep(750);
-            Bot.stopPixelArm();
-            Bot.openPixelClawRight();
             sleep(500);
             Bot.retractPixelArm(.5);
             sleep(700);
             Bot.stopPixelArm();
-            Bot.closePixelClawRight();
-            sleep(500);
             Bot.rotateLeft(.5, 2.9);
-            Bot.driveForward(.5, 3);
-            Bot.strafeRight(.5, .5);
-
-
-            Bot.rotatePixelArmUp(.5);
-            sleep(1300);
-            Bot.stopPixelArmRotation();
-            Bot.extendPixelArm(.5);
-            sleep(1200);
-            Bot.stopPixelArm();
-            Bot.openPixelClawLeft();
             sleep(500);
-            Bot.retractPixelArm(.5);
-            sleep(1150);
-            Bot.closePixelClawLeft();
+            Bot.driveForward(.5, 3.1);
             sleep(500);
-            Bot.rotatePixelArmDown(.5);
-            sleep(1200);
-            Bot.stopPixelArmRotation();
+            Bot.strafeRight(.5, .6);
+            sleep(500);
 
-            Bot.strafeLeft(.5, 1);
+
+//            Bot.rotatePixelArmUp(.5);
+//            sleep(1300);
+//            Bot.stopPixelArmRotation();
+//            Bot.extendPixelArm(.5);
+//            sleep(1200);
+//            Bot.stopPixelArm();
+//            Bot.openPixelClawLeft();
+//            sleep(500);
+//            Bot.retractPixelArm(.5);
+//            sleep(1150);
+//            Bot.closePixelClawLeft();
+//            sleep(500);
+//            Bot.rotatePixelArmDown(.5);
+//            sleep(1200);
+//            Bot.stopPixelArmRotation();
+
+            Bot.strafeLeft(.5, 4);
+            sleep(100);
             Bot.driveForward(.5, .5);
+            sleep(100);
         }
         else {
-            Bot.strafeLeft(.5, .5);
-            Bot.driveForward(.5, 2.5);
-            Bot.rotateRight(.5, 2.5);
-//            Bot.extendPixelArm(.5);
-//            sleep(50);
-//            Bot.openPixelClawRight();
-//            Bot.retractPixelArm(.5);
-//            sleep(50);
-//            Bot.closePixelClawRight();
-            Bot.rotateLeft(.5, 5.5);
-            Bot.driveForward(.5, 3);
-            Bot.strafeRight(.5, 1);
+            Bot.driveForward(.5, 2.3);
+            Bot.rotateRight(.5, 2.35);
+            Bot.rotateEndGameArmDown(0);
+            sleep(2000);
+            Bot.rotateEndGameArmStop(.5);
+            Bot.extendPixelArm(.5);
+            sleep(250);
+            Bot.stopPixelArm();
+            Bot.openPixelClawRight();
+            sleep(500);
+            Bot.closePixelClawRight();
+            sleep(500);
+            Bot.retractPixelArm(.5);
+            sleep(250);
+            Bot.stopPixelArm();
+            Bot.driveBack(.5, .5);
+            Bot.rotateLeft(.5, 5.3);
+            sleep(100);
+            Bot.driveForward(.5, 2.75);
+            sleep(100);
+            Bot.strafeRight(.5, 1.8);
+            sleep(100);
+            Bot.driveForward(.5, .25);
 //            Bot.rotatePixelArmUp(.5);
 //            sleep(50);
 //            Bot.extendPixelArm(.5);
 //            sleep(50);
 //            Bot.openPixelClawLeft();
-//            Bot.driveBack(.5, 1);
 //            Bot.retractPixelArm(.5);
 //            sleep(50);
 //            Bot.closePixelClawLeft();
 //            Bot.rotatePixelArmDown(.5);
 //            sleep(50);
-            Bot.strafeLeft(.5, 1.5);
-            Bot.driveForward(.5, .5);
+//            Bot.strafeLeft(.5, 4);
         }
     }
     public void positionToDropBlueAud() {
@@ -211,11 +235,15 @@ public abstract class AutoBlueAlliance extends AutoMain{
 
     public void CameraDetection () {
         propPosition = pipeline.getAnalysis();
+        telemetry.addData("Position Detected: ", propPosition);
+        telemetry.update();
         sleep(1000);
 
-        // Stop Camera Detection
         stopCamera();
+        telemetry.addLine("Stopping Camera");
+        telemetry.update();
         sleep(1000);
+
     }
 
 
