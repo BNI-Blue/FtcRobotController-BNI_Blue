@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPosition;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPositionPipeline;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 import org.firstinspires.ftc.vision.VisionPortal;
 import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
@@ -18,6 +19,9 @@ public abstract class AutoMain extends LinearOpMode {
 
     // Enum for Team Prop Position
     public TeamPropPosition propPosition;
+
+    // Construct Program Bot or Competiton Bot for all autonomous red paths
+    public BlueBot Bot = new BlueBot();
 
     //Object Declaration
     public OpenCvCamera webcam;
@@ -51,6 +55,21 @@ public abstract class AutoMain extends LinearOpMode {
             }
         });
 
+    }
+
+    public void placePixelBackdrop(){
+        Bot.rotatePixelArmUp(.75);
+        sleep(650);
+        Bot.stopPixelArmRotation();
+
+        Bot.extendPixelArm(.5);
+        sleep(1200);
+        Bot.stopPixelArm();
+
+        Bot.openPixelClawLeft();
+        sleep(500);
+        Bot.closePixelClawLeft();
+        sleep(500);
     }
 
 

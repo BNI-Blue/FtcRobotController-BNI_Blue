@@ -11,7 +11,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
     public TeamPropPositionPipeline pipeline = new TeamPropPositionPipeline("BLUE", 140);
 
     // Construct Program Bot or Competiton Bot for all autonomous red paths
-    public BlueBot Bot = new BlueBot();
+    //public BlueBot Bot = new BlueBot();
     //public BlueBot Bot = new BlueBot();
 
     // Common method for BLUE alliance positioning to drop pixel
@@ -49,7 +49,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
             Bot.closePixelClawLeft();
             sleep(500);
             Bot.rotatePixelArmDown(.5);
-            sleep(1250);
+            sleep(1200);
             Bot.stopPixelArmRotation();
 
             Bot.strafeLeft(.5, 1);
@@ -86,7 +86,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
             Bot.closePixelClawLeft();
             sleep(500);
             Bot.rotatePixelArmDown(.5);
-            sleep(1250);
+            sleep(1200);
             Bot.stopPixelArmRotation();
 
             Bot.strafeLeft(.5, 1);

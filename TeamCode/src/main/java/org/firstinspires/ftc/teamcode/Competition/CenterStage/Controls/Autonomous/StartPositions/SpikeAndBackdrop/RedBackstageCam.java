@@ -24,6 +24,8 @@ public class RedBackstageCam extends AutoRedAlliance {
 
             positionToDropRedBack();
 
+//            placePixelBackdrop();
+
             sleep(3000);
             requestOpModeStop();
 
