@@ -90,21 +90,19 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.strafeLeft(.5, 2.5);
 
             Bot.rotatePixelArmUp(1);
-            sleep(550);
+            sleep(1300);
             Bot.stopPixelArmRotation();
             Bot.extendPixelArm(.5);
-            sleep(1300);
+            sleep(1200);
             Bot.stopPixelArm();
-            Bot.driveForward(.5, .75);
             Bot.openPixelClawLeft();
             sleep(500);
             Bot.closePixelClawLeft();
-            Bot.driveBack(.5, .75);
             Bot.retractPixelArm(.5);
-            sleep(1200);
+            sleep(1150);
             Bot.stopPixelArm();
             Bot.rotatePixelArmDown(.75);
-            sleep(500);
+            sleep(1250);
             Bot.stopPixelArmRotation();
 
             /////////////////////////////////////////
