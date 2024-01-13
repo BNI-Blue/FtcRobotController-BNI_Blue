@@ -34,7 +34,7 @@ public abstract class AutoRedAlliance extends AutoMain{
             sleep(150);
             Bot.stopPixelArm();
             Bot.openPixelClawRight();
-            sleep(1000);
+            sleep(500);
             Bot.closePixelClawRight();
             Bot.retractPixelArm(.5);
             sleep(500);
@@ -49,7 +49,7 @@ public abstract class AutoRedAlliance extends AutoMain{
             sleep(1300);
             Bot.stopPixelArmRotation();
             Bot.extendPixelArm(.5);
-            sleep(1600);
+            sleep(1700);
             Bot.stopPixelArm();
             sleep(100);
             Bot.openPixelClawLeft();
@@ -57,6 +57,7 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.closePixelClawLeft();
             Bot.retractPixelArm(.5);
             sleep(1500);
+            Bot.stopPixelArm();
             Bot.rotatePixelArmDown(.5);
             sleep(800);
             Bot.stopPixelArmRotation();
@@ -79,32 +80,35 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.openPixelClawRight();
             sleep(500);
             Bot.retractPixelArm(.5);
-            sleep(450);
+            sleep(700);
             Bot.stopPixelArm();
             Bot.closePixelClawRight();
             sleep(500);
             Bot.driveBack(.5, 1);
             Bot.rotateRight(.5, 2.9);
-            Bot.driveForward(.5, 3);
-            Bot.strafeLeft(.5, 2);
+            Bot.driveForward(.5, 3.65);
+            Bot.strafeLeft(.5, 2.5);
 
             Bot.rotatePixelArmUp(1);
-            sleep(1500);
+            sleep(550);
             Bot.stopPixelArmRotation();
             Bot.extendPixelArm(.5);
-            sleep(1250);
+            sleep(1300);
             Bot.stopPixelArm();
+            Bot.driveForward(.5, .75);
             Bot.openPixelClawLeft();
             sleep(500);
             Bot.closePixelClawLeft();
+            Bot.driveBack(.5, .75);
             Bot.retractPixelArm(.5);
-            sleep(1400);
+            sleep(1200);
+            Bot.stopPixelArm();
             Bot.rotatePixelArmDown(.75);
             sleep(500);
+            Bot.stopPixelArmRotation();
 
             /////////////////////////////////////////
-            Bot.stopPixelArmRotation();
-            Bot.strafeRight(.5, 2);
+            Bot.strafeRight(.5, 3.1);
             Bot.driveForward(.5, .5);
         }
         else {
