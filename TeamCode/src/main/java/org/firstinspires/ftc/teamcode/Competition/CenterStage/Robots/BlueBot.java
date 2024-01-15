@@ -135,6 +135,28 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             pixelArm.setPower(0);
         }
 
+        public void extendPixelArm(double speed, double rotations) {
+
+            double ticks = rotations  * TICKS_PER_ROTATION;
+            setMotorRunModes(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            setMotorRunModes(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+            while ((Math.abs(pixelArm.getCurrentPosition() ) < ticks && LinearOp.opModeIsActive()) ) {
+                extendPixelArm(speed);
+            }
+            stopMotors();
+        }
+
+        public void retractPixelArm(double speed, double rotations){
+            double ticks = rotations * TICKS_PER_ROTATION;
+            setMotorRunModes((DcMotor.RunMode.STOP_AND_RESET_ENCODER));
+            setMotorRunModes(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+            while((Math.abs(pixelArm.getCurrentPosition()) < ticks && LinearOp.opModeIsActive()) ){
+                extendPixelArm(speed);
+            }
+        }
+
         // ************* Pixel Claw Open & Close ********************
         public void openPixelClaw(){
             pixelClawLeft.setPosition(0.55);    //0.552233
@@ -175,6 +197,27 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         public void stopPixelArmRotation() {
             pixelArmRotator.setPower(0);
+        }
+
+        public void rotatePixelArmUp(double speed, double rotations) {
+
+            double ticks = rotations  * TICKS_PER_ROTATION;
+            setMotorRunModes(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            setMotorRunModes(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+            while ((Math.abs(pixelArmRotator.getCurrentPosition() ) < ticks && LinearOp.opModeIsActive()) ) {
+                rotatePixelArmUp(speed);
+            }
+            stopMotors();
+        }
+
+        public void rotatePixelArmDown(double speed, double rotations){
+            double ticks = rotations * TICKS_PER_ROTATION;
+            setMotorRunModes((DcMotor.RunMode.STOP_AND_RESET_ENCODER));
+            setMotorRunModes(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+            while((Math.abs(pixelArmRotator.getCurrentPosition()) < ticks && LinearOp.opModeIsActive()) ){
+                rotatePixelArmDown(speed);
+            }
         }
 
 
