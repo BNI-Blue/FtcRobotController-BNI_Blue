@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomo
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoBlueAlliance;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPosition;
 
 @Autonomous(name = "Blue:Backstage:Start:Cam")
 public class BlueBackstageCam extends AutoBlueAlliance {
@@ -19,12 +20,10 @@ public class BlueBackstageCam extends AutoBlueAlliance {
         while (opModeIsActive()) {
 
             CameraDetection();
-
+            //propPosition = TeamPropPosition.ONE;
             positionToDropBlueBack();
 
-//            placePixelBackdrop();
 
-            sleep(1000);
             requestOpModeStop();
 
         }

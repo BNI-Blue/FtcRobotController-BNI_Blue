@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRedAlliance;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPosition;
 
 @Autonomous(name = "Red:Backstage:Start:Cam")
 public class RedBackstageCam extends AutoRedAlliance {
@@ -22,11 +23,11 @@ public void runOpMode() throws InterruptedException {
 
         CameraDetection();
 
+//        propPosition = TeamPropPosition.ONE;
+
         positionToDropRedBack();
 
-//            placePixelBackdrop();
 
-        sleep(1000);
         requestOpModeStop();
 
     }

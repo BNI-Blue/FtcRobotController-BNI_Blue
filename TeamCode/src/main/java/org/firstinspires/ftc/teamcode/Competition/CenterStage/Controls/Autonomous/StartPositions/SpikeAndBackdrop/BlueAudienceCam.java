@@ -1,16 +1,15 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions.SpikeAndBackdrop;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRedAlliance;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoBlueAlliance;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPosition;
 
-
-@Autonomous(name = "Red:Audience:Start:Cam")
-public class RedAudienceCam extends AutoRedAlliance {
+@Autonomous (name = "Blue:Audience:Start:Cam")
+public class BlueAudienceCam extends AutoBlueAlliance {
     @Override
     public void runOpMode() throws InterruptedException {
+
         Bot.initRobot(hardwareMap);
         initCamera();
         Bot.setLinearOp(this);
@@ -18,12 +17,15 @@ public class RedAudienceCam extends AutoRedAlliance {
 
         waitForStart();
 
-        while(opModeIsActive()){
+        while (opModeIsActive()) {
+
             CameraDetection();
-            propPosition = TeamPropPosition.FOUR;
-            positionToDropRedAud();
+            //propPosition = TeamPropPosition.THREE;
+            positionToDropBlueAud();
+
 
             requestOpModeStop();
+
         }
         idle();
     }

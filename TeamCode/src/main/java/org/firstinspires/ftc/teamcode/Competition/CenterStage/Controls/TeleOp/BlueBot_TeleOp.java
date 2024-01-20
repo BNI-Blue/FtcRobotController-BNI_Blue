@@ -177,7 +177,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             else{
                 BlueBot.launchAirPlane(0);
             }
-            if (gamepad2.b) {
+            if (gamepad2.y) {
                 BlueBot.launchAirPlanePusher();
             }
             else {
@@ -193,6 +193,8 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             telemetry.addData("pwr", "FR mtr: " + frontRightSpeed);
             telemetry.addData("pwr", "RL mtr: " + rearLeftSpeed);
             telemetry.addData("pwr", "RR mtr: " + rearRightSpeed);
+            telemetry.addData("Pixel Arm Rotator: ", + BlueBot.pixelArmRotator.getCurrentPosition());
+            telemetry.addData("Pixel Arm: ", + BlueBot.pixelArm.getCurrentPosition());
             telemetry.update();
         }
 

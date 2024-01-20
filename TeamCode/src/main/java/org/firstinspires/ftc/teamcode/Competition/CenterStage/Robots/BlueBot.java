@@ -80,9 +80,13 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
             // Pixel Arm Rotational Mechanism HW Mapping
             //worm gear
+
             pixelArmRotator = hwBot.dcMotor.get("pixel_arm_rotator");//Port 2 - Expansion
             pixelArmRotator.setDirection(DcMotor.Direction.FORWARD); //check direction b/f testing
             pixelArmRotator.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+            pixelArmRotator.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            pixelArmRotator.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
 
             //Pixel Claw Mechanism HW Mapping/
             pixelClawLeft = hwBot.servo.get("pixel_claw_left");//Port 0 - Expansion
@@ -110,8 +114,8 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             planeLaunch.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
             planePusher = hwBot.servo.get("plane_pusher");//Port 2 - Expansion
-            planePusher.setDirection(Servo.Direction.FORWARD);
-            restAirPlanePusher();
+            planePusher.setDirection(Servo.Direction.REVERSE);
+            //restAirPlanePusher();
 
             //LED Control
             blinkinLedDriver = hwBot.get(RevBlinkinLedDriver.class, "led");
@@ -135,32 +139,32 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             pixelArm.setPower(0);
         }
 
-        public void extendPixelArm(double speed, double rotations) {
+        public void extendPixelArm(double speed, double ticks) {
 
-            double ticks = rotations  * TICKS_PER_ROTATION;
-            setMotorRunModes(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-            setMotorRunModes(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+            pixelArm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            pixelArm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
             while ((Math.abs(pixelArm.getCurrentPosition() ) < ticks && LinearOp.opModeIsActive()) ) {
                 extendPixelArm(speed);
             }
-            stopMotors();
+            stopPixelArm();
         }
 
-        public void retractPixelArm(double speed, double rotations){
-            double ticks = rotations * TICKS_PER_ROTATION;
-            setMotorRunModes((DcMotor.RunMode.STOP_AND_RESET_ENCODER));
-            setMotorRunModes(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        public void retractPixelArm(double speed, double ticks){
 
-            while((Math.abs(pixelArm.getCurrentPosition()) < ticks && LinearOp.opModeIsActive()) ){
-                extendPixelArm(speed);
+            pixelArm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            pixelArm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+            while ((Math.abs(pixelArm.getCurrentPosition()) < ticks && LinearOp.opModeIsActive()) ) {
+                retractPixelArm(speed);
             }
+            stopPixelArm();
         }
 
         // ************* Pixel Claw Open & Close ********************
         public void openPixelClaw(){
             pixelClawLeft.setPosition(0.55);    //0.552233
-            pixelClawRight.setPosition(0.586);   //0.586
+            pixelClawRight.setPosition(0.65);   //0.586
         }
         public void closePixelClaw(){
             pixelClawLeft.setPosition(0.71);    //0.71
@@ -169,14 +173,12 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         public void openPixelClawLeft(){
             pixelClawLeft.setPosition(0.55);
         }
-        public void openPixelClawRight(){
-            pixelClawRight.setPosition(0.586);
+        public void openPixelClawRight(){ pixelClawRight.setPosition(0.65);
         }
         public void closePixelClawLeft(){
             pixelClawLeft.setPosition(0.71);
         }
-        public void closePixelClawRight(){
-            pixelClawRight.setPosition(0.78);
+        public void closePixelClawRight(){ pixelClawRight.setPosition(0.8);
         }
 
 //        //************** Pixel Wrist Up & Down ******************
@@ -199,26 +201,40 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             pixelArmRotator.setPower(0);
         }
 
-        public void rotatePixelArmUp(double speed, double rotations) {
+        public void rotatePixelArmUp(double speed, double ticks) {
 
-            double ticks = rotations  * TICKS_PER_ROTATION;
-            setMotorRunModes(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-            setMotorRunModes(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+            pixelArmRotator.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            pixelArmRotator.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
             while ((Math.abs(pixelArmRotator.getCurrentPosition() ) < ticks && LinearOp.opModeIsActive()) ) {
                 rotatePixelArmUp(speed);
             }
-            stopMotors();
+            stopPixelArmRotation();
         }
 
-        public void rotatePixelArmDown(double speed, double rotations){
-            double ticks = rotations * TICKS_PER_ROTATION;
-            setMotorRunModes((DcMotor.RunMode.STOP_AND_RESET_ENCODER));
-            setMotorRunModes(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        public void rotatePixelArmDown(double speed, double ticks){
+
+            pixelArmRotator.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            pixelArmRotator.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
             while((Math.abs(pixelArmRotator.getCurrentPosition()) < ticks && LinearOp.opModeIsActive()) ){
                 rotatePixelArmDown(speed);
             }
+            stopPixelArmRotation();
         }
+
+//        public void dropPixelBackdrop(double speed, double ticks) {
+//            double power = 0.5;
+//            double ticks = 749;
+//
+//            pixelArmRotator.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+//            pixelArmRotator.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+//
+//            while ((Math.abs(pixelArmRotator.getCurrentPosition() ) < ticks && LinearOp.opModeIsActive()) ) {
+//                pixelArmRotator.setPower(speed);
+//            }
+//            pixelArmRotator.setPower(0);
+//        }
 
 
 

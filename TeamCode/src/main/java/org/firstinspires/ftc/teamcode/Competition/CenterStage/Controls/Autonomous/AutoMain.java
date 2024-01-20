@@ -1,6 +1,8 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
+
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPosition;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPositionPipeline;
@@ -30,8 +32,8 @@ public abstract class AutoMain extends LinearOpMode {
     //Method to Initialize Camera Hardware
     public void initCamera() {
         int cameraMonitorViewId = hardwareMap.appContext.getResources().getIdentifier("cameraMonitorViewId", "id", hardwareMap.appContext.getPackageName());
-        webcam =OpenCvCameraFactory.getInstance().
-                createWebcam(hardwareMap.get(WebcamName.class, "Webcam 1"),cameraMonitorViewId);
+        webcam = OpenCvCameraFactory.getInstance().
+                createWebcam(hardwareMap.get(WebcamName.class, "Webcam 1"), cameraMonitorViewId);
     }
 
     // Stop the Streaming and Close the Camera Pipeline
@@ -57,22 +59,18 @@ public abstract class AutoMain extends LinearOpMode {
 
     }
 
-    public void placePixelBackdrop(){
-        Bot.rotatePixelArmUp(.75);
-        sleep(650);
-        Bot.stopPixelArmRotation();
-
-        Bot.extendPixelArm(.5);
-        sleep(1200);
-        Bot.stopPixelArm();
-
+    public void dropPixelBackdrop() {
+        Bot.rotatePixelArmUp(.5, 950);
+        Bot.driveForward(.2, 0.6);
+        Bot.extendPixelArm(.5, 1200);
         Bot.openPixelClawLeft();
         sleep(500);
+        Bot.driveBack(.5, .3);
         Bot.closePixelClawLeft();
         sleep(500);
+        Bot.retractPixelArm(.5, 1000);
+        Bot.driveBack(.5, 0.6);
+        Bot.rotatePixelArmDown(.5, 900);
+
     }
-
-
-
-
 }

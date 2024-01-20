@@ -1,81 +1,68 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRedAlliance;
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPosition;
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPositionPipeline;
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
-import org.firstinspires.ftc.teamcode.Lab.BNIVision;
 
-@Disabled
-@Autonomous(name="Start:CamTest")
-public class RedBackstageStart_CamTest extends AutoRedAlliance {
+@Autonomous(name = "Red:Cam:Test")
+public class RedBackstageStart_CamTest extends AutoRedAlliance {@Override
+public void runOpMode() throws InterruptedException {
 
+    //Initialize Robot, Initialize Camera, and Integrate Linear OP
+    Bot.initRobot(hardwareMap);
+    initCamera();
+    Bot.setLinearOp(this);
 
-    @Override
-    public void runOpMode() throws InterruptedException{
+    // Start OpenCV Pipeline Processing
+    startPipeline(pipeline);
+    telemetry.addLine("Starting Vision Pipeline");
+    telemetry.update();
 
-        //Initialize Robot, Initialize Camera, and Integrate Linear OP
-        Bot.initRobot(hardwareMap);
-        initCamera();
-        Bot.setLinearOp(this);
+    // Wait for Start Button to be pressed... No position detection yet due to randomization
+    waitForStart();
 
-        // Start OpenCV Pipeline Processing
-        startPipeline(pipeline);
-        telemetry.addLine("Starting Vision Pipeline");
+    while (opModeIsActive()) {
+
+        // First detection after randomization
+        propPosition = pipeline.getAnalysis();
+        telemetry.addData("Position Detected: ", propPosition);
         telemetry.update();
+        sleep(1000);
 
-        // Wait for Start Button to be pressed... No position detection yet due to randomization
-        waitForStart();
+        // Backup detection after first detection
+        propPosition = pipeline.getAnalysis();
+        telemetry.addData("Position Detected: ", propPosition);
+        telemetry.update();
+        sleep(1000);
 
-        while(opModeIsActive()){
+        // Stop Camera Detection
+        stopCamera();
+        telemetry.addLine("Stopping Camera");
+        telemetry.update();
+        sleep(1000);
 
-            // First detection after randomization
-            propPosition = pipeline.getAnalysis();
-            telemetry.addData("Position Detected: ", propPosition);
-            telemetry.update();
-            sleep(1000);
+        //Bot.driveForward(.5, .5);
+        telemetry.addLine("Drive Forward");
+        telemetry.update();
+        sleep(1000);
 
-            // Backup detection after first detection
-            propPosition = pipeline.getAnalysis();
-            telemetry.addData("Position Detected: ", propPosition);
-            telemetry.update();
-            sleep(1000);
+        //Bot.rotateRightNew(0.5, 3.1);
+        telemetry.addLine("Rotate Right");
+        telemetry.update();
+        sleep(1000);
 
-            // Stop Camera Detection
-            stopCamera();
-            telemetry.addLine("Stopping Camera");
-            telemetry.update();
-            sleep(1000);
-
-            //Bot.driveForward(.5, .5);
-            telemetry.addLine("Drive Forward");
-            telemetry.update();
-            sleep(1000);
-
-            //Bot.rotateRightNew(0.5, 3.1);
-            telemetry.addLine("Rotate Right");
-            telemetry.update();
-            sleep(1000);
-
-            //Bot.driveForward(.5,3.6);
-            telemetry.addLine("Drive Forward");
-            telemetry.update();
-            sleep(1000);
+        //Bot.driveForward(.5,3.6);
+        telemetry.addLine("Drive Forward");
+        telemetry.update();
+        sleep(1000);
 
 
-            sleep(3000);
+        sleep(3000);
 
-            requestOpModeStop();
+        requestOpModeStop();
 
-        }
-
-        idle();
     }
 
-
-
+    idle();
+}
 }
