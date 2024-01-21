@@ -135,9 +135,9 @@ public abstract class AutoRedAlliance extends AutoMain{
 
     public void positionToDropRedAud(){
         if(propPosition == TeamPropPosition.FOUR){
-//            Bot.rotatePixelArmDown(.5);
-//            sleep(1250);
-//            Bot.stopPixelArmRotation();
+            Bot.rotatePixelArmDown(.5);
+            sleep(1250);
+            Bot.stopPixelArmRotation();
 
             Bot.driveForward(.5, 2);
 
@@ -162,9 +162,9 @@ public abstract class AutoRedAlliance extends AutoMain{
    //         Bot.driveForward(.5, .5);
         }
         else if (propPosition == TeamPropPosition.FIVE){
-//            Bot.rotatePixelArmDown(.5);
-//            sleep(1250);
-//            Bot.stopPixelArmRotation();
+            Bot.rotatePixelArmDown(.5);
+            sleep(1250);
+            Bot.stopPixelArmRotation();
           Bot.driveForward(.5, 2.5);
 
           Bot.extendPixelArm(.5, 550);
@@ -181,20 +181,14 @@ public abstract class AutoRedAlliance extends AutoMain{
     //        Bot.rotateRight(.5, 3);
       //      Bot.driveForward(.5,9);
         //    Bot.strafeRight(.5,    .5);
-//          Bot.rotatePixelArmUp(.5, .5);
-//          Bot.extendPixelArm(.5, .5);
-//          Bot.openPixelClawRight();
-//          Bot.driveBack(.5, 1);
-//          Bot.retractPixelArm(.5, .5);
-//          Bot.closePixelClawRight();
-//          Bot.rotatePixelArmDown(.5, .5);
+//          dropPixelBackdrop();
 //            Bot.strafeLeft(.5, 1.5);
   //          Bot.driveForward(.5, .5);
         }
         else{
-//            Bot.rotatePixelArmDown(.5);
-//            sleep(1250);
-//            Bot.stopPixelArmRotation();
+            Bot.rotatePixelArmDown(.5);
+            sleep(1250);
+            Bot.stopPixelArmRotation();
 
             Bot.driveForward(.5, 2);
             Bot.rotateRight(.5, 1.7);
@@ -214,13 +208,7 @@ public abstract class AutoRedAlliance extends AutoMain{
 //          Bot.rotateRight(.5, 3.1);
 //          Bot.driveForward(.5, 9);
 //          Bot.strafeRight(.5, 5);
-//          Bot.rotatePixelArmUp(.5, .5);
-//          Bot.extendPixelArm(.5, .5);
-//          Bot.openPixelClawRight();
-//          Bot.driveBack(.5, 1);
-//          Bot.retractPixelArm(.5, .5);
-//          Bot.closePixelClawRight();
-//          Bot.rotatePixelArmDown(.5, .5);
+//          dropPixelBackdrop();
 //          Bot.strafeLeft(.5, 6);
 //          Bot.driveForward(.5, .5);
         }
