@@ -192,14 +192,15 @@ public abstract class AutoBlueAlliance extends AutoMain{
 
             Bot.driveForward(.5, 2);
             Bot.rotateRight(.5, 1.7);
+            sleep(500);
 
-            Bot.extendPixelArm(.5, 120);
+//            Bot.extendPixelArm(.5, 120);
             Bot.openPixelClawRight();
             sleep(500);
 
             Bot.driveBack(.5, .2);
 
-            Bot.retractPixelArm(.5, 100);
+//            Bot.retractPixelArm(.5, 100);
             Bot.closePixelClawRight();
             sleep(500);
 
