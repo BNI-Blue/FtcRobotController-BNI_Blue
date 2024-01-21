@@ -20,7 +20,7 @@ public class RedAudienceCam extends AutoRedAlliance {
 
         while(opModeIsActive()){
             CameraDetection();
-            propPosition = TeamPropPosition.FOUR;
+            //propPosition = TeamPropPosition.FOUR;
             positionToDropRedAud();
 
             requestOpModeStop();
