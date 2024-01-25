@@ -60,17 +60,17 @@ public abstract class AutoMain extends LinearOpMode {
     }
 
     public void dropPixelBackdrop() {
-        Bot.rotatePixelArmUp(.5, 950);
+        Bot.rotatePixelArmUp(.5, 760);//950
         Bot.driveForward(.2, 0.6);
-        Bot.extendPixelArm(.5, 1200);
+        Bot.extendPixelArm(.5, 685);//1200
         Bot.openPixelClawLeft();
         sleep(500);
         Bot.driveBack(.5, .3);
         Bot.closePixelClawLeft();
         sleep(500);
-        Bot.retractPixelArm(.5, 1000);
+        Bot.retractPixelArm(.5, 665);
         Bot.driveBack(.5, 0.6);
-        Bot.rotatePixelArmDown(.5, 900);
+        Bot.rotatePixelArmDown(.5, 735);
 
     }
 }
