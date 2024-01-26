@@ -201,7 +201,7 @@ public class BlueBot_TeleOp_Profiles extends OpMode {
     }
 
     public void launcherControl (){
-        if (gamepad2.b) {
+        if (gamepad2.x) {
             BlueBot.launchAirPlanePusher();
         }
         else {
