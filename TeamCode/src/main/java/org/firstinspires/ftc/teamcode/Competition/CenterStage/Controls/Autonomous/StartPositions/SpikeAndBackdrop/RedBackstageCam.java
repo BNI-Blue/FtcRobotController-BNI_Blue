@@ -23,7 +23,7 @@ public void runOpMode() throws InterruptedException {
 
         CameraDetection();
 
-//        propPosition = TeamPropPosition.ONE;
+//        propPosition = TeamPropPosition.FIVE;
 
         positionToDropRedBack();
 

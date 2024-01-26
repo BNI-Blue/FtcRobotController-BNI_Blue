@@ -61,14 +61,19 @@ public abstract class AutoMain extends LinearOpMode {
 
     public void dropPixelBackdrop() {
         Bot.rotatePixelArmUp(.5, 760);//950
-        Bot.driveForward(.2, 0.6);
+//    FORWARD with power so robot does not time out driving into backdrop
+//        Bot.driveForward(.2, 0.6);
+        Bot.driveForward(0.3);
+        sleep(1000);
+        Bot.stopMotors();
+        sleep(100);
         Bot.extendPixelArm(.5, 685);//1200
         Bot.openPixelClawLeft();
         sleep(500);
         Bot.driveBack(.5, .3);
         Bot.closePixelClawLeft();
         sleep(500);
-        Bot.retractPixelArm(.5, 665);
+        Bot.retractPixelArm(.5, 640);
         Bot.driveBack(.5, 0.6);
         Bot.rotatePixelArmDown(.5, 735);
 

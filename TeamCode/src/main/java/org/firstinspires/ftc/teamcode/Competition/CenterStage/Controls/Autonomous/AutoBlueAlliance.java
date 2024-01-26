@@ -51,7 +51,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
 
             dropPixelBackdrop();
 //
-            Bot.strafeLeft(.5, 2.7);
+            Bot.strafeLeft(.5, 2.6);
             Bot.driveForward(.5, .5);
             //backstage parks outside
         }
@@ -65,15 +65,19 @@ public abstract class AutoBlueAlliance extends AutoMain{
             sleep(2000);
             Bot.rotateEndGameArmStop(.5);
 
-            Bot.extendPixelArm(.5, 400);
-            Bot.retractPixelArm(.5, 50);
+            Bot.rotateLeft(0.5, .35);
+
+            Bot.extendPixelArm(.5, 550);
+//            Bot.retractPixelArm(.5, 50);
 
             Bot.openPixelClawRight();
             sleep(500);
             Bot.closePixelClawRight();
             sleep(500);
 
-            Bot.retractPixelArm(.5, 345);
+            Bot.retractPixelArm(.5, 445);
+
+            Bot.rotateRight(0.5, .35);
 
             Bot.driveBack(.5, 1);
             sleep(100);

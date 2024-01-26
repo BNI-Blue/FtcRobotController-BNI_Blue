@@ -20,7 +20,7 @@ public class BlueAudienceCam extends AutoBlueAlliance {
         while (opModeIsActive()) {
 
             CameraDetection();
-            //propPosition = TeamPropPosition.THREE;
+//            propPosition = TeamPropPosition.ONE;
             positionToDropBlueAud();
 
 

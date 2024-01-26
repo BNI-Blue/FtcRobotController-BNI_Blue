@@ -20,7 +20,7 @@ public class BlueBackstageCam extends AutoBlueAlliance {
         while (opModeIsActive()) {
 
             CameraDetection();
-            //propPosition = TeamPropPosition.ONE;
+//            propPosition = TeamPropPosition.THREE;
             positionToDropBlueBack();
 
 

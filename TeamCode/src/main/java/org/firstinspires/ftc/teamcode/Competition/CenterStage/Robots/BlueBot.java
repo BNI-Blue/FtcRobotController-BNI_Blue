@@ -176,7 +176,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         public void openPixelClawRight(){ pixelClawRight.setPosition(0.65);
         }
         public void closePixelClawLeft(){
-            pixelClawLeft.setPosition(0.71);
+            pixelClawLeft.setPosition(0.70);
         }
         public void closePixelClawRight(){ pixelClawRight.setPosition(0.8);
         }
