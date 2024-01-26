@@ -25,8 +25,8 @@ public class BlueBot_TeleOp_Profiles extends OpMode {
     double speedMultiply = 1;
 
     // Constants for driver profiles
-    private static final int PROFILE_1 = 1;
-    private static final int PROFILE_2 = 2;
+    private static final int PROFILE_1 = 1;  //Charlie
+    private static final int PROFILE_2 = 2;  // Evan
     private int currentProfile = PROFILE_1;
 
     public double pixelArmRotatorPower = 0.95;
@@ -88,8 +88,8 @@ public class BlueBot_TeleOp_Profiles extends OpMode {
             // Name of Driver using Profile 1
             case PROFILE_1:
                 // leftStickXVal controls rotation, and rightStickXVal controls strafing.
-                frontLeftSpeed = leftStickYVal + rightStickXVal + leftStickXVal;
-                frontRightSpeed = leftStickYVal - rightStickXVal - leftStickXVal;
+                frontLeftSpeed = leftStickYVal + rightStickXVal + leftStickXVal;    // Vertical + Rotation + Staffing
+                frontRightSpeed = leftStickYVal - rightStickXVal - leftStickXVal;   // Vertical - Rotation - Strafing(sign in front is the way the motor is turning in relation to the others)
                 rearLeftSpeed = leftStickYVal - rightStickXVal + leftStickXVal;
                 rearRightSpeed = leftStickYVal + rightStickXVal - leftStickXVal;
                 break;
@@ -230,11 +230,11 @@ public class BlueBot_TeleOp_Profiles extends OpMode {
     // Driving Speed Control Method
     public void speedControl() {
 
-        if (gamepad1.dpad_up) {
+        if (gamepad1.left_bumper) {
             speedMultiply = 0.5;
         }
 
-        else if (gamepad1.dpad_down) {
+        else if (gamepad1.left_bumper) {
             speedMultiply = 1;
         }
     }

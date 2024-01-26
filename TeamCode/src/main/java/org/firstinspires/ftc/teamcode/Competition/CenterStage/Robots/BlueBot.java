@@ -96,8 +96,8 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
 
             //Pixel Wrist HW Mapping
-            pixelWrist = hwBot.servo.get("pixel_wrist");//Port 2 - Expansion
-            pixelWrist.setDirection(Servo.Direction.FORWARD);
+            //pixelWrist = hwBot.servo.get("pixel_wrist");//Port 2 - Expansion
+            //pixelWrist.setDirection(Servo.Direction.FORWARD);
 
             // End Game Rotational Mechanism (Servo and Motor) HW Mapping
             endGameRotator = hwBot.crservo.get("end_game_rotator");//Port 5 - Expansion
@@ -109,7 +109,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             endgameArm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
             // End game airplane launcher
-            planeLaunch = hwBot.dcMotor.get("plane_launcher");//Port_ - ______
+            planeLaunch = hwBot.dcMotor.get("plane_launcher");//Port 3 - Expansion
             planeLaunch.setDirection(DcMotorSimple.Direction.FORWARD);
             planeLaunch.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
