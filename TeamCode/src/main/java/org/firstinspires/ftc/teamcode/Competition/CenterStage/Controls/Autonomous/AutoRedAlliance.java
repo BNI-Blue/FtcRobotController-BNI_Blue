@@ -21,7 +21,7 @@ public abstract class AutoRedAlliance extends AutoMain{
     public void positionToDropRedBack() {
 
         if (propPosition == TeamPropPosition.FOUR) {
-//            Bot.rotatePixelArmDown(.5);
+            Bot.rotatePixelArmDown(.5);
             sleep(1250);
             Bot.stopPixelArmRotation();
 
@@ -58,7 +58,7 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.driveForward(.5, .5);
         }
         else if (propPosition == TeamPropPosition.FIVE) {
-//            Bot.rotatePixelArmDown(.5);
+            Bot.rotatePixelArmDown(.5);
             sleep(1250);
             Bot.stopPixelArmRotation();
 
@@ -93,7 +93,7 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.driveForward(.5, .5);
         }
         else {
-//            Bot.rotatePixelArmDown(.5);
+            Bot.rotatePixelArmDown(.5);
             sleep(1250);
             Bot.stopPixelArmRotation();
 
