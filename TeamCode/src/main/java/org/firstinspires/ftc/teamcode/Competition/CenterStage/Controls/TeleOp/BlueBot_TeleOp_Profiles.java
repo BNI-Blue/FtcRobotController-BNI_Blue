@@ -9,7 +9,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
 
 //@Disabled
-@TeleOp(name = "BlueBot:TeleOp:Diff Profiles ")
+@TeleOp(name = "BlueBot:TeleOp")
 public class BlueBot_TeleOp_Profiles extends OpMode {
     double leftStickYVal;
     double leftStickXVal;
@@ -201,12 +201,6 @@ public class BlueBot_TeleOp_Profiles extends OpMode {
     }
 
     public void launcherControl (){
-        if(gamepad2.a){
-            BlueBot.launchAirPlane(-1);
-        }
-        else{
-            BlueBot.launchAirPlane(0);
-        }
         if (gamepad2.b) {
             BlueBot.launchAirPlanePusher();
         }
