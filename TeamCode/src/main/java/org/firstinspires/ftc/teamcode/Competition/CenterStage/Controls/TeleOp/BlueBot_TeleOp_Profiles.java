@@ -228,7 +228,7 @@ public class BlueBot_TeleOp_Profiles extends OpMode {
             speedMultiply = 0.5;
         }
 
-        else if (gamepad1.left_bumper) {
+        else if (gamepad1.right_bumper) {
             speedMultiply = 1;
         }
     }
