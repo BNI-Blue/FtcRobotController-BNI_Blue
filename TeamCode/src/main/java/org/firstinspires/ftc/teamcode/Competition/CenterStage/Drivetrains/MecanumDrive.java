@@ -501,9 +501,37 @@ public class MecanumDrive {
             LinearOp.telemetry.update();
 
         }
-
         stopMotors();
     }
+
+    // Method to move robot forward/backward or strafe based on desired trajectory
+    public void moveRobot(double drive, double strafe, double yaw) {
+
+        // Calculates the power for each wheel / motor
+        double frontLeftPower = drive - strafe - yaw;
+        double frontRightPower = drive + strafe + yaw;
+        double rearLeftPower = drive + strafe - yaw;
+        double rearRightPower = drive - strafe + yaw;
+
+        // Normalize wheel powers to ensure values are within -1.0 to 1.0
+        double max = Math.max(Math.max(Math.abs(frontLeftPower), Math.abs(frontRightPower)),
+                Math.max(Math.abs(rearLeftPower), Math.abs(rearRightPower)));
+
+        if (max > 1.0) {
+            frontLeftPower /= max;
+            frontRightPower /= max;
+            rearLeftPower /= max;
+            rearRightPower /= max;
+        }
+
+        // Send powers to the wheels
+        frontLeftMotor.setPower(frontLeftPower);
+        frontRightMotor.setPower(frontRightPower);
+        rearLeftMotor.setPower(rearLeftPower);
+        rearRightMotor.setPower(rearRightPower);
+    }
+
+
 
     // *********  Helper methods for Encoders******************
 
