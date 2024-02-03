@@ -73,7 +73,7 @@ public abstract class AutoMain extends LinearOpMode {
         Bot.driveBack(.5, .3);
         Bot.closePixelClawLeft();
         sleep(500);
-        Bot.retractPixelArm(.5, 620);
+        Bot.retractPixelArm(.5, 300);
         Bot.driveBack(.5, 0.6);
         Bot.rotatePixelArmDown(.5, 735);
 

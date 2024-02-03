@@ -29,9 +29,9 @@ public abstract class AutoRedAlliance extends AutoMain{
             sleep(100);
             Bot.rotateLeft(.5, 2.3);
             sleep(100);
-            Bot.rotateEndGameArmDown(0);
-            sleep(2000);
-            Bot.rotateEndGameArmStop(.5);
+//            Bot.rotateEndGameArmDown(0);
+//            sleep(2000);
+//            Bot.rotateEndGameArmStop(.5);
 
             Bot.extendPixelArm(.5, 200);
 
@@ -43,7 +43,7 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.retractPixelArm(.5 ,160);
 
 //            Just time to see pixel delivery
-            sleep(2000);
+
 
             Bot.driveBack(.5, 3);
             Bot.rotateRight(.5, 5.6);
@@ -64,9 +64,9 @@ public abstract class AutoRedAlliance extends AutoMain{
 
             Bot.driveForward(.5, 2.5);
             sleep(100);
-            Bot.rotateEndGameArmDown(0);
-            sleep(2000);
-            Bot.rotateEndGameArmStop(.5);
+//            Bot.rotateEndGameArmDown(0);
+//            sleep(2000);
+//            Bot.rotateEndGameArmStop(.5);
 
             Bot.extendPixelArm(.5, 550);
 
@@ -78,7 +78,7 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.retractPixelArm(.5, 550);
 
             //            Just time to see pixel delivery
-            sleep(2000);
+
 
             Bot.driveBack(.5, 1);
             Bot.rotateRight(.5, 2.9);
@@ -99,9 +99,9 @@ public abstract class AutoRedAlliance extends AutoMain{
 
             Bot.driveForward(.5, 2);
             Bot.rotateRight(.5, 1.6);  //1.7
-            Bot.rotateEndGameArmDown(0);
-            sleep(2000);
-            Bot.rotateEndGameArmStop(.5);
+//            Bot.rotateEndGameArmDown(0);
+//            sleep(2000);
+//            Bot.rotateEndGameArmStop(.5);
 
             Bot.openPixelClawRight();
             sleep(500);
@@ -109,7 +109,7 @@ public abstract class AutoRedAlliance extends AutoMain{
             sleep(500);
 
             //            Just time to see pixel delivery
-            sleep(2000);
+
 
             Bot.driveBack(.5, .15);
             Bot.rotateRight(.5, 1.65);

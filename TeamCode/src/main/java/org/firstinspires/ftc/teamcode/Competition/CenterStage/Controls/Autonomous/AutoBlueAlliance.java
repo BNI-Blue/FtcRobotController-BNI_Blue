@@ -85,7 +85,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
             sleep(100);
             Bot.driveForward(.5, 3.55);
             sleep(100);
-            Bot.strafeRight(.5, 2.3);
+            Bot.strafeRight(.5, 2.4);
 
             dropPixelBackdrop();
 
@@ -121,13 +121,13 @@ public abstract class AutoBlueAlliance extends AutoMain{
             sleep(100);
             Bot.driveForward(.5, 3.1);
             sleep(100);
-            Bot.strafeRight(.5, 1.8);
+            Bot.strafeRight(.5, 1.9);
             sleep(100);
 
             dropPixelBackdrop();
             Bot.strafeLeft(.5, 3.7);
             sleep(100);
-            Bot.driveForward(.5, 1);
+            Bot.driveForward(.5, .5);
         }
     }
     public void positionToDropBlueAud() {
@@ -217,6 +217,16 @@ public abstract class AutoBlueAlliance extends AutoMain{
 //            Bot.strafeLeft(.5, 4);
 //            Bot.driveForward(.5, 1);
         }
+    }
+
+
+    public void encoderTesting () {
+        Bot.driveForwardToPosition (0.5, 3);
+        sleep(100);
+        Bot.rotateLeft(0.5, 2);
+        sleep(100);
+        Bot.gyroCorrection(0.5, 90);
+        sleep(100);
     }
 
     public void CameraDetection () {
