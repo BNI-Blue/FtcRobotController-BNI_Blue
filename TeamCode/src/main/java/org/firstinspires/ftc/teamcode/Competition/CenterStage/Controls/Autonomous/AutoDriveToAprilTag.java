@@ -49,7 +49,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 @TeleOp(name="Auto Drive To AprilTag", group = "Lab")
 @Disabled
-public class AutoDriveToAprilTag extends AutoBlueAlliance
+public class AutoDriveToAprilTag extends LinearOpMode
 {
 
     final double DESIRED_DISTANCE = 12.0; // inches to April Tag
@@ -62,11 +62,12 @@ public class AutoDriveToAprilTag extends AutoBlueAlliance
     final double MAX_AUTO_STRAFE= 0.5;   //  Clip the approach speed to this max value (adjust for your robot)
     final double MAX_AUTO_TURN  = 0.3;   //  Clip the turn speed to this max value (adjust for your robot)
 
-    private static final int DESIRED_TAG_ID = 0;     // Choose the tag you want to approach or set to -1 for ANY tag.
-    private AprilTagProcessor aprilTag;              // Used for managing the AprilTag detection process.
-    private AprilTagDetection desiredTag = null;     // Used to hold the data for a detected AprilTag
+    public static final int DESIRED_TAG_ID = 1;     // Choose the tag you want to approach or set to -1 for ANY tag.
+    public VisionPortal visionPortal;
+    public AprilTagProcessor aprilTag;              // Used for managing the AprilTag detection process.
+    public AprilTagDetection desiredTag = null;     // Used to hold the data for a detected AprilTag
 
-    //public BlueBot Bot = new BlueBot();
+    public BlueBot Bot = new BlueBot();
 
     @Override public void runOpMode()
     {
