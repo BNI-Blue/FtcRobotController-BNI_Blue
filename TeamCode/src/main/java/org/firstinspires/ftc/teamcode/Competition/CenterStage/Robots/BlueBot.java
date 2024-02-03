@@ -48,7 +48,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         RevBlinkinLedDriver blinkinLedDriver;
 
         // Declaration of Gyro Variables
-        RevHubOrientationOnRobot.LogoFacingDirection logoDirection = RevHubOrientationOnRobot.LogoFacingDirection.RIGHT;
+        RevHubOrientationOnRobot.LogoFacingDirection logoDirection = RevHubOrientationOnRobot.LogoFacingDirection.LEFT;
         RevHubOrientationOnRobot.UsbFacingDirection  usbDirection  = RevHubOrientationOnRobot.UsbFacingDirection.UP;
         RevHubOrientationOnRobot orientationOnRobot = new RevHubOrientationOnRobot(logoDirection, usbDirection);
 
@@ -174,8 +174,8 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         // ************* Pixel Claw Open & Close ********************
         public void openPixelClaw(){
-            pixelClawLeft.setPosition(0.55);    //0.552233
-            pixelClawRight.setPosition(0.65);   //0.586
+            pixelClawLeft.setPosition(0.6);    //0.552233
+            pixelClawRight.setPosition(0.7);   //0.586
         }
         public void closePixelClaw(){
             pixelClawLeft.setPosition(0.71);    //0.71
