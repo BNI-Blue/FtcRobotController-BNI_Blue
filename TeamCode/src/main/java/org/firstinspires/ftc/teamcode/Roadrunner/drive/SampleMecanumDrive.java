@@ -93,7 +93,7 @@ public class SampleMecanumDrive extends MecanumDrive {
         for (LynxModule module : hardwareMap.getAll(LynxModule.class)) {
             module.setBulkCachingMode(LynxModule.BulkCachingMode.AUTO);
         }
-
+//
         // TODO: adjust the names of the following hardware devices to match your configuration
         imu = hardwareMap.get(IMU.class, "imu");
 //        LOGO_FACING_DIR & USB_FACING_DIR throwing error, so created new IMU.Parameters below.
