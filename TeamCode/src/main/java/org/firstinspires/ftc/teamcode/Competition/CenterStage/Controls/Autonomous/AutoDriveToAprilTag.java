@@ -47,9 +47,9 @@ import org.firstinspires.ftc.vision.apriltag.AprilTagProcessor;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-@TeleOp(name="Auto Drive To AprilTag", group = "Lab")
-@Disabled
-public class AutoDriveToAprilTag extends LinearOpMode
+@TeleOp(name="Auto Drive To AprilTag")
+//@Disabled
+public class AutoDriveToAprilTag extends AutoBlueAlliance
 {
 
     final double DESIRED_DISTANCE = 12.0; // inches to April Tag
@@ -66,8 +66,6 @@ public class AutoDriveToAprilTag extends LinearOpMode
     public VisionPortal visionPortal;
     public AprilTagProcessor aprilTag;              // Used for managing the AprilTag detection process.
     public AprilTagDetection desiredTag = null;     // Used to hold the data for a detected AprilTag
-
-    public BlueBot Bot = new BlueBot();
 
     @Override public void runOpMode()
     {

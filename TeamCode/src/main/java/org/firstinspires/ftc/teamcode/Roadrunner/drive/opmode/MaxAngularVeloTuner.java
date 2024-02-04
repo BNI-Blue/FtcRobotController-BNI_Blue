@@ -22,11 +22,11 @@ import java.util.Objects;
  * <p>
  * Further fine tuning of MAX_ANG_VEL may be desired.
  */
-@Disabled
+//@Disabled
 @Config
 @Autonomous(group = "drive")
 public class MaxAngularVeloTuner extends LinearOpMode {
-    public static double RUNTIME = 4.0;
+    public static double RUNTIME = 2.0;
 
     private ElapsedTime timer;
     private double maxAngVelocity = 0.0;

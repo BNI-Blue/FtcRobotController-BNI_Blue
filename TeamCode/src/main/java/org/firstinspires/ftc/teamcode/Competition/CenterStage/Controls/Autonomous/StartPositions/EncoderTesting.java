@@ -21,7 +21,7 @@ public class EncoderTesting extends AutoBlueAlliance {
 
 //            CameraDetection();
             stopCamera();
-
+            Bot.drivePIDForward(12,.4,.1,.1,.1);
 //            Bot.drivePIDForward(1500, 0.3, 0.1,0, 0.4);
 
             Bot.resetHeading();

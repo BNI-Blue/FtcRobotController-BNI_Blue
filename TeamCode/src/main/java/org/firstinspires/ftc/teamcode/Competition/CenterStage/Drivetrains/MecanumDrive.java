@@ -565,62 +565,6 @@ public class MecanumDrive {
 
     //***************** Holonomic PID COntrol **************************
 
-    public void moveRobotToTargetPID(double targetXinches, double targetYinches, double deltaTime) {
-
-        // Loop until the robot reaches the target position or a timeout occurs
-        double startTime = System.currentTimeMillis();        // For timeout
-        double timeout = 7000;                                // 5 seconds timeout, adjust as necessary
-        double TICK_THRESHOLD = 10;
-
-        double targetX = inchesToTicks(targetXinches);
-        double targetY = inchesToTicks(targetYinches);
-
-        while (LinearOp.opModeIsActive() && (System.currentTimeMillis() - startTime) < timeout) {
-
-            // Data from IMU and Encoders
-            double currentX = getCurrentX();    // Forward/Backward Distance in Ticks
-            double currentY = getCurrentY();    // Stafing Distances in Tickets
-
-            double errorX = targetX - currentX;
-            double errorY = targetY - currentY;
-
-            // Check if the robot is close enough to the target positions
-            if (Math.abs(errorX) < TICK_THRESHOLD && Math.abs(errorY) < TICK_THRESHOLD) {
-                break; // Exit loop if the robot is within the acceptable range
-            }
-            // Calculate PID outputs
-            double translationXOutput = translationPID.calculate(errorX, deltaTime);
-            double translationYOutput = translationPID.calculate(errorY, deltaTime);
-
-            double currentRotation = getHeading();
-            double rotationOutput = rotationPID.calculate(currentRotation, deltaTime);
-
-            // Calculate power for each wheel based on PID outputs
-            double frontLeftPower = translationXOutput + translationYOutput + rotationOutput;
-            double frontRightPower = translationXOutput - translationYOutput - rotationOutput;
-            double rearLeftPower = translationXOutput - translationYOutput + rotationOutput;
-            double rearRightPower = translationXOutput + translationYOutput - rotationOutput;
-
-            // Normalize powers
-            double max = Math.max(Math.max(Math.abs(frontLeftPower), Math.abs(frontRightPower)), Math.max(Math.abs(rearLeftPower), Math.abs(rearRightPower)));
-            if (max > 1.0) {
-                frontLeftPower /= max;
-                frontRightPower /= max;
-                rearLeftPower /= max;
-                rearRightPower /= max;
-            }
-
-            // Apply Normalized Power
-            frontLeftMotor.setPower(frontLeftPower);
-            frontRightMotor.setPower(frontRightPower);
-            rearLeftMotor.setPower(rearLeftPower);
-            rearRightMotor.setPower(rearRightPower);
-
-            LinearOp.sleep(10);
-        }
-        stopMotors();
-
-    }
 
     // Helper Method for Distance Conversion
     public double inchesToTicks (double inches) {
