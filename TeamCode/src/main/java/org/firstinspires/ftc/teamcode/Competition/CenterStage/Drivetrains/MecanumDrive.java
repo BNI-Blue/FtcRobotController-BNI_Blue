@@ -27,8 +27,8 @@ public class MecanumDrive {
     // Instance Variables for PID Coefficients
     private double integralSum = 0;
     private double lastError = 0;
-    PIDController translationPID = new PIDController(0.1, 0.01, 0.1);
-    PIDController rotationPID = new PIDController(0.1, 0.01, 0.1);
+    PIDController translationPID = new PIDController(0.1, 0.00, 0.1);
+    PIDController rotationPID = new PIDController(0.1, 0.00, 0.1);
 
     // Instance Variable for Linear Op Mode
     public LinearOpMode LinearOp = null;
@@ -124,7 +124,7 @@ public class MecanumDrive {
 
     // Method to drive straight either forward or backward using IMU
     public void driveGyroStraight(int encoders, double power, String direction) throws InterruptedException {
-        imu.resetYaw();
+        resetHeading();
         currentHeading = getHeading();
 
         double target = getHeading();
