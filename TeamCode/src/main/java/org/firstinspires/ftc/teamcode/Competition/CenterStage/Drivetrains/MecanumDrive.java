@@ -123,25 +123,30 @@ public class MecanumDrive {
     }
 
     // Method to drive straight either forward or backward using IMU
-    public void driveGyroStraight(int encoders, double power, String direction) throws InterruptedException {
+    public void driveGyroStraight(double rotations, double power, String direction) throws InterruptedException {
+        double ticks = rotations * TICKS_PER_ROTATION;
+
+
         imu.resetYaw();
         currentHeading = getHeading();
 
         double target = getHeading();
         double currentPos = 0;
-        double leftSideSpeed;
-        double rightSideSpeed;
+        double leftSideSpeed = 0;
+        double rightSideSpeed = 0;
 
         double startPosition = frontLeftMotor.getCurrentPosition();
         LinearOp.sleep(100);
-        while (currentPos < encoders + startPosition && LinearOp.opModeIsActive()) {
+        while (currentPos < ticks + startPosition && LinearOp.opModeIsActive()) {
             currentHeading = getHeading();
             currentPos = Math.abs(frontLeftMotor.getCurrentPosition());
-
+//VEERING TO LEFT
             switch (direction) {
                 case "FORWARD":
-                    leftSideSpeed = power + (currentHeading - target) / 100;            // they need to be different
-                    rightSideSpeed = power - (currentHeading - target) / 100;
+                    leftSideSpeed = power + (currentHeading - target) / 20;            // they need to be different
+                    rightSideSpeed = power - (currentHeading - target) / 20;   //100
+
+
 
                     leftSideSpeed = Range.clip(leftSideSpeed, -1, 1);        // helps prevent out of bounds error
                     rightSideSpeed = Range.clip(rightSideSpeed, -1, 1);
@@ -165,11 +170,37 @@ public class MecanumDrive {
                     frontRightMotor.setPower(-rightSideSpeed);
                     rearRightMotor.setPower(-rightSideSpeed);
                     break;
+                case "LEFT":
+                    leftSideSpeed = power - (currentHeading - target) / 100;            // they need to be different
+                    rightSideSpeed = power + (currentHeading - target) / 100;
+
+                    leftSideSpeed = Range.clip(leftSideSpeed, -1, 1);        // helps prevent out of bounds error
+                    rightSideSpeed = Range.clip(rightSideSpeed, -1, 1);
+
+                    frontLeftMotor.setPower(leftSideSpeed);
+                    rearLeftMotor.setPower(-leftSideSpeed);
+
+                    frontRightMotor.setPower(-rightSideSpeed);
+                    rearRightMotor.setPower(rightSideSpeed);
+                    break;
+                case "RIGHT":
+                    leftSideSpeed = power - (currentHeading - target) / 100;            // they need to be different
+                    rightSideSpeed = power + (currentHeading - target) / 100;
+
+                    leftSideSpeed = Range.clip(leftSideSpeed, -1, 1);        // helps prevent out of bounds error
+                    rightSideSpeed = Range.clip(rightSideSpeed, -1, 1);
+
+                    frontLeftMotor.setPower(-leftSideSpeed);
+                    rearLeftMotor.setPower(leftSideSpeed);
+
+                    frontRightMotor.setPower(rightSideSpeed);
+                    rearRightMotor.setPower(-rightSideSpeed);
+                    break;
             }
 
-            LinearOp.telemetry.addData("Left Speed", frontLeftMotor.getPower());
-            LinearOp.telemetry.addData("Right Speed", frontRightMotor.getPower());
-            LinearOp.telemetry.addData("Distance till destination ", encoders + startPosition - frontLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("Left Speed", leftSideSpeed);
+            LinearOp.telemetry.addData("Right Speed", rightSideSpeed);
+            LinearOp.telemetry.addData("Distance till destination ", ticks + startPosition - frontLeftMotor.getCurrentPosition());
             LinearOp.telemetry.addData("Current Position", currentPos);
             LinearOp.telemetry.addData("Target Position", target);
             LinearOp.telemetry.addData("Current Headig: ", currentHeading);
