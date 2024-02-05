@@ -140,7 +140,7 @@ public class MecanumDrive {
         while (currentPos < ticks + startPosition && LinearOp.opModeIsActive()) {
             currentHeading = getHeading();
             currentPos = Math.abs(frontLeftMotor.getCurrentPosition());
-//VEERING TO LEFT
+//VEERING TO LEFT!
             switch (direction) {
                 case "FORWARD":
                     leftSideSpeed = power + (currentHeading - target) / 20;            // they need to be different
