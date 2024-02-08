@@ -25,7 +25,7 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
 
     //Instance Variables for Acceleration
     public double currentDistance = frontLeftMotor.getCurrentPosition();
-    double power;
+    public double power;
 
     // Instance Variables for PID Coefficients
     private double integralSum = 0;
@@ -81,7 +81,7 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
                 LinearOp.telemetry.addData("Target Angle: ", targetAngle);
                 LinearOp.telemetry.update();
             }
-        } else if (currentHeading <= targetAngle - headingTolerance && LinearOp.opModeIsActive()) ;
+        } else  if (currentHeading <= targetAngle - headingTolerance && LinearOp.opModeIsActive()) ;
         {
             while (currentHeading <= targetAngle - headingTolerance && LinearOp.opModeIsActive()) {
                 rotateLeft(speed);
@@ -208,7 +208,7 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
             LinearOp.telemetry.addData("Distance till destination ", ticks + startPosition - frontLeftMotor.getCurrentPosition());
             LinearOp.telemetry.addData("Current Position", currentPos);
             LinearOp.telemetry.addData("Target Position", target);
-            LinearOp.telemetry.addData("Current Headig: ", currentHeading);
+            LinearOp.telemetry.addData("Current Heading: ", currentHeading);
             LinearOp.telemetry.update();
 
             LinearOp.idle();
@@ -305,10 +305,10 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition()) < ticks && LinearOp.opModeIsActive())) {
             driveForward(speed);
-            LinearOp.telemetry.addData("FL tickes", frontLeftMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("FR tickes", frontRightMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("RL tickes", rearLeftMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("RR tickes", rearRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FL ticks", frontLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FR ticks", frontRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RL ticks", rearLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RR ticks", rearRightMotor.getCurrentPosition());
             LinearOp.telemetry.update();
         }
         stopMotors();
@@ -321,10 +321,10 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition()) < ticks && LinearOp.opModeIsActive())) {
             driveBack(speed);
-            LinearOp.telemetry.addData("FL tickes", frontLeftMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("FR tickes", frontRightMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("RL tickes", rearLeftMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("RR tickes", rearRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FL ticks", frontLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FR ticks", frontRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RL ticks", rearLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RR ticks", rearRightMotor.getCurrentPosition());
             LinearOp.telemetry.update();
         }
         stopMotors();
@@ -338,10 +338,10 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition()) < ticks && LinearOp.opModeIsActive())) {
             rotateLeft(speed);
-            LinearOp.telemetry.addData("FL tickes", frontLeftMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("FR tickes", frontRightMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("RL tickes", rearLeftMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("RR tickes", rearRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FL ticks", frontLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FR ticks", frontRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RL ticks", rearLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RR ticks", rearRightMotor.getCurrentPosition());
             LinearOp.telemetry.update();
         }
         stopMotors();
@@ -354,10 +354,10 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition()) < ticks && LinearOp.opModeIsActive())) {
             rotateRight(speed);
-            LinearOp.telemetry.addData("FL tickes", frontLeftMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("FR tickes", frontRightMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("RL tickes", rearLeftMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("RR tickes", rearRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FL ticks", frontLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FR ticks", frontRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RL ticks", rearLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RR ticks", rearRightMotor.getCurrentPosition());
             LinearOp.telemetry.update();
         }
         stopMotors();
@@ -371,10 +371,10 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition()) < ticks) && LinearOp.opModeIsActive()) {
             strafeRight(speed);
-            LinearOp.telemetry.addData("FL tickes", frontLeftMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("FR tickes", frontRightMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("RL tickes", rearLeftMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("RR tickes", rearRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FL ticks", frontLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FR ticks", frontRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RL ticks", rearLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RR ticks", rearRightMotor.getCurrentPosition());
             LinearOp.telemetry.update();
         }
         stopMotors();
@@ -387,10 +387,10 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
 
         while ((Math.abs(frontLeftMotor.getCurrentPosition()) < ticks) && LinearOp.opModeIsActive()) {
             strafeLeft(speed);
-            LinearOp.telemetry.addData("FL tickes", frontLeftMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("FR tickes", frontRightMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("RL tickes", rearLeftMotor.getCurrentPosition());
-            LinearOp.telemetry.addData("RR tickes", rearRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FL ticks", frontLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("FR ticks", frontRightMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RL ticks", rearLeftMotor.getCurrentPosition());
+            LinearOp.telemetry.addData("RR ticks", rearRightMotor.getCurrentPosition());
             LinearOp.telemetry.update();
         }
         stopMotors();
@@ -504,42 +504,42 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
     }
 
 
-    // Method to drive robot using PID control
-    public void drivePIDForward(double targetDistance, double power, double p, double i, double d) {
-        resetEncoders();
-
-        double error;
-        double derivative;
-        double output;
-        double distance = getEncoderAvgDistance();
-
-        while (Math.abs(targetDistance - distance) > 100 && LinearOp.opModeIsActive()) { // 1 is the tolerance, you can adjust it
-            LinearOp.telemetry.addData("targetDistance", targetDistance);
-            LinearOp.telemetry.addData("distance", distance);
-            distance = getEncoderAvgDistance();
-            error = targetDistance - distance;
-
-            integralSum += error;
-            derivative = error - lastError;
-
-            output = (p * error) + (i * integralSum) + (d * derivative);
-
-            driveForward(output * power);
-
-            lastError = error;
-
-            // Add a small delay to avoid hogging CPU cycles
-            try {
-                Thread.sleep(10);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            getMotorTelemetry();
-            LinearOp.telemetry.update();
-
-        }
-        stopMotors();
-    }
+//    // Method to drive robot using PID control
+//    public void drivePIDForward(double targetDistance, double power, double p, double i, double d) {
+//        resetEncoders();
+//
+//        double error;
+//        double derivative;
+//        double output;
+//        double distance = getEncoderAvgDistance();
+//
+//        while (Math.abs(targetDistance - distance) > 100 && LinearOp.opModeIsActive()) { // 1 is the tolerance, you can adjust it
+//            LinearOp.telemetry.addData("targetDistance", targetDistance);
+//            LinearOp.telemetry.addData("distance", distance);
+//            distance = getEncoderAvgDistance();
+//            error = targetDistance - distance;
+//
+//            integralSum += error;
+//            derivative = error - lastError;
+//
+//            output = (p * error) + (i * integralSum) + (d * derivative);
+//
+//            driveForward(output * power);
+//
+//            lastError = error;
+//
+//            // Add a small delay to avoid hogging CPU cycles
+//            try {
+//                Thread.sleep(10);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            getMotorTelemetry();
+//            LinearOp.telemetry.update();
+//
+//        }
+//        stopMotors();
+//    }
 
     // Method to move robot forward/backward or strafe based on desired trajectory
     public void moveRobot(double drive, double strafe, double yaw) {
@@ -572,7 +572,7 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
 
     // *********  Helper methods for Encoders******************
 
-    // Helper Method to reset ecoders
+    // Helper Method to reset encoders
     public void resetEncoders() {
         frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -656,12 +656,8 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
         try {
             Thread.sleep(10);
         } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();//re-interupt the thread
+            Thread.currentThread().interrupt();//re-interrupt the thread
         }
     }
-
-
-
-
 
 }

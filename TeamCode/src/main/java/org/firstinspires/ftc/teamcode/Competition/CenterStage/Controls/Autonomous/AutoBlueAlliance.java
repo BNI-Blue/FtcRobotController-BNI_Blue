@@ -14,6 +14,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
     //public BlueBot Bot = new BlueBot();
     //public BlueBot Bot = new BlueBot();
 
+
     // Common method for BLUE alliance positioning to drop pixel
     public void positionToDropBlueBack() {
 

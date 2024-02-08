@@ -1,5 +1,4 @@
-package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions;
-
+package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions.NoCamera;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
@@ -7,16 +6,19 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRedAlliance;
 
 @Disabled
-@Autonomous(name= "Red:Audience:Start_1")
-public class RedAudienceStart_Truss1 extends AutoRedAlliance {
+@Autonomous(name="Red:Backstage:Start")
+public class RedBackstageStart extends AutoRedAlliance {
 
     @Override
     public void runOpMode() throws InterruptedException{
         Bot.initRobot(hardwareMap);
         Bot.setLinearOp(this);
 
+        Bot.closePixelClaw();
+
         telemetry.addLine("Awaiting Start");
         telemetry.update();
+
 
 
         waitForStart();
@@ -24,23 +26,11 @@ public class RedAudienceStart_Truss1 extends AutoRedAlliance {
         while(opModeIsActive()){
 
 
-            // INSERT AUTO CODE BELOW
-
-
-            Bot.driveForward(.25, .28);
-            sleep(100);
-
-
-            Bot.rotateRight(0.25, 3);
-            sleep(100);
-
-
-            Bot.driveForward(.5,10);
-            sleep(100);
-
-
-            // INSERT AUTO CODE ABOVE
-
+//            Bot.driveForward(.5,4);
+//            Bot.extendPixelArm(.5);
+//            sleep(500);
+//            Bot.stopPixelArm();
+//            Bot.openPixelClaw();
 
             requestOpModeStop();
 
@@ -48,6 +38,5 @@ public class RedAudienceStart_Truss1 extends AutoRedAlliance {
 
         idle();
     }
-
 
 }

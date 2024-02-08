@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions;
+package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions.NoCamera;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;

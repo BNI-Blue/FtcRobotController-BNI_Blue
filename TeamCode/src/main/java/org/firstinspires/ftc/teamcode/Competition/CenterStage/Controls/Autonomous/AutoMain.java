@@ -19,6 +19,8 @@ public abstract class AutoMain extends LinearOpMode {
     public int webCamWidth = 960;
     public int webCamHeight = 720;
 
+
+
     // Enum for Team Prop Position
     public TeamPropPosition propPosition;
 
@@ -78,4 +80,6 @@ public abstract class AutoMain extends LinearOpMode {
         Bot.rotatePixelArmDown(.5, 735);
 
     }
+
+
 }

@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions;
+package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions.NoCamera;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
@@ -6,14 +6,15 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoBlueAlliance;
 
 @Disabled
-@Autonomous(name="Blue:Audience:Start_1")
-public class BlueAudienceStart_Truss1 extends AutoBlueAlliance {
-
+@Autonomous(name= "Blue:Backstage:Start")
+public class BlueBackstageStart extends AutoBlueAlliance {
 
     @Override
     public void runOpMode() throws InterruptedException{
         Bot.initRobot(hardwareMap);
         Bot.setLinearOp(this);
+
+        Bot.closePixelClaw();
 
         telemetry.addLine("Awaiting Start");
         telemetry.update();
@@ -26,18 +27,14 @@ public class BlueAudienceStart_Truss1 extends AutoBlueAlliance {
             // INSERT AUTO CODE BELOW
 
 
-            Bot.driveForward(.25, .28);
-            sleep(100);
-
-
-            Bot.rotateLeft(0.25, 3);
-            sleep(100);
-
-
-            Bot.driveForward(.5,9);
-            sleep(100);
+            Bot.driveForward(0.5,4);
+            Bot.extendPixelArm(.5);
+            sleep(500);
+            Bot.stopPixelArm();
+            Bot.openPixelClaw();
 
             // INSERT AUTO CODE ABOVE
+
 
             requestOpModeStop();
 
@@ -45,4 +42,5 @@ public class BlueAudienceStart_Truss1 extends AutoBlueAlliance {
 
         idle();
     }
+
 }
