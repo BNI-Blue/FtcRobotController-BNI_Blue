@@ -35,6 +35,7 @@ public abstract class AutoRedAlliance extends AutoMain{
 
             Bot.extendPixelArm(.5, 200);
 
+
             Bot.openPixelClawRight();
             sleep(500);
             Bot.closePixelClawRight();

@@ -1,17 +1,16 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.IMU;
 import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.YawPitchRollAngles;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
-
-public class MecanumDrive {
-
-    // Instance Variables for Mecanum Motors
+public class MecanumDrive {// Instance Variables for Mecanum Motors
     public DcMotor frontLeftMotor;
     public DcMotor frontRightMotor;
     public DcMotor rearLeftMotor;
@@ -23,6 +22,10 @@ public class MecanumDrive {
     public IMU imu = null;
     public double headingTolerance = 0.5;
     public double currentHeading = 0;
+
+    //Instance Variables for Acceleration
+    public double currentDistance = frontLeftMotor.getCurrentPosition();
+    double power;
 
     // Instance Variables for PID Coefficients
     private double integralSum = 0;
@@ -143,8 +146,8 @@ public class MecanumDrive {
 //VEERING TO LEFT!
             switch (direction) {
                 case "FORWARD":
-                    leftSideSpeed = power + (currentHeading - target) / 20;            // they need to be different
-                    rightSideSpeed = power - (currentHeading - target) / 20;   //100
+                    leftSideSpeed = power + (currentHeading - target) / 75;            // they need to be different
+                    rightSideSpeed = power - (currentHeading - target) / 75;   //100
 
 
 
@@ -158,14 +161,15 @@ public class MecanumDrive {
                     rearRightMotor.setPower(rightSideSpeed);
                     break;
                 case "BACK":
-                    leftSideSpeed = power - (currentHeading - target) / 100;            // they need to be different
-                    rightSideSpeed = power + (currentHeading - target) / 100;
+                    leftSideSpeed = power - (currentHeading - target) / 75;            // they need to be different
+                    rightSideSpeed = power + (currentHeading - target) / 75;
 
                     leftSideSpeed = Range.clip(leftSideSpeed, -1, 1);        // helps prevent out of bounds error
                     rightSideSpeed = Range.clip(rightSideSpeed, -1, 1);
 
                     frontLeftMotor.setPower(-leftSideSpeed);
                     rearLeftMotor.setPower(-leftSideSpeed);
+
 
                     frontRightMotor.setPower(-rightSideSpeed);
                     rearRightMotor.setPower(-rightSideSpeed);
@@ -179,6 +183,7 @@ public class MecanumDrive {
 
                     frontLeftMotor.setPower(leftSideSpeed);
                     rearLeftMotor.setPower(-leftSideSpeed);
+
 
                     frontRightMotor.setPower(-rightSideSpeed);
                     rearRightMotor.setPower(rightSideSpeed);
@@ -594,7 +599,7 @@ public class MecanumDrive {
         LinearOp.telemetry.addData("RRM", rearRightMotor.getCurrentPosition());
     }
 
-    //***************** Holonomic PID COntrol **************************
+    //***************** Holonomic PID Control **************************
 
 
     // Helper Method for Distance Conversion
@@ -631,6 +636,31 @@ public class MecanumDrive {
         double brDistance = rearRightMotor.getCurrentPosition();
         return (-flDistance + frDistance + blDistance - brDistance) / 4;
     }
+
+    public void speedAcceleration(double targetDistance, double maxPower) {
+        double accelerationDistance = targetDistance * 0.2;
+        double decelerationDistance = targetDistance * 0.1;
+
+        //Inside While Loop
+        if (currentDistance < accelerationDistance) {
+            power = maxPower * (currentDistance / accelerationDistance);
+        } else if (currentDistance > targetDistance - decelerationDistance) {
+            power = maxPower * ((targetDistance - currentDistance) / decelerationDistance);
+        } else {
+            power = maxPower;
+        }
+        frontLeftMotor.setPower(power);
+        frontRightMotor.setPower(power);
+        rearLeftMotor.setPower(power);
+        rearRightMotor.setPower(power);
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();//re-interupt the thread
+        }
+    }
+
+
 
 
 

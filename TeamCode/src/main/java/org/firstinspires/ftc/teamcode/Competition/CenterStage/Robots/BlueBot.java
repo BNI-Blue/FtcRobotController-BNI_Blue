@@ -1,12 +1,11 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots;
 
+import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.hardware.rev.RevBlinkinLedDriver;
-import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.hardware.IMU;
 import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
@@ -39,6 +38,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         public double airplanePusher_Launch = 0.8;
 
         //Gyro Variables
+        public BNO055IMU imu;
         public Orientation angles;
         public Acceleration gravity;
         public final double SPEED = .3;
@@ -46,11 +46,6 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         // LED Variables
         RevBlinkinLedDriver blinkinLedDriver;
-
-        // Declaration of Gyro Variables
-        RevHubOrientationOnRobot.LogoFacingDirection logoDirection = RevHubOrientationOnRobot.LogoFacingDirection.LEFT;
-        RevHubOrientationOnRobot.UsbFacingDirection  usbDirection  = RevHubOrientationOnRobot.UsbFacingDirection.UP;
-        RevHubOrientationOnRobot orientationOnRobot = new RevHubOrientationOnRobot(logoDirection, usbDirection);
 
         // Constructors
         public BlueBot(){}
@@ -126,13 +121,7 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             blinkinLedDriver = hwBot.get(RevBlinkinLedDriver.class, "led");
             blinkinLedDriver.setPattern(RevBlinkinLedDriver.BlinkinPattern.BLACK);
 
-            closePixelClaw();
-
-
-            // Gyro Initiatlization
-            imu = hwBot.get(IMU.class, "imu");
-            imu.initialize(new IMU.Parameters(orientationOnRobot));
-
+             closePixelClaw();
 
 
         }
@@ -174,8 +163,8 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         // ************* Pixel Claw Open & Close ********************
         public void openPixelClaw(){
-            pixelClawLeft.setPosition(0.6);    //0.552233
-            pixelClawRight.setPosition(0.7);   //0.586
+            pixelClawLeft.setPosition(0.55);    //0.552233
+            pixelClawRight.setPosition(0.65);   //0.586
         }
         public void closePixelClaw(){
             pixelClawLeft.setPosition(0.71);    //0.71
