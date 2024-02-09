@@ -1,9 +1,11 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoMain;
 
+@Disabled
 @Autonomous(name = "Speed Increase Test")
 
 public class SpeedIncreaseTest extends AutoMain {
@@ -14,7 +16,7 @@ public class SpeedIncreaseTest extends AutoMain {
 
         waitForStart();
         while(opModeIsActive()){
-            Bot.speedAcceleration(10, .6);
+            //Bot.speedAcceleration(10, .6);
         }
     }
 }

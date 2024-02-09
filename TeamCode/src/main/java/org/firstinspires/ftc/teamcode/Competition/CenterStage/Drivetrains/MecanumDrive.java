@@ -23,10 +23,6 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
     public double headingTolerance = 0.5;
     public double currentHeading = 0;
 
-    //Instance Variables for Acceleration
-    public double currentDistance = frontLeftMotor.getCurrentPosition();
-    public double power;
-
     // Instance Variables for PID Coefficients
     private double integralSum = 0;
     private double lastError = 0;
@@ -37,7 +33,8 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
     public LinearOpMode LinearOp = null;
 
     // Default Constructor for Mecanum Drive Class
-    public MecanumDrive() {}
+    public MecanumDrive() {
+    }
 
 
     //********  Helper Methods for the Class  ************
@@ -81,7 +78,7 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
                 LinearOp.telemetry.addData("Target Angle: ", targetAngle);
                 LinearOp.telemetry.update();
             }
-        } else  if (currentHeading <= targetAngle - headingTolerance && LinearOp.opModeIsActive()) ;
+        } else if (currentHeading <= targetAngle - headingTolerance && LinearOp.opModeIsActive()) ;
         {
             while (currentHeading <= targetAngle - headingTolerance && LinearOp.opModeIsActive()) {
                 rotateLeft(speed);
@@ -148,7 +145,6 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
                 case "FORWARD":
                     leftSideSpeed = power + (currentHeading - target) / 75;            // they need to be different
                     rightSideSpeed = power - (currentHeading - target) / 75;   //100
-
 
 
                     leftSideSpeed = Range.clip(leftSideSpeed, -1, 1);        // helps prevent out of bounds error
@@ -569,7 +565,6 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
     }
 
 
-
     // *********  Helper methods for Encoders******************
 
     // Helper Method to reset encoders
@@ -603,7 +598,7 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
 
 
     // Helper Method for Distance Conversion
-    public double inchesToTicks (double inches) {
+    public double inchesToTicks(double inches) {
         final double TICKS_PER_REV = 537.7;
         final double GEAR_RATIO = 1.0;
         final double WHEEL_DIAMETER_INCHES = 3.77953;
@@ -637,27 +632,34 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
         return (-flDistance + frDistance + blDistance - brDistance) / 4;
     }
 
-    public void speedAcceleration(double targetDistance, double maxPower) {
-        double accelerationDistance = targetDistance * 0.2;
-        double decelerationDistance = targetDistance * 0.1;
+//    public void speedAcceleration(double targetDistance, double maxPower) {
+//        double accelerationDistance = targetDistance * 0.2;
+//        double decelerationDistance = targetDistance * 0.1;
+//        double power;
+//        double currentDistance = frontLeftMotor.getCurrentPosition();
 
-        //Inside While Loop
-        if (currentDistance < accelerationDistance) {
-            power = maxPower * (currentDistance / accelerationDistance);
-        } else if (currentDistance > targetDistance - decelerationDistance) {
-            power = maxPower * ((targetDistance - currentDistance) / decelerationDistance);
-        } else {
-            power = maxPower;
-        }
-        frontLeftMotor.setPower(power);
-        frontRightMotor.setPower(power);
-        rearLeftMotor.setPower(power);
-        rearRightMotor.setPower(power);
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();//re-interrupt the thread
-        }
-    }
+//        while(currentDistance < targetDistance && LinearOp.opModeIsActive()){
+//        if (currentDistance < accelerationDistance) {
+//            power = maxPower * (currentDistance / accelerationDistance);
+
+//        } else if (currentDistance > targetDistance - decelerationDistance) {
+//            power = maxPower * ((targetDistance - currentDistance) / decelerationDistance);
+
+//        } else {
+//            power = maxPower;
+//        }
+//        frontLeftMotor.setPower(power);
+//        frontRightMotor.setPower(power);
+//        rearLeftMotor.setPower(power);
+//        rearRightMotor.setPower(power);
+//        frontLeftMotor.getCurrentPosition();
+//        try {
+//            Thread.sleep(10);
+//        } catch (InterruptedException e) {
+//            Thread.currentThread().interrupt();//re-interrupt the thread
+//        }
+//        frontLeftMotor.getCurrentPosition();
+//    }
+//}
 
 }
