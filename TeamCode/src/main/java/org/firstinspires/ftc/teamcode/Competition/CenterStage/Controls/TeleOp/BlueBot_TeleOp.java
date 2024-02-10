@@ -8,8 +8,8 @@ import com.qualcomm.robotcore.util.Range;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
 
-    @Disabled
-    @TeleOp(name = "BlueBot:TeleOp ")
+@Disabled
+    @TeleOp(name = "BlueBot:TeleOp_OLD-DO NOT USE")
     public class BlueBot_TeleOp extends OpMode {
         double leftStickYVal;
         double leftStickXVal;
@@ -121,12 +121,15 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
             // Pixel Arm Rotation
             if (gamepad2.left_stick_y < -0.1) {
                 BlueBot.rotatePixelArmUp(pixelArmRotatorPower);
+                telemetry.addLine("ARM UP");
             }
             else if (gamepad2.left_stick_y > 0.1) {
                 BlueBot.rotatePixelArmDown(gamepad2.left_stick_y * 1);
+                telemetry.addLine("ARM DOWN");
             }
             else {
                 BlueBot.stopPixelArmRotation();
+                telemetry.addLine("ARM STOP");
             }
         }
         // EndGame Control Method for EndGame Extension/Lifting and Rotation

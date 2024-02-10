@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.IMU;
 import com.qualcomm.robotcore.util.Range;
@@ -16,12 +17,20 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
     public DcMotor rearLeftMotor;
     public DcMotor rearRightMotor;
 
+    public double currentDistance = 0;
+
     public static final double TICKS_PER_ROTATION = 386.3;
 
     // Instance Variables for IMU
     public IMU imu = null;
     public double headingTolerance = 0.5;
     public double currentHeading = 0;
+
+    public enum driveDirections {
+        STOP,
+        DRIVE_FORWARD, DRIVE_BACK, STRAFE_LEFT, STRAFE_RIGHT
+    }
+    driveDirections driveDirection = driveDirections.STOP;
 
     // Instance Variable for Linear Op Mode
     public LinearOpMode LinearOp = null;
@@ -62,6 +71,32 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
     // Method that corrects the robots original heading.
     // Method assumes the heading to correct to has been set outside of this method
     public void gyroCorrection(double speed, double targetAngle) {
+        currentHeading = getHeading();
+        if (currentHeading >= targetAngle + headingTolerance && LinearOp.opModeIsActive()) {
+            while (currentHeading >= targetAngle + headingTolerance && LinearOp.opModeIsActive()) {
+                rotateRight(speed);
+
+                currentHeading = getHeading();
+                LinearOp.telemetry.addData("Current Angle: ", currentHeading);
+                LinearOp.telemetry.addData("Target Angle: ", targetAngle);
+                LinearOp.telemetry.update();
+            }
+        } else if (currentHeading <= targetAngle - headingTolerance && LinearOp.opModeIsActive()) ;
+        {
+            while (currentHeading <= targetAngle - headingTolerance && LinearOp.opModeIsActive()) {
+                rotateLeft(speed);
+
+                currentHeading = getHeading();
+                LinearOp.telemetry.addData("Current Angle: ", currentHeading);
+                LinearOp.telemetry.addData("Target Angle: ", targetAngle);
+                LinearOp.telemetry.update();
+            }
+        }
+        stopMotors();
+        currentHeading = getHeading();
+    }
+
+    public void gyroPath (double speed, double targetAngle) {
         currentHeading = getHeading();
         if (currentHeading >= targetAngle + headingTolerance && LinearOp.opModeIsActive()) {
             while (currentHeading >= targetAngle + headingTolerance && LinearOp.opModeIsActive()) {
@@ -539,7 +574,11 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
 
     // Helper Method that averages all the encoder counts using getPosition
     public double getEncoderAvgDistance() {
-        double average = (frontLeftMotor.getCurrentPosition() + frontRightMotor.getCurrentPosition() + rearLeftMotor.getCurrentPosition() + rearRightMotor.getCurrentPosition()) / 4.0;
+        double average = (Math.abs(frontLeftMotor.getCurrentPosition()) +
+                Math.abs(frontRightMotor.getCurrentPosition()) +
+                Math.abs(rearLeftMotor.getCurrentPosition()) +
+                Math.abs(rearRightMotor.getCurrentPosition()))
+                / 4.0;
         return Math.abs(average);
     }
 
@@ -573,34 +612,78 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
 
 
     // Speed Acceleration and Deceleration Method
-    public void speedAcceleration(double targetDistance, double maxPower) {
+    public void speedAcceleration(double rotations, double maxPower, driveDirections driveDirection) {
+        double targetDistance = rotations * TICKS_PER_ROTATION;
+
+        resetEncoders();
         double accelerationDistance = targetDistance * 0.2;
-        double decelerationDistance = targetDistance * 0.2;
+        double decelerationDistance = targetDistance * 0.7;
+        double minPowerStart = .2;
+        double minPowerStop = 0;
         double power;
         double currentDistance = frontLeftMotor.getCurrentPosition();
+        currentDistance = getEncoderAvgDistance();
 
-        while(currentDistance < targetDistance && LinearOp.opModeIsActive()){
+        while(getEncoderAvgDistance() < targetDistance && LinearOp.opModeIsActive()){
+
 
             // Acceleration
             if (currentDistance < accelerationDistance) {
                 power = maxPower * (currentDistance / accelerationDistance);
+                power = Range.clip(power, minPowerStart,maxPower);
+                LinearOp.telemetry.addData("< 0.2: ", power);
             }
 
             // Deceleration
             else if (currentDistance > targetDistance - decelerationDistance) {
                 power = maxPower * ((targetDistance - currentDistance) / decelerationDistance);
+                power = Range.clip(power, minPowerStop, maxPower);
+                LinearOp.telemetry.addData("> 0.2: ", power);
             }
 
             // Constant Power
             else {
+
                 power = maxPower;
+                power = Range.clip(power, minPowerStart,maxPower);
+                LinearOp.telemetry.addData("Main Drive: ", power);
             }
+            LinearOp.telemetry.update();
 
             // Incremental Power Assigned to Motors
-            frontLeftMotor.setPower(power);
-            frontRightMotor.setPower(power);
-            rearLeftMotor.setPower(power);
-            rearRightMotor.setPower(power);
+            switch (driveDirection) {
+                case STOP:
+                    stopMotors();
+                    break;
+                case DRIVE_FORWARD:
+                    frontLeftMotor.setPower(power);
+                    frontRightMotor.setPower(power);
+                    rearLeftMotor.setPower(power);
+                    rearRightMotor.setPower(power);
+                    break;
+                case DRIVE_BACK:
+                    frontLeftMotor.setPower(-power);
+                    frontRightMotor.setPower(-power);
+                    rearLeftMotor.setPower(-power);
+                    rearRightMotor.setPower(-power);
+                    break;
+                case STRAFE_LEFT:
+                    frontLeftMotor.setPower(-power);
+                    frontRightMotor.setPower(power);
+                    rearLeftMotor.setPower(-power);
+                    rearRightMotor.setPower(power);
+                    break;
+                case STRAFE_RIGHT:
+                    frontLeftMotor.setPower(power);
+                    frontRightMotor.setPower(-power);
+                    rearLeftMotor.setPower(power);
+                    rearRightMotor.setPower(-power);
+                    break;
+                default:
+                    stopMotors();
+                    break;
+            }
+
 
             try {
                 Thread.sleep(10);
@@ -610,7 +693,8 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
                 Thread.currentThread().interrupt();//re-interrupt the thread
                 }
 
-            frontLeftMotor.getCurrentPosition();
+//            currentDistance = frontLeftMotor.getCurrentPosition();
+            currentDistance = getEncoderAvgDistance();
             }
 
         stopMotors();

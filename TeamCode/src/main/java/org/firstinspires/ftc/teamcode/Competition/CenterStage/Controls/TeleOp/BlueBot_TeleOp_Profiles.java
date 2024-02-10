@@ -150,12 +150,15 @@ public class BlueBot_TeleOp_Profiles extends OpMode {
         // Pixel Arm Rotation
         if (gamepad2.left_stick_y < -0.1) {
             BlueBot.rotatePixelArmUp(pixelArmRotatorPower);
+            telemetry.addLine("ARM UP");
         }
         else if (gamepad2.left_stick_y > 0.1) {
             BlueBot.rotatePixelArmDown(gamepad2.left_stick_y * 1);
+            telemetry.addLine("ARM DOWN");
         }
         else {
             BlueBot.stopPixelArmRotation();
+            telemetry.addLine("ARM STOP");
         }
     }
     // EndGame Control Method for EndGame Extension/Lifting and Rotation

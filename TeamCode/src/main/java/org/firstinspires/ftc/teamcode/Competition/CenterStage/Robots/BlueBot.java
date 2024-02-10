@@ -1,11 +1,12 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots;
 
-import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.hardware.rev.RevBlinkinLedDriver;
+import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.IMU;
 import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
@@ -38,14 +39,19 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
         public double airplanePusher_Launch = 0.8;
 
         //Gyro Variables
-        public BNO055IMU imu;
-        public Orientation angles;
-        public Acceleration gravity;
-        public final double SPEED = .3;
-        public final double TOLERANCE = .4;
+//        public BNO055IMU imu;
+//        public Orientation angles;
+//        public Acceleration gravity;
+//        public final double SPEED = .3;
+//        public final double TOLERANCE = .4;
 
         // LED Variables
         RevBlinkinLedDriver blinkinLedDriver;
+
+//        GYRO
+        RevHubOrientationOnRobot.LogoFacingDirection logoDirection = RevHubOrientationOnRobot.LogoFacingDirection.LEFT;
+        RevHubOrientationOnRobot.UsbFacingDirection usbDirection = RevHubOrientationOnRobot.UsbFacingDirection.UP;
+        RevHubOrientationOnRobot orientationOnRobot = new RevHubOrientationOnRobot(logoDirection, usbDirection);
 
         // Constructors
         public BlueBot(){}
@@ -121,6 +127,11 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
             blinkinLedDriver = hwBot.get(RevBlinkinLedDriver.class, "led");
             blinkinLedDriver.setPattern(RevBlinkinLedDriver.BlinkinPattern.BLACK);
 
+//            USB
+            imu = hwBot.get (IMU.class, "imu");
+            imu.initialize(new IMU.Parameters(orientationOnRobot));
+
+
              closePixelClaw();
 
 
@@ -191,9 +202,11 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.Mecanu
 
         // **********  Pixel Arm Rotating Methods  ************
 
-        public void rotatePixelArmUp(double power) {pixelArmRotator.setPower(Math.abs(power));
+        public void rotatePixelArmUp(double power) {
+            pixelArmRotator.setPower(Math.abs(power));
         }
         public void rotatePixelArmDown(double power) {
+
             pixelArmRotator.setPower(-Math.abs(power));
         }
 

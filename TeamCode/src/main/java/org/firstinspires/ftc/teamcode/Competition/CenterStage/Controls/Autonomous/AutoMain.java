@@ -19,6 +19,8 @@ public abstract class AutoMain extends LinearOpMode {
     public int webCamWidth = 960;
     public int webCamHeight = 720;
 
+    public int SLEEP_TIME = 100;
+    public int SLEEP_GYRO = 300;
 
 
     // Enum for Team Prop Position
