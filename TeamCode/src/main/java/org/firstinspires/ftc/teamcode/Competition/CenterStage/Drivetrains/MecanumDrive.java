@@ -23,12 +23,6 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
     public double headingTolerance = 0.5;
     public double currentHeading = 0;
 
-    // Instance Variables for PID Coefficients
-    private double integralSum = 0;
-    private double lastError = 0;
-    PIDController translationPID = new PIDController(0.1, 0.01, 0.1);
-    PIDController rotationPID = new PIDController(0.1, 0.01, 0.1);
-
     // Instance Variable for Linear Op Mode
     public LinearOpMode LinearOp = null;
 
@@ -500,43 +494,6 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
     }
 
 
-//    // Method to drive robot using PID control
-//    public void drivePIDForward(double targetDistance, double power, double p, double i, double d) {
-//        resetEncoders();
-//
-//        double error;
-//        double derivative;
-//        double output;
-//        double distance = getEncoderAvgDistance();
-//
-//        while (Math.abs(targetDistance - distance) > 100 && LinearOp.opModeIsActive()) { // 1 is the tolerance, you can adjust it
-//            LinearOp.telemetry.addData("targetDistance", targetDistance);
-//            LinearOp.telemetry.addData("distance", distance);
-//            distance = getEncoderAvgDistance();
-//            error = targetDistance - distance;
-//
-//            integralSum += error;
-//            derivative = error - lastError;
-//
-//            output = (p * error) + (i * integralSum) + (d * derivative);
-//
-//            driveForward(output * power);
-//
-//            lastError = error;
-//
-//            // Add a small delay to avoid hogging CPU cycles
-//            try {
-//                Thread.sleep(10);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//            getMotorTelemetry();
-//            LinearOp.telemetry.update();
-//
-//        }
-//        stopMotors();
-//    }
-
     // Method to move robot forward/backward or strafe based on desired trajectory
     public void moveRobot(double drive, double strafe, double yaw) {
 
@@ -614,52 +571,53 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
         return (ticks / TICKS_PER_REV) * WHEEL_CIRCUMFERENCE * GEAR_RATIO;
     }
 
-    // Helper Method for Mecanum wheel formula for X movement
-    public double getCurrentX() {
-        double flDistance = frontLeftMotor.getCurrentPosition();
-        double frDistance = frontRightMotor.getCurrentPosition();
-        double blDistance = rearLeftMotor.getCurrentPosition();
-        double brDistance = rearRightMotor.getCurrentPosition();
-        return (flDistance + frDistance + blDistance + brDistance) / 4;
+
+    // Speed Acceleration and Deceleration Method
+    public void speedAcceleration(double targetDistance, double maxPower) {
+        double accelerationDistance = targetDistance * 0.2;
+        double decelerationDistance = targetDistance * 0.2;
+        double power;
+        double currentDistance = frontLeftMotor.getCurrentPosition();
+
+        while(currentDistance < targetDistance && LinearOp.opModeIsActive()){
+
+            // Acceleration
+            if (currentDistance < accelerationDistance) {
+                power = maxPower * (currentDistance / accelerationDistance);
+            }
+
+            // Deceleration
+            else if (currentDistance > targetDistance - decelerationDistance) {
+                power = maxPower * ((targetDistance - currentDistance) / decelerationDistance);
+            }
+
+            // Constant Power
+            else {
+                power = maxPower;
+            }
+
+            // Incremental Power Assigned to Motors
+            frontLeftMotor.setPower(power);
+            frontRightMotor.setPower(power);
+            rearLeftMotor.setPower(power);
+            rearRightMotor.setPower(power);
+
+            try {
+                Thread.sleep(10);
+                }
+            catch (InterruptedException e)
+                {
+                Thread.currentThread().interrupt();//re-interrupt the thread
+                }
+
+            frontLeftMotor.getCurrentPosition();
+            }
+
+        stopMotors();
+
     }
 
-    // Helper Method for Mecanum wheel formula for Y movement
-    public double getCurrentY() {
-        double flDistance = frontLeftMotor.getCurrentPosition();
-        double frDistance = frontRightMotor.getCurrentPosition();
-        double blDistance = rearLeftMotor.getCurrentPosition();
-        double brDistance = rearRightMotor.getCurrentPosition();
-        return (-flDistance + frDistance + blDistance - brDistance) / 4;
-    }
-
-//    public void speedAcceleration(double targetDistance, double maxPower) {
-//        double accelerationDistance = targetDistance * 0.2;
-//        double decelerationDistance = targetDistance * 0.1;
-//        double power;
-//        double currentDistance = frontLeftMotor.getCurrentPosition();
-
-//        while(currentDistance < targetDistance && LinearOp.opModeIsActive()){
-//        if (currentDistance < accelerationDistance) {
-//            power = maxPower * (currentDistance / accelerationDistance);
-
-//        } else if (currentDistance > targetDistance - decelerationDistance) {
-//            power = maxPower * ((targetDistance - currentDistance) / decelerationDistance);
-
-//        } else {
-//            power = maxPower;
-//        }
-//        frontLeftMotor.setPower(power);
-//        frontRightMotor.setPower(power);
-//        rearLeftMotor.setPower(power);
-//        rearRightMotor.setPower(power);
-//        frontLeftMotor.getCurrentPosition();
-//        try {
-//            Thread.sleep(10);
-//        } catch (InterruptedException e) {
-//            Thread.currentThread().interrupt();//re-interrupt the thread
-//        }
-//        frontLeftMotor.getCurrentPosition();
-//    }
-//}
 
 }
+
+
