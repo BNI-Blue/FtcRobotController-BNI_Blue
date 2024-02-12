@@ -618,8 +618,17 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
         resetEncoders();
         double accelerationDistance = targetDistance * 0.2;
         double decelerationDistance = targetDistance * 0.7;
-        double minPowerStart = .2;
+        double minPowerStart = 0;
         double minPowerStop = 0;
+        if (driveDirection == driveDirections.DRIVE_FORWARD || driveDirection == driveDirections.DRIVE_BACK) {
+            minPowerStart = 0.2;
+            minPowerStop = 0.2;
+        }
+        else {
+            minPowerStart = 0.4;
+            minPowerStop = 0.4;
+        }
+
         double power;
         double currentDistance = frontLeftMotor.getCurrentPosition();
         currentDistance = getEncoderAvgDistance();
@@ -701,6 +710,94 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
 
     }
 
+    public void speedAccelerationStrafe (double rotations, double maxPower, driveDirections driveDirection) {
+        double targetDistance = rotations * TICKS_PER_ROTATION;
+
+        resetEncoders();
+        double accelerationDistance = targetDistance * 0.2;
+        double decelerationDistance = targetDistance * 0.7;
+        double minPowerStart = .2;
+        double minPowerStop = 0.2;
+        double power;
+        double currentDistance = frontLeftMotor.getCurrentPosition();
+        currentDistance = getEncoderAvgDistance();
+
+        while(getEncoderAvgDistance() < targetDistance && LinearOp.opModeIsActive()){
+
+
+            // Acceleration
+            if (currentDistance < accelerationDistance) {
+                power = maxPower * (currentDistance / accelerationDistance);
+                power = Range.clip(power, minPowerStart,maxPower);
+                LinearOp.telemetry.addData("< 0.2: ", power);
+            }
+
+            // Deceleration
+            else if (currentDistance > targetDistance - decelerationDistance) {
+                power = maxPower * ((targetDistance - currentDistance) / decelerationDistance);
+                power = Range.clip(power, minPowerStop, maxPower);
+                LinearOp.telemetry.addData("> 0.2: ", power);
+            }
+
+            // Constant Power
+            else {
+
+                power = maxPower;
+                power = Range.clip(power, minPowerStart,maxPower);
+                LinearOp.telemetry.addData("Main Drive: ", power);
+            }
+            LinearOp.telemetry.update();
+
+            // Incremental Power Assigned to Motors
+            switch (driveDirection) {
+                case STOP:
+                    stopMotors();
+                    break;
+                case DRIVE_FORWARD:
+                    frontLeftMotor.setPower(power);
+                    frontRightMotor.setPower(power);
+                    rearLeftMotor.setPower(power);
+                    rearRightMotor.setPower(power);
+                    break;
+                case DRIVE_BACK:
+                    frontLeftMotor.setPower(-power);
+                    frontRightMotor.setPower(-power);
+                    rearLeftMotor.setPower(-power);
+                    rearRightMotor.setPower(-power);
+                    break;
+                case STRAFE_LEFT:
+                    frontLeftMotor.setPower(-power);
+                    frontRightMotor.setPower(power);
+                    rearLeftMotor.setPower(-power);
+                    rearRightMotor.setPower(power);
+                    break;
+                case STRAFE_RIGHT:
+                    frontLeftMotor.setPower(power);
+                    frontRightMotor.setPower(-power);
+                    rearLeftMotor.setPower(power);
+                    rearRightMotor.setPower(-power);
+                    break;
+                default:
+                    stopMotors();
+                    break;
+            }
+
+
+            try {
+                Thread.sleep(10);
+            }
+            catch (InterruptedException e)
+            {
+                Thread.currentThread().interrupt();//re-interrupt the thread
+            }
+
+//            currentDistance = frontLeftMotor.getCurrentPosition();
+            currentDistance = getEncoderAvgDistance();
+        }
+
+        stopMotors();
+
+    }
 
 }
 

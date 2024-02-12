@@ -18,12 +18,13 @@ public void runOpMode() throws InterruptedException {
     startPipeline(pipeline);
 
     waitForStart();
+    Bot.resetHeading();
 
     while (opModeIsActive()){
 
         CameraDetection();
 
-//        propPosition = TeamPropPosition.FIVE;
+        //propPosition = TeamPropPosition.SIX;
 
         positionToDropRedBack();
 

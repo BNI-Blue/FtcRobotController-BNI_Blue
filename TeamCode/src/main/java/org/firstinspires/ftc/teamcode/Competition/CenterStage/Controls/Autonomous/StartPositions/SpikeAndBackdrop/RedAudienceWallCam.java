@@ -2,30 +2,28 @@ package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomo
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
-import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoBlueAlliance;
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRedAlliance;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPosition;
 
-@Autonomous (name = "Blue:Audience:Start:Cam")
-public class BlueAudienceCam extends AutoBlueAlliance {
+
+@Autonomous(name = "Red:Audience:Wall:Cam")
+public class RedAudienceWallCam extends AutoRedAlliance {
     @Override
     public void runOpMode() throws InterruptedException {
-
         Bot.initRobot(hardwareMap);
         initCamera();
         Bot.setLinearOp(this);
         startPipeline(pipeline);
 
         waitForStart();
+        Bot.resetHeading();
 
-        while (opModeIsActive()) {
-
+        while(opModeIsActive()){
             CameraDetection();
-//            propPosition = TeamPropPosition.ONE;
-            positionToDropBlueAud();
-
+            //propPosition = TeamPropPosition.FOUR;
+            positionToDropRedAudWall();
 
             requestOpModeStop();
-
         }
         idle();
     }
