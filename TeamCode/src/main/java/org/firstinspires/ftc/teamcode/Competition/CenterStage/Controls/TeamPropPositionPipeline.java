@@ -20,8 +20,8 @@ public class TeamPropPositionPipeline extends OpenCvPipeline {
     static final Scalar RED = new Scalar(255, 0, 0);
 
     // Constants for the Points to draw a box
-    static final Point REGION1_TOPLEFT_ANCHOR_POINT = new Point(35, 370);
-    static final Point REGION2_TOPLEFT_ANCHOR_POINT = new Point(390, 320);
+    static final Point REGION1_TOPLEFT_ANCHOR_POINT = new Point(0, 285);
+    static final Point REGION2_TOPLEFT_ANCHOR_POINT = new Point(390, 270);
     static final Point REGION3_TOPLEFT_ANCHOR_POINT = new Point(760, 350);
     static final int REGION_WIDTH = 200;
     static final int REGION_HEIGHT = 200;

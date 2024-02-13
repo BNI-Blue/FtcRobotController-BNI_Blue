@@ -10,17 +10,10 @@ public class BlueAudienceWallCam extends AutoBlueAlliance {
     @Override
     public void runOpMode() throws InterruptedException {
 
-//        Bot.initRobot(hardwareMap);
         Bot.initRobot(hardwareMap);
-//        initCamera();
         initCamera();
-//        Bot.setLinearOp(this);
         Bot.setLinearOp(this);
         startPipeline(pipeline);
-//        startPipeline(pipeline);
-
-
-
 //        telemetry.addLine("Turning on Camera, please wait...");
 //        telemetry.update();
 //        sleep(1000);

@@ -20,6 +20,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
 
         if (propPosition == TeamPropPosition.ONE) {
 
+
             Bot.rotatePixelArmDown(.5, PIXEL_DOWN_DISTANCE);
             sleep(SLEEP_TIME);
             Bot.stopPixelArmRotation();
@@ -181,6 +182,8 @@ public abstract class AutoBlueAlliance extends AutoMain{
     public void positionToDropBlueAudMiddle() {
         if (propPosition == TeamPropPosition.ONE) {
 
+            //This is where you can add in a sleep to delay the start of AUTO - MAXIMUM of 2500 milliseconds
+            //sleep(2000);
             Bot.rotatePixelArmDown(.5, PIXEL_DOWN_DISTANCE);
             sleep(SLEEP_TIME);
             Bot.stopPixelArmRotation();
@@ -233,6 +236,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
         }
         else if (propPosition == TeamPropPosition.TWO) {
 
+            //DO NOT ADD IN ANY SLEEPS!!!
             Bot.rotatePixelArmDown(.5, PIXEL_DOWN_DISTANCE);
             sleep(SLEEP_TIME);
             Bot.stopPixelArmRotation();
@@ -271,13 +275,15 @@ public abstract class AutoBlueAlliance extends AutoMain{
             sleep(SLEEP_GYRO);
             Bot.rotatePixelArmUp(.5, PIXEL_UP_DISTANCE);
             sleep(SLEEP_TIME);
-            Bot.speedAccelerationStrafe(3.6, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
+            Bot.speedAccelerationStrafe(3.3, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
             dropPixelBackdrop();
             sleep(SLEEP_TIME);
             Bot.speedAccelerationStrafe(3.4, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
 
         }
         else {
+
+            //DO NOT ADD IN ANY SLEEPS!!!
             Bot.rotatePixelArmDown(.5, PIXEL_DOWN_DISTANCE);
             sleep(SLEEP_TIME);
             Bot.stopPixelArmRotation();
@@ -287,7 +293,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
             sleep(SLEEP_GYRO);
             Bot.gyroCorrection(GYRO_CORRECT_SPD,0);
             sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(.7, FAST_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
+            Bot.speedAcceleration( .8, FAST_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
             sleep(SLEEP_TIME);
             Bot.gyroCorrection(GYRO_CORRECT_SPD, -.5);
             sleep(SLEEP_GYRO);
@@ -301,7 +307,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
             Bot.closePixelClawRight();
             sleep(300);
 
-            Bot.speedAccelerationStrafe(2.25, FAST_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
+            Bot.speedAccelerationStrafe(1.2, FAST_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
             sleep(SLEEP_GYRO);
             Bot.gyroCorrection(GYRO_CORRECT_SPD, -1.5);
             sleep(SLEEP_GYRO);
@@ -310,7 +316,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
             Bot.gyroPath(GYRO_PATH_SPD, 90);
             sleep(SLEEP_GYRO);
             Bot.gyroCorrection(GYRO_CORRECT_SPD, 92);
-            Bot.speedAcceleration(11.4, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+            Bot.speedAcceleration(9, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
             sleep(SLEEP_TIME);
             Bot.gyroCorrection(GYRO_CORRECT_SPD, 90);
             sleep(SLEEP_GYRO);
@@ -321,7 +327,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
             sleep(SLEEP_TIME);
             Bot.gyroCorrection(GYRO_CORRECT_SPD, 90);
             sleep(SLEEP_GYRO);
-            Bot.speedAccelerationStrafe(2.6, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
+            Bot.speedAccelerationStrafe(2.1, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
 
 
         }
@@ -329,6 +335,8 @@ public abstract class AutoBlueAlliance extends AutoMain{
     public void positionToDropBlueAudWall() {
         if (propPosition == TeamPropPosition.ONE) {
 
+            //This is where you can add in a sleep to delay the start of AUTO - MAXIMUM of 1500 milliseconds
+            //sleep(1500);
             Bot.rotatePixelArmDown(.5, PIXEL_DOWN_DISTANCE);
             sleep(SLEEP_TIME);
             Bot.stopPixelArmRotation();
@@ -378,7 +386,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
             sleep(SLEEP_GYRO);
             Bot.gyroCorrection(GYRO_CORRECT_SPD, 90);
             sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(3, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
+            Bot.speedAcceleration(2.8, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
             sleep(SLEEP_GYRO);
             Bot.gyroCorrection(GYRO_CORRECT_SPD, 90);
             sleep(SLEEP_GYRO);
@@ -390,17 +398,18 @@ public abstract class AutoBlueAlliance extends AutoMain{
             sleep(SLEEP_TIME);
             Bot.gyroCorrection(GYRO_CORRECT_SPD, 90);
             sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(4.1, MAX_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
+            Bot.speedAcceleration(3.8, MAX_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
 
         }
         else if (propPosition == TeamPropPosition.TWO) {
 
+            //DO NOT ADD IN ANY SLEEPS - THERE IS NO TIME!!!!
             Bot.rotatePixelArmDown(.5, PIXEL_DOWN_DISTANCE);
             sleep(SLEEP_TIME);
             Bot.stopPixelArmRotation();
 //            DRIVE TO SPIKE MARK
             sleep(SLEEP_TIME);
-            Bot.speedAcceleration(2, FAST_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+            Bot.speedAcceleration(2.1, FAST_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
             sleep(SLEEP_GYRO);
             Bot.gyroCorrection(GYRO_CORRECT_SPD,0);
             sleep(SLEEP_GYRO);
@@ -422,7 +431,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
             Bot.closePixelClawRight();
             sleep(200);
 
-            Bot.speedAcceleration(.5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_BACK);
+            Bot.speedAcceleration(.8, MAX_SPD, MecanumDrive.driveDirections.DRIVE_BACK);
             sleep(SLEEP_TIME);
             Bot.gyroPath(GYRO_PATH_SPD, 90);
             sleep(SLEEP_GYRO);
@@ -460,6 +469,8 @@ public abstract class AutoBlueAlliance extends AutoMain{
 
         }
         else {
+
+            //DO NOT ADD IN ANY SLEEPS - THERE IS NO TIME!!!!
             Bot.rotatePixelArmDown(.5, PIXEL_DOWN_DISTANCE);
             sleep(SLEEP_TIME);
             Bot.stopPixelArmRotation();
