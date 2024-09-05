@@ -17,9 +17,11 @@ public class RedAudienceWallCam extends AutoRedAlliance {
         startPipeline(pipeline);
 
         waitForStart();
-        Bot.resetHeading();
 
         while(opModeIsActive()){
+            Bot.resetHeading();
+            sleep(200);
+
             CameraDetection();
             //propPosition = TeamPropPosition.FOUR;
             positionToDropRedAudWall();

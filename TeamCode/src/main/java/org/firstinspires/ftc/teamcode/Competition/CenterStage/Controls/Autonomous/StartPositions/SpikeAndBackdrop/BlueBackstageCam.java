@@ -22,9 +22,12 @@ public class BlueBackstageCam extends AutoBlueAlliance {
         startPipeline(pipeline);
 
         waitForStart();
-        Bot.resetHeading();
+//        Bot.resetHeading();
 
         while (opModeIsActive()) {
+            Bot.resetHeading();
+            sleep(200);
+
 
 //            CameraDetection();
             CameraDetection();

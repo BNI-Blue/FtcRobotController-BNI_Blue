@@ -23,7 +23,7 @@ public class MecanumDrive {// Instance Variables for Mecanum Motors
 
     // Instance Variables for IMU
     public IMU imu = null;
-    public double headingTolerance = 0.5;
+    public double headingTolerance = 0;
     public double currentHeading = 0;
 
     public enum driveDirections {

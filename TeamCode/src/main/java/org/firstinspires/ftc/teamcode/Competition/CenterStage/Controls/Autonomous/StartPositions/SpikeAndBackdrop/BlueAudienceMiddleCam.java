@@ -20,9 +20,11 @@ public class BlueAudienceMiddleCam extends AutoBlueAlliance {
         telemetry.addData("POSITION:", propPosition);
         telemetry.update();
         waitForStart();
-        Bot.resetHeading();
+//        Bot.resetHeading();
 
         while (opModeIsActive()) {
+            Bot.resetHeading();
+            sleep(200);
 
             CameraDetection();
             //propPosition = TeamPropPosition.ONE;

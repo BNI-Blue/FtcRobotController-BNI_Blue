@@ -220,29 +220,29 @@ public abstract class AutoRedAlliance extends AutoMain{
             sleep(300);
             Bot.retractPixelArm(.5 ,450);
             sleep(SLEEP_TIME);
-
-            Bot.speedAccelerationStrafe(1.95, FAST_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -1.5);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(4.35, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
-            sleep(SLEEP_GYRO);
-            Bot.gyroPath(GYRO_PATH_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -92);
-            Bot.speedAcceleration(9.5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
-            sleep(SLEEP_TIME);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.rotatePixelArmUp(.5, PIXEL_UP_DISTANCE);
-            sleep(SLEEP_TIME);
-            Bot.speedAccelerationStrafe(3.1, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
-            dropPixelBackdrop();
-            sleep(SLEEP_TIME);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAccelerationStrafe(2.7, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
-            sleep(SLEEP_TIME);
+//
+//            Bot.speedAccelerationStrafe(1.95, FAST_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -1.5);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(4.35, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroPath(GYRO_PATH_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -92);
+//            Bot.speedAcceleration(9.5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+//            sleep(SLEEP_TIME);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.rotatePixelArmUp(.5, PIXEL_UP_DISTANCE);
+//            sleep(SLEEP_TIME);
+//            Bot.speedAccelerationStrafe(3.1, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
+//            dropPixelBackdrop();
+//            sleep(SLEEP_TIME);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAccelerationStrafe(2.7, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
+//            sleep(SLEEP_TIME);
 
 
 
@@ -256,11 +256,11 @@ public abstract class AutoRedAlliance extends AutoMain{
             sleep(SLEEP_TIME);
             Bot.speedAcceleration(2, FAST_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
             sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD,0);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD,0);
             sleep(SLEEP_GYRO);
             Bot.speedAcceleration(.4, FAST_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
             sleep(SLEEP_TIME);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, 0);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, 0);
             sleep(SLEEP_GYRO);
 //            EXTEND ARM AND DROP PIXEL
             Bot.extendPixelArm(.5, 775);
@@ -272,28 +272,28 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.retractPixelArm(.5 ,700);
             sleep(SLEEP_TIME);
 
-            Bot.speedAccelerationStrafe(1.3, FAST_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -1.5);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(3.1, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
-            sleep(SLEEP_GYRO);
-            Bot.gyroPath(GYRO_PATH_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -92);
-            Bot.speedAcceleration(10.6, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
-            sleep(SLEEP_TIME);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.rotatePixelArmUp(.5, PIXEL_UP_DISTANCE);
-            sleep(SLEEP_TIME);
-            Bot.speedAccelerationStrafe(3.9, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
-            dropPixelBackdrop();
-            sleep(SLEEP_TIME);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAccelerationStrafe(3.2, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
-            sleep(SLEEP_TIME);
+//            Bot.speedAccelerationStrafe(1.3, FAST_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -1.5);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(3.1, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroPath(GYRO_PATH_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -92);
+//            Bot.speedAcceleration(10.6, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+//            sleep(SLEEP_TIME);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.rotatePixelArmUp(.5, PIXEL_UP_DISTANCE);
+//            sleep(SLEEP_TIME);
+//            Bot.speedAccelerationStrafe(3.9, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
+//            dropPixelBackdrop();
+//            sleep(SLEEP_TIME);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAccelerationStrafe(3.2, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
+//            sleep(SLEEP_TIME);
 
         }
         else{
@@ -320,33 +320,33 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.retractPixelArm(.5 ,110);
             sleep(SLEEP_TIME);
 
-            Bot.speedAcceleration(.5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_BACK);
-            sleep(SLEEP_TIME);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -60);
-            sleep(SLEEP_TIME);
-            Bot.speedAcceleration(4.8, FAST_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
-            sleep(SLEEP_GYRO);
-            Bot.gyroPath(GYRO_PATH_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -92);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(11.4, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(4.6, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.rotatePixelArmUp(.5, 600);//950
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            dropPixelBackdrop();
-            sleep(SLEEP_TIME);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(4.3, MAX_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
+//            Bot.speedAcceleration(.5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_BACK);
+//            sleep(SLEEP_TIME);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -60);
+//            sleep(SLEEP_TIME);
+//            Bot.speedAcceleration(4.8, FAST_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroPath(GYRO_PATH_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -92);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(11.4, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(4.6, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.rotatePixelArmUp(.5, 600);//950
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            dropPixelBackdrop();
+//            sleep(SLEEP_TIME);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(4.3, MAX_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
 
         }
 
@@ -369,7 +369,7 @@ public abstract class AutoRedAlliance extends AutoMain{
             sleep(SLEEP_TIME);
             Bot.gyroCorrection(GYRO_CORRECT_SPD, -.5);
             sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -.5);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -.5);
             sleep(SLEEP_GYRO);
 //            EXTEND ARM AND DROP PIXEL
             Bot.extendPixelArm(.5, 550);
@@ -381,39 +381,39 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.retractPixelArm(.5 ,450);
             sleep(SLEEP_TIME);
 
-            Bot.speedAcceleration(.5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_BACK);
-            sleep(SLEEP_TIME);
-            Bot.gyroPath(GYRO_PATH_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.rotateEndGameArmDown(0);
-            sleep(1500);
-            Bot.rotateEndGameArmStop(.5);
-            sleep(SLEEP_TIME);
-            Bot.speedAccelerationStrafe(.5, STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
-            sleep(SLEEP_TIME);
-            Bot.speedAcceleration(5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(5.15, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(3.4, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.rotatePixelArmUp(.5, 600);//950
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            dropPixelBackdrop();
-            sleep(SLEEP_TIME);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(2.4, MAX_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
+//            Bot.speedAcceleration(.5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_BACK);
+//            sleep(SLEEP_TIME);
+//            Bot.gyroPath(GYRO_PATH_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.rotateEndGameArmDown(0);
+//            sleep(1500);
+//            Bot.rotateEndGameArmStop(.5);
+//            sleep(SLEEP_TIME);
+//            Bot.speedAccelerationStrafe(.5, STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
+//            sleep(SLEEP_TIME);
+//            Bot.speedAcceleration(5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(5.15, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(3.4, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.rotatePixelArmUp(.5, 600);//950
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            dropPixelBackdrop();
+//            sleep(SLEEP_TIME);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(2.4, MAX_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
 
 
 
@@ -444,41 +444,41 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.retractPixelArm(.5 ,700);
             sleep(SLEEP_TIME);
 
-            Bot.speedAcceleration(.5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_BACK);
-            sleep(SLEEP_TIME);
-            Bot.gyroPath(GYRO_PATH_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(1.15, FAST_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.rotateEndGameArmDown(0);
-            sleep(1500);
-            Bot.rotateEndGameArmStop(.5);
-            sleep(SLEEP_TIME);
-            Bot.speedAcceleration(4.7, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(4.9, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(2.4, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.rotatePixelArmUp(.5, 600);//950
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            dropPixelBackdrop();
-            sleep(SLEEP_TIME);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(3.5, MAX_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
+//            Bot.speedAcceleration(.5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_BACK);
+//            sleep(SLEEP_TIME);
+//            Bot.gyroPath(GYRO_PATH_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(1.15, FAST_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.rotateEndGameArmDown(0);
+//            sleep(1500);
+//            Bot.rotateEndGameArmStop(.5);
+//            sleep(SLEEP_TIME);
+//            Bot.speedAcceleration(4.7, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(4.9, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(2.4, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.rotatePixelArmUp(.5, 600);//950
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            dropPixelBackdrop();
+//            sleep(SLEEP_TIME);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(3.5, MAX_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
 
         }
         else{
@@ -503,43 +503,43 @@ public abstract class AutoRedAlliance extends AutoMain{
             Bot.retractPixelArm(.5 ,110);
             sleep(SLEEP_TIME);
 
-            Bot.speedAcceleration(.5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_BACK);
-            sleep(SLEEP_TIME);
-            Bot.gyroPath(GYRO_PATH_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(2.05, FAST_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.rotateEndGameArmDown(0);
-            sleep(1500);
-            Bot.rotateEndGameArmStop(.5);
-            sleep(SLEEP_TIME);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(4.7, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(2, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.rotatePixelArmUp(.5, 600);//950
-            sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            dropPixelBackdrop();
-            sleep(SLEEP_TIME);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
-            sleep(SLEEP_GYRO);
-            Bot.speedAcceleration(4.1, MAX_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
+//            Bot.speedAcceleration(.5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_BACK);
+//            sleep(SLEEP_TIME);
+//            Bot.gyroPath(GYRO_PATH_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(2.05, FAST_SPD, MecanumDrive.driveDirections.STRAFE_RIGHT);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.rotateEndGameArmDown(0);
+//            sleep(1500);
+//            Bot.rotateEndGameArmStop(.5);
+//            sleep(SLEEP_TIME);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(4.7, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(5, MAX_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(2, LONG_STRAFE_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.rotatePixelArmUp(.5, 600);//950
+//            sleep(SLEEP_GYRO);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            dropPixelBackdrop();
+//            sleep(SLEEP_TIME);
+//            Bot.gyroCorrection(GYRO_CORRECT_SPD, -90);
+//            sleep(SLEEP_GYRO);
+//            Bot.speedAcceleration(4.1, MAX_SPD, MecanumDrive.driveDirections.STRAFE_LEFT);
 
         }
 

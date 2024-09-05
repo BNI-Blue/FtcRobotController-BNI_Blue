@@ -19,9 +19,10 @@ public void runOpMode() throws InterruptedException {
     startPipeline(pipeline);
 
     waitForStart();
-    Bot.resetHeading();
 
     while (opModeIsActive()){
+        Bot.resetHeading();
+        sleep(200);
 
         CameraDetection();
 

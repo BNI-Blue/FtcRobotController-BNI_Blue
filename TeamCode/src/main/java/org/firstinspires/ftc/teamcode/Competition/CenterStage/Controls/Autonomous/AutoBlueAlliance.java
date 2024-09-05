@@ -82,7 +82,7 @@ public abstract class AutoBlueAlliance extends AutoMain{
             Bot.stopPixelArmRotation();
 //            DRIVE TO SPIKE MARK
             sleep(SLEEP_TIME);
-            Bot.speedAcceleration(2.3, FAST_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+            Bot.speedAcceleration(2.2, FAST_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
             sleep(SLEEP_GYRO);
             Bot.gyroCorrection(GYRO_CORRECT_SPD,0);
             sleep(SLEEP_GYRO);

@@ -25,9 +25,11 @@ public class BlueAudienceWallCam extends AutoBlueAlliance {
 //        telemetry.addLine("WAITING FOR START >");
 //        telemetry.update();
         waitForStart();
-        Bot.resetHeading();
+//        Bot.resetHeading();
 
         while (opModeIsActive()) {
+            Bot.resetHeading();
+            sleep(200);
 
             CameraDetection();
             //propPosition = TeamPropPosition.THREE;
