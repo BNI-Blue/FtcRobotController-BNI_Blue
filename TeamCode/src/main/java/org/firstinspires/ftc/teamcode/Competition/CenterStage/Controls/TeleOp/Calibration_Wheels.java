@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeleOp;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -8,7 +9,7 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 
-
+@Disabled
 public class Calibration_Wheels extends OpMode {
 
     public enum driveStates {

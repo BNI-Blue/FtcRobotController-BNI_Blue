@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions;
+package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.Test;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
@@ -7,9 +7,9 @@ import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomou
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.MecanumDrive;
 
 @Disabled
-@Autonomous(name = "Blue_Speed_test")
+@Autonomous(name = "Red_Speed_test")
 
-public class AutoBlueTest extends AutoMain {
+public class AutoRedTest extends AutoMain {
 
     @Override
 
@@ -40,15 +40,15 @@ public class AutoBlueTest extends AutoMain {
             Bot.stopPixelArmRotation();
 //            DRIVE TO SPIKE MARK
             sleep(SLEEP_TIME);
-            Bot.speedAcceleration(2.5, FAST_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
+            Bot.speedAcceleration(2.85, FAST_SPD, MecanumDrive.driveDirections.DRIVE_FORWARD);
             sleep(SLEEP_GYRO);
             Bot.rotateEndGameArmDown(0);
             sleep(2000);
             Bot.rotateEndGameArmStop(.5);
             sleep(SLEEP_TIME);
-            Bot.gyroPath(GYRO_PATH_SPD, 45);
+            Bot.gyroPath(GYRO_PATH_SPD, 90);
             sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, 45);
+            Bot.gyroCorrection(GYRO_CORRECT_SPD, 90);
 //            EXTEND ARM AND DROP PIXEL
             sleep(500);
             Bot.extendPixelArm(.5, 130);
@@ -62,7 +62,7 @@ public class AutoBlueTest extends AutoMain {
             sleep(SLEEP_TIME);
             Bot.rotatePixelArmUp(.5, 600);//950
             sleep(SLEEP_GYRO);
-            Bot.gyroCorrection(GYRO_CORRECT_SPD, 45);
+            Bot.gyroCorrection(GYRO_CORRECT_SPD, 90);
             sleep(SLEEP_GYRO);
             Bot.speedAcceleration(3.5, FAST_SPD, MecanumDrive.driveDirections.DRIVE_BACK);
             sleep(SLEEP_GYRO);

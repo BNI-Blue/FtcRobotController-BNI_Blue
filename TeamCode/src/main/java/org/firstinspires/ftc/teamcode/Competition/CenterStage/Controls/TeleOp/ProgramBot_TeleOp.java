@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeleOp;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.ProgramBot;
 
+@Disabled
 @TeleOp(name="ProgramBot")
 public class ProgramBot_TeleOp extends OpMode {
         double leftStickYVal;

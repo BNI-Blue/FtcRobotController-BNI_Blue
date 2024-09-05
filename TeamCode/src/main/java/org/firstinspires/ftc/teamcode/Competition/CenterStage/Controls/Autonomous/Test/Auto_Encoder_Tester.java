@@ -1,14 +1,15 @@
-package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous;
+package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.Test;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
+import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoMain;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.BlueBot;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Robots.AckerBot;
 
 @Disabled
 @Autonomous(name= "Encoder Tester")
-public class Auto_Encoder_Tester extends AutoMain{
+public class Auto_Encoder_Tester extends AutoMain {
     // Construct Competition and Programming Robots
     public BlueBot Bot = new BlueBot();
     public AckerBot programBot = new AckerBot();

@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions;
+package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.Test;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoMain;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Drivetrains.MecanumDrive;
 
-//@Disabled
+@Disabled
 @Autonomous(name = "Speed Acceleration Test")
 
 public class SpeedIncreaseTest extends AutoMain {

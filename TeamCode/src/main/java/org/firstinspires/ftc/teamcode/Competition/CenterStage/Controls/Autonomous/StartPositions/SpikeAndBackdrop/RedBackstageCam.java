@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRedAlliance;
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.TeamPropPosition;
 
+@Disabled
 @Autonomous(name = "Red:Backstage:Start:Cam")
 public class RedBackstageCam extends AutoRedAlliance {
 

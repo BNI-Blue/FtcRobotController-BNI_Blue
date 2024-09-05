@@ -1,9 +1,11 @@
-package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.StartPositions;
+package org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.Test;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.teamcode.Competition.CenterStage.Controls.Autonomous.AutoRedAlliance;
 
+@Disabled
 @Autonomous(name = "Red:Cam:Test")
 public class RedBackstageStart_CamTest extends AutoRedAlliance {@Override
 public void runOpMode() throws InterruptedException {
