@@ -33,6 +33,16 @@ public class MecanumDrive {
 
     public void stopMotors(){
         frontLeftMotor.setPower(0);
+        frontRightMotor.setPower(0);
+        rearLeftMotor.setPower(0);
+        rearRightMotor.setPower(0);
+    }
+
+    public void driveForward(double speed){
+        frontLeftMotor.setPower(speed);
+        frontRightMotor.setPower(speed);
+        rearLeftMotor.setPower(speed);
+        rearRightMotor.setPower(speed);
     }
 }
 
